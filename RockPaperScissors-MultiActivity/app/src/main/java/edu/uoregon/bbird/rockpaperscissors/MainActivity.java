@@ -21,9 +21,6 @@ public class MainActivity extends AppCompatActivity {
     public void play(View v) {
         // Get the player's hand choice
         String humanHand = rpsEditText.getText().toString().toLowerCase();
-        if (humanHand.equals("")) {
-            humanHand = "none";
-        }
 
         // Start second activity and send it the player's hand selection
         Intent intent = new Intent(this, SecondActivity.class);

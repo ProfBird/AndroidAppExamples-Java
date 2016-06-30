@@ -29,9 +29,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Waiting..."
         android:id="@+id/winnerTextView"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_toRightOf="@+id/newGameButton"
-        android:layout_toEndOf="@+id/newGameButton" />
+        android:layout_marginTop="66dp"
+        android:layout_below="@+id/compMoveTextView"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -39,11 +39,10 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Winner: "
         android:id="@+id/textView2"
-        android:layout_marginTop="30dp"
-        android:layout_below="@+id/compMoveTextView"
-        android:layout_toLeftOf="@+id/newGameButton"
-        android:layout_toStartOf="@+id/newGameButton" />
-
+        android:layout_alignTop="@+id/winnerTextView"
+        android:layout_alignLeft="@+id/rpsImage"
+        android:layout_alignStart="@+id/rpsImage" />
+    <!--
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -51,6 +50,7 @@
         android:id="@+id/newGameButton"
         android:layout_below="@+id/winnerTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp" />
-
+        android:layout_marginTop="30dp"
+        android:onClick="newGame"/>
+    -->
 </RelativeLayout>

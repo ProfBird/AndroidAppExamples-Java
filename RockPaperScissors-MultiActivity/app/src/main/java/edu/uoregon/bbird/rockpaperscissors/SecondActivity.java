@@ -20,16 +20,16 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.second_activity);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+   //     getActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
-
+/*
     @Override
     protected void onNewIntent(Intent intent) {
         setIntent(intent);
         super.onNewIntent(intent);
     }
-
+*/
     @Override
     protected void onResume() {
         super.onResume();
@@ -51,6 +51,13 @@ public class SecondActivity extends AppCompatActivity {
         TextView winnerTextView = (TextView)findViewById(R.id.winnerTextView);
         winnerTextView.setText(game.whoWon().toString());
     }
+
+    /*
+    public  void newGame(View v ) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+*/
 
     private void displayImage(Hand hand) {
         int id = 0;
