@@ -1,56 +1,62 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin">
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
      <ImageView
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:id="@+id/rpsImage"
-        android:src="@drawable/rock"
-        android:scaleType="fitCenter"
-        android:layout_below="@+id/rpsEditText"
-        android:layout_centerHorizontal="true" />
+         android:id="@+id/rpsImage"
+         android:layout_width="300dp"
+         android:layout_height="200dp"
+         android:src="@drawable/rock"
+         android:scaleType="fitCenter"
+         android:contentDescription="The hand chosen by the computer"
+         android:layout_marginTop="39dp"
+         android:layout_below="@+id/my_toolbar"
+         android:layout_centerHorizontal="true" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/compMoveTextView"
-        android:layout_below="@+id/rpsImage"
-        android:layout_centerHorizontal="true"
-        android:text="None" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Waiting..."
+        android:text="@string/none"
+        android:layout_above="@+id/winnerTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/rpsImage" />
+
+    <TextView
         android:id="@+id/winnerTextView"
-        android:layout_marginTop="66dp"
-        android:layout_below="@+id/compMoveTextView"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Winner: "
-        android:id="@+id/textView2"
-        android:layout_alignTop="@+id/winnerTextView"
-        android:layout_alignLeft="@+id/rpsImage"
-        android:layout_alignStart="@+id/rpsImage" />
-    <!--
-    <Button
+        android:text="@string/waiting"
+        android:layout_below="@+id/rpsImage"
+        android:layout_toRightOf="@+id/compMoveTextView"
+        android:layout_toEndOf="@+id/compMoveTextView"
+        android:layout_marginTop="48dp" />
+
+    <TextView
+        android:id="@+id/winnerLabelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Game"
-        android:id="@+id/newGameButton"
-        android:layout_below="@+id/winnerTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:onClick="newGame"/>
-    -->
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/winner"
+        android:layout_alignTop="@+id/winnerTextView"
+        android:layout_toLeftOf="@+id/compMoveTextView"
+        android:layout_toStartOf="@+id/compMoveTextView" />
+
 </RelativeLayout>

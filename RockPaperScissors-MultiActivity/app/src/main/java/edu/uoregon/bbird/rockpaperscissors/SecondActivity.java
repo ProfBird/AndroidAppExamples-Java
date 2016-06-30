@@ -3,6 +3,7 @@ package edu.uoregon.bbird.rockpaperscissors;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,15 +22,12 @@ public class SecondActivity extends AppCompatActivity {
 
         setContentView(R.layout.second_activity);
    //     getActionBar().setDisplayHomeAsUpEnabled(true);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
 
     }
-/*
-    @Override
-    protected void onNewIntent(Intent intent) {
-        setIntent(intent);
-        super.onNewIntent(intent);
-    }
-*/
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -37,10 +35,9 @@ public class SecondActivity extends AppCompatActivity {
         // Get the game state sent from the FirstActivity
         Intent intent = getIntent();
         String handString = intent.getExtras().getString("humanHand");
-        Hand humanHand = Hand.valueOf(handString);
         if (game == null)   // We might already have a game object
             game = new RpsGame();
-        game.setHumanHand(humanHand);
+        game.setHumanHand(handString);
 
         // Display the computer's move
         rpsImageView = (ImageView)findViewById(R.id.rpsImage);
@@ -51,13 +48,6 @@ public class SecondActivity extends AppCompatActivity {
         TextView winnerTextView = (TextView)findViewById(R.id.winnerTextView);
         winnerTextView.setText(game.whoWon().toString());
     }
-
-    /*
-    public  void newGame(View v ) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-*/
 
     private void displayImage(Hand hand) {
         int id = 0;

@@ -13,14 +13,13 @@ public class MainActivity extends AppCompatActivity {
     RpsGame game = new RpsGame();
     ImageView rpsImage;
     EditText rpsEditText;
-    TextView winnerText;
     TextView compMoveText;
 
 
     // Handler for the paly click event
     public void play(View v) {
         // Get the player's hand choice
-        String humanHand = rpsEditText.getText().toString().toLowerCase();
+        String humanHand = rpsEditText.getText().toString();
 
         // Start second activity and send it the player's hand selection
         Intent intent = new Intent(this, SecondActivity.class);
