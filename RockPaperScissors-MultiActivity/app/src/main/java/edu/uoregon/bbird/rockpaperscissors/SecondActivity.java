@@ -19,13 +19,12 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.second_activity);
-   //     getActionBar().setDisplayHomeAsUpEnabled(true);
+        // Add an app bar to this activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
+        // Add an "up" button to the app bar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
