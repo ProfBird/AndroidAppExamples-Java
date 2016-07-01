@@ -1687,7 +1687,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="3434" />
+    <option name="y" value="-129" />
     <option name="width" value="1280" />
     <option name="height" value="873" />
   </component>
@@ -1811,7 +1812,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/projects" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../RockPaperScissors-MultiActivity-ActionBar" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Developer/Xamarin/android-sdk-macosx" />
@@ -2093,8 +2094,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="873" extended-state="0" />
-    <editor active="true" />
+    <frame x="3434" y="-129" width="1280" height="873" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
