@@ -65,15 +65,13 @@ public class FirstFragment extends Fragment implements OnClickListener {
             String humanHand = rpsEditText.getText().toString();
             game.setHumanHand(humanHand);
 
-            if(!twoPaneLayout) {
+            if (twoPaneLayout) {
+                activity.computerMove(game);
+            } else {
                 Intent intent = new Intent(getActivity(), SecondActivity.class);
                 int humanHandNum = game.getHumanHand().ordinal();
                 intent.putExtra("humanHand", humanHandNum);  // send state to 2nd activity
                 startActivity(intent);
-            }
-            else
-            {
-                activity.computerMove(game);
             }
         }
     }

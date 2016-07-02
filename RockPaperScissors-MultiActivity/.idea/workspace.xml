@@ -18,21 +18,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="528f7858-45a9-49da-9e09-a5b4ca2f0d26" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/java/edu/uoregon/bbird/rps/MainActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/res/layout-land/activity_main.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/res/layout/activity_main.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RockPaperScissors-Fragments/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../RockPaperScissors-Fragments/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/java/edu/uoregon/bbird/rps/FirstActivity.java" afterPath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/java/edu/uoregon/bbird/rps/FirstActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/java/edu/uoregon/bbird/rps/FirstFragment.java" afterPath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/java/edu/uoregon/bbird/rps/FirstFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/java/edu/uoregon/bbird/rps/RpsGame.java" afterPath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/java/edu/uoregon/bbird/rps/RpsGame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/java/edu/uoregon/bbird/rps/SecondFragment.java" afterPath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/java/edu/uoregon/bbird/rps/SecondFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/res/layout-large-land/first_activity.xml" afterPath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/res/layout-large-land/first_activity.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/res/layout/first_fragment.xml" afterPath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/res/layout/first_fragment.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/res/layout/second_fragment.xml" afterPath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/res/layout/second_fragment.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="528f7858-45a9-49da-9e09-a5b4ca2f0d26" name="Default" comment="" />
     <ignored path="RockPaperScissors-MultiActivity.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -1687,7 +1673,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="2064" />
+    <option name="y" value="-33" />
     <option name="width" value="1280" />
     <option name="height" value="873" />
   </component>
@@ -1825,7 +1812,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/projects" />
+    <property name="last_opened_file_path" value="$USER_HOME$/OneDrive/UO/CIS399/Student Work/lab2submissions/chentimo_lab2/Pigdice" />
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Developer/Xamarin/android-sdk-macosx" />
@@ -2108,8 +2095,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="873" extended-state="0" />
-    <editor active="true" />
+    <frame x="2064" y="-33" width="1280" height="873" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
