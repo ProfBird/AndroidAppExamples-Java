@@ -18,21 +18,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="528f7858-45a9-49da-9e09-a5b4ca2f0d26" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RockPaperScissors-Fragments/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../RockPaperScissors-Fragments/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/java/edu/uoregon/bbird/rps/FirstActivity.java" afterPath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/java/edu/uoregon/bbird/rps/FirstActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/java/edu/uoregon/bbird/rps/SecondActivity.java" afterPath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/java/edu/uoregon/bbird/rps/SecondActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/res/layout-large-land/first_activity.xml" afterPath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/res/layout-large-land/first_activity.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/res/layout-large-port/first_activity.xml" afterPath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/res/layout-large-port/first_activity.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/res/layout/first_activity.xml" afterPath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/res/layout/first_activity.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/res/layout/first_fragment.xml" afterPath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/res/layout/first_fragment.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/res/layout/second_activity.xml" afterPath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/res/layout/second_activity.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/../RockPaperScissors-Fragments/app/src/main/res/values/styles.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/second_activity.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/second_activity.xml" />
-    </list>
+    <list default="true" id="528f7858-45a9-49da-9e09-a5b4ca2f0d26" name="Default" comment="" />
     <ignored path="RockPaperScissors-MultiActivity.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
