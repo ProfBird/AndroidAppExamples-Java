@@ -7,51 +7,41 @@
     tools:context=".SecondFragment">
 
      <ImageView
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:id="@+id/rpsImage"
-        android:src="@drawable/rock"
-        android:scaleType="fitCenter"
-        android:layout_below="@+id/rpsEditText"
-        android:layout_centerHorizontal="true" />
+         android:id="@+id/rpsImage"
+         android:layout_width="300dp"
+         android:layout_height="200dp"
+         android:src="@drawable/rock"
+         android:scaleType="fitCenter"
+         android:layout_centerHorizontal="true" />
 
     <TextView
+        android:id="@+id/compMoveTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/compMoveTextView"
+        android:text="@string/none"
         android:layout_below="@+id/rpsImage"
-        android:layout_centerHorizontal="true"
-        android:text="None" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
+        android:id="@+id/winnerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Waiting..."
-        android:id="@+id/winnerTextView"
         android:layout_alignTop="@+id/textView2"
-        android:layout_toRightOf="@+id/newGameButton"
-        android:layout_toEndOf="@+id/newGameButton" />
+        android:layout_toRightOf="@+id/compMoveTextView"
+        android:layout_toEndOf="@+id/compMoveTextView" />
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Winner: "
-        android:id="@+id/textView2"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="36dp"
         android:layout_below="@+id/compMoveTextView"
-        android:layout_toLeftOf="@+id/newGameButton"
-        android:layout_toStartOf="@+id/newGameButton" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Game"
-        android:id="@+id/newGameButton"
-        android:layout_below="@+id/winnerTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp" />
+        android:layout_toLeftOf="@+id/compMoveTextView"
+ />
 
 </RelativeLayout>

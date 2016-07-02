@@ -19,6 +19,7 @@ public class FirstFragment extends Fragment implements OnClickListener {
     private RpsGame game;
     private boolean twoPaneLayout;
     private EditText rpsEditText;
+    private FirstActivity activity;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -37,7 +38,7 @@ public class FirstFragment extends Fragment implements OnClickListener {
         super.onActivityCreated(savedInstanceState);
 
         // Get a references from the host activity
-        FirstActivity activity = (FirstActivity)getActivity();
+        activity = (FirstActivity)getActivity();
         rpsEditText = (EditText) activity.findViewById(R.id.rpsEditText);
 
         // Make a new game object, use saved state if it exists
@@ -61,16 +62,18 @@ public class FirstFragment extends Fragment implements OnClickListener {
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.playButton) {
-            String humanHand = rpsEditText.getText().toString().toLowerCase();
-            if (humanHand.equals("")) {
-                humanHand = "none";
-            }
-            game.setHumanHand(Hand.valueOf(humanHand));
+            String humanHand = rpsEditText.getText().toString();
+            game.setHumanHand(humanHand);
+
             if(!twoPaneLayout) {
                 Intent intent = new Intent(getActivity(), SecondActivity.class);
                 int humanHandNum = game.getHumanHand().ordinal();
                 intent.putExtra("humanHand", humanHandNum);  // send state to 2nd activity
                 startActivity(intent);
+            }
+            else
+            {
+                activity.computerMove(game);
             }
         }
     }

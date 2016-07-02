@@ -3,7 +3,7 @@ package edu.uoregon.bbird.rps;
 import java.util.Random;
 
 /**
- * Created by Brian Bird on 7/1/2015. Revised 7/15/15
+ * Created by Brian Bird on 7/1/2015, revised 6/30/2016
  */
 
 public class RpsGame {
@@ -17,15 +17,33 @@ public class RpsGame {
     public Hand getHumanHand() {
         return humanHand;
     }
-
     public void setHumanHand(Hand humanHand) {
         this.humanHand = humanHand;
+    }
+    public boolean setHumanHand(String hand) {
+        boolean isValidHand = true;
+        // Accomdate user entries of single letters as well as full words
+        // and accomdate upper as well as lower case
+        switch(hand.toLowerCase().charAt(0)) {
+            case 'r': hand = "rock";
+                break;
+            case 'p': hand ="paper";
+                break;
+            case 's': hand = "scissors";
+                break;
+            default:
+                hand = "none";
+                isValidHand = false;
+                break;
+        }
+        humanHand = Hand.valueOf(hand);
+        // return false if the hand wasn't a valid char or word
+        return isValidHand;
     }
 
     public Hand getComputerHand() {
         return computerHand;
     }
-
     public void setComputerHand(Hand computerHand) {
         this.computerHand = computerHand;
     }

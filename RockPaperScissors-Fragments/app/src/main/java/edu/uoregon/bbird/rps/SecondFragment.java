@@ -2,12 +2,10 @@ package edu.uoregon.bbird.rps;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,7 +13,7 @@ import android.widget.TextView;
  * Created by Brian Bird on 7/15/2015.
  */
 
-public class SecondFragment extends Fragment implements View.OnClickListener{
+public class SecondFragment extends Fragment {
 
     ImageView rpsImageView;
     TextView compMoveTextView;
@@ -25,21 +23,7 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
         // inflate the layout for this fragment
         View view = inflater.inflate(R.layout.second_fragment, container, false);
 
-        // Set this fragment to listen for the "New Game" button's click event
-        Button b = (Button) view.findViewById(R.id.newGameButton);
-        b.setOnClickListener(this);
-
         return view;
-    }
-
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.newGameButton:
-                startActivity(new Intent(getActivity(), FirstActivity.class));
-                break;
-        }
     }
 
     public void computerMove(RpsGame game) {
@@ -53,6 +37,7 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
         // Display the winner
         TextView winnerTextView = (TextView)activity.findViewById(R.id.winnerTextView);
         winnerTextView.setText(game.whoWon().toString());
+        getView().invalidate();
     }
 
 
@@ -73,6 +58,5 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
         }
         rpsImageView.setImageResource(id);
         compMoveTextView.setText(hand.toString());
-
     }
 }

@@ -25,4 +25,13 @@ public class FirstActivity extends Activity {
 
         setContentView(R.layout.first_activity);
     }
+
+    // Only used when two fragments are loaded in this activity
+    // This is called when the paly button is clicked in the FristFragment
+    public void computerMove(RpsGame g) {
+        game = g;
+        SecondFragment secondFragment = (SecondFragment)getFragmentManager().findFragmentById(R.id.second_fragment);
+        secondFragment.computerMove(game);
+
+    }
 }
