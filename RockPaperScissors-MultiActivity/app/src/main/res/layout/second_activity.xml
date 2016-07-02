@@ -25,7 +25,7 @@
          android:scaleType="fitCenter"
          android:contentDescription="The hand chosen by the computer"
          android:layout_marginTop="39dp"
-         android:layout_below="@+id/my_toolbar"
+         android:layout_below="@+id/toolbar"
          android:layout_centerHorizontal="true" />
 
     <TextView

@@ -26,10 +26,10 @@
         <activity
             android:name="edu.uoregon.bbird.rps.SettingsActivity"
             android:label="@string/action_settings"
-            android:parentActivityName="edu.uoregon.bbird.rps.MainActivity" >
+            android:parentActivityName="edu.uoregon.bbird.rps.FirstActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="edu.uoregon.bbird.rps.MainActivity" />
+                android:value="edu.uoregon.bbird.rps.FirstActivity" />
         </activity>
     </application>
 
