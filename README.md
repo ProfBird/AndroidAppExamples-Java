@@ -1,5 +1,5 @@
 # CIS399AndroidDemos
-Demos of Android apps for CIS 399 at the University of Oregon
+Demos of Android apps for CIS 399 at the University of Oregon. Apps were created using Android Studio.
 
 Note: All these apps are in one repository, so you will
 need to download or clone the whole repository even if you
