@@ -2,7 +2,6 @@ package edu.uoregon.bbird.rps;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
@@ -25,17 +24,6 @@ public class SecondActivity extends AppCompatActivity {
             Toast.makeText(this, savedInstanceState.getString("test","huh?"),Toast.LENGTH_LONG).show();
     }
 
-    @Override
-    protected void onNewIntent(Intent intent) {
-        setIntent(intent);
-        super.onNewIntent(intent);
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
-        super.onSaveInstanceState(outState, outPersistentState);
-        outState.putString("test", "hello");
-    }
 
     @Override
     protected void onResume() {
