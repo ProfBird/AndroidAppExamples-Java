@@ -1,18 +1,15 @@
 package com.example.xmlparsepractice;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
+import android.content.Context;
+import android.util.Log;
 
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 
-import android.content.Context;
-import android.util.Log;
+import java.io.InputStream;
+
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 
 public class FileIO {
     
@@ -31,8 +28,8 @@ public class FileIO {
             XMLReader xmlreader = parser.getXMLReader();
 
             // set content handler
-            ParseHandler theRssHandler = new ParseHandler();
-            xmlreader.setContentHandler(theRssHandler);
+            ParseHandler weatherParseHandler = new ParseHandler();
+            xmlreader.setContentHandler(weatherParseHandler);
 
             // read the file from internal storage
             InputStream in = context.getAssets().open(FILENAME);
@@ -41,9 +38,9 @@ public class FileIO {
             InputSource is = new InputSource(in);
             xmlreader.parse(is);
 
-            // set the feed in the activity
-            WeatherItems feed = theRssHandler.getFeed();
-            return feed;
+            // return a forecast object which contains a list of parsed weather data
+            WeatherItems forecast = weatherParseHandler.getFeed();
+            return forecast;
         } 
         catch (Exception e) {
             Log.e("News reader", e.toString());
