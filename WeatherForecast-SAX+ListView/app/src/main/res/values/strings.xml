@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Weather Forecast</string>
+    <string name="low">Low: </string>
+    <string name="high">High: </string>
+    <string name="weather_icon">weather icon</string>
+    
+</resources>
