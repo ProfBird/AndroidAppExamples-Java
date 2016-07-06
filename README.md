@@ -24,6 +24,8 @@ only want code for one app.
     * A game with two activities and two fragments which are loaded differently
     depending on screen size and orientation. Activities have a Toolbar and the
     second activity has an up button on the Toolbar.
+* XMLParsePractice
+  * An app that demonstrates parsing XML using SAX. The assets folder contains an XML weather forecast file that is parsed and displayed in a ListView
 
 I wrote these apps for use with a class I teach at University of Oregon, CIS 399, Android Mobile Application Development.
 
