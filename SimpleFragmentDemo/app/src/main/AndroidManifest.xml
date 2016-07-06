@@ -16,7 +16,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".SecondActivity"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:configChanges="orientation|screenSize">
+            <!-- the above attribute prevents the activity from being
+            destroied and re-created when the device is rotated.
+            It also enables the call to onConfigurationChange -->
         </activity>
     </application>
 

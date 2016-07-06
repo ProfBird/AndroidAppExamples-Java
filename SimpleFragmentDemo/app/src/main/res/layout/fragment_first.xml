@@ -11,6 +11,13 @@
         android:text="Hello fragment!"
         android:id="@+id/messageEditText" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Copy of message"
+        android:id="@+id/messageTextView" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

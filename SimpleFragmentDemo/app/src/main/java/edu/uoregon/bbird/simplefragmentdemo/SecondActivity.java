@@ -9,6 +9,7 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Get the message that the first fragment's button onClick handler sent
         setContentView(R.layout.activity_second);
         String message = getIntent().getStringExtra("message");
         // The toast is just for testing
@@ -19,4 +20,5 @@ public class SecondActivity extends AppCompatActivity {
                 (SecondFragment)getFragmentManager().findFragmentById(R.id.fragment_second);
         fragment.showMessage(message);
     }
+
 }
