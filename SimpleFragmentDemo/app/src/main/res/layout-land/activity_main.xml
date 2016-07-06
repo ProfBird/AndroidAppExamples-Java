@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- landscape layout for the main activity -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/fragment_first"
+        android:name="edu.uoregon.bbird.simplefragmentdemo.FirstFragment"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_first" />
+
+    <fragment
+        android:id="@+id/fragment_second"
+        android:name="edu.uoregon.bbird.simplefragmentdemo.SecondFragment"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_second" />
+
+</LinearLayout>

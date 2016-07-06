@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Large landscape -->
+<!-- at least 640dp x 480dp -->
+<!-- Nexus 7 (2012 and 2013) is 600dp x 960dp -->
+<!-- Nexus 5X is 411dp x 732dp -->
+
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"

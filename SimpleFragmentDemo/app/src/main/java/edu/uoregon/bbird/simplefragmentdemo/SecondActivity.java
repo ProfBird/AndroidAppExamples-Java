@@ -12,7 +12,7 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
         String message = getIntent().getStringExtra("message");
         // The toast is just for testing
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "SecondActivity: " + message, Toast.LENGTH_SHORT).show();
 
         // Send the message to the fragment
         SecondFragment fragment =

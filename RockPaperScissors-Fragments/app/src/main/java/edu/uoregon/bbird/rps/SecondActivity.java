@@ -2,8 +2,10 @@ package edu.uoregon.bbird.rps;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.Toast;
 
 /**
  * Created by Brian Bird on 7/15/2015.
@@ -19,12 +21,20 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.second_activity);
         setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (savedInstanceState != null)
+            Toast.makeText(this, savedInstanceState.getString("test","huh?"),Toast.LENGTH_LONG).show();
     }
 
     @Override
     protected void onNewIntent(Intent intent) {
         setIntent(intent);
         super.onNewIntent(intent);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
+        outState.putString("test", "hello");
     }
 
     @Override

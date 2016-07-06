@@ -3,6 +3,7 @@ package edu.uoregon.bbird.simplefragmentdemo;
 
 import android.app.Fragment;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,8 +37,18 @@ public class FirstFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        Intent intent = new Intent(getActivity(), SecondActivity.class);
-        intent.putExtra("message", messageEditText.getText().toString());
-        startActivity(intent);
+        String message = messageEditText.getText().toString();
+        Configuration config = getResources().getConfiguration();
+        // If orientation is portrait the fragments are in separate activities
+        // if it's landscape they're both in the main activity
+        if (config.orientation == config.ORIENTATION_PORTRAIT) {
+            Intent intent = new Intent(getActivity(), SecondActivity.class);
+            intent.putExtra("message", message);
+            startActivity(intent);
+        }
+        else
+        {
+            ((MainActivity)getActivity()).sendMessage(message);
+        }
     }
 }
