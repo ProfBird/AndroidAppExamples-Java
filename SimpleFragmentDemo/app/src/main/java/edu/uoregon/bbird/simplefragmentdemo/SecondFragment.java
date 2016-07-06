@@ -40,6 +40,7 @@ public class SecondFragment extends Fragment {
         super.onConfigurationChanged(newConfig);
         Toast.makeText(getActivity(), "In onConfigurationChanged", Toast.LENGTH_SHORT).show();
         // Put your code to handle rotation here
+        // Although there's nothing that needs to be done for this app
     }
 
     // Call this from the host activity to display the message
