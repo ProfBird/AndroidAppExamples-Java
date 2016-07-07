@@ -5,22 +5,29 @@ android {
     buildToolsVersion "24.0.0"
 
     defaultConfig {
-        applicationId "edu.uoregon.bbird.simplefragmentdemo"
+        applicationId "edu.uoregon.bbird.weatherdemo"
         minSdkVersion 16
-        targetSdkVersion 23
+        targetSdkVersion 19
         versionCode 1
         versionName "1.0"
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
+        repositories {
+            maven { url 'https://oss.sonatype.org/content/repositories/ksoap2-android-releases'  }
+        }
     }
 }
 
+
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.0.0'
+    compile 'com.android.support:support-v4:21.0.3'
+    compile 'com.google.code.ksoap2-android:ksoap2-android:3.6.0'
 }

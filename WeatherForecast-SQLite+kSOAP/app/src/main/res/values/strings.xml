@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Weather Forecast</string>
+    <string name="low">Low: \t</string>
+    <string name="high">\tHigh: \t</string>
+    <string name="weather_icon">weather icon</string>
+    <string-array name="locations_array">
+        <item>Eugene</item>
+        <item>Florence</item>
+        <item>Anchorage</item>
+    </string-array>
+        <string name="enter_location">"Enter a zip code: "</string>
+    
+</resources>
