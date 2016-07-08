@@ -6,10 +6,8 @@ package edu.uoregon.bbird.weatherdemo;
 // http://stackoverflow.com/questions/5457699/cursor-adapter-and-sqlite-example
 // http://developer.android.com/reference/android/widget/SimpleCursorAdapter.html
 
-import edu.uoregon.bbird.weatherdemo.R;
 import android.app.Activity;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.View;
@@ -38,7 +36,7 @@ public class MainActivity extends Activity
         locationSpinner.setOnItemSelectedListener(this);
         
         // Initialize the database
-        dal.loadTestData();
+        dal.loadTestData("97405");
         
         // Get Forecast for the default location
         cursor = dal.getForcastByLocation(locationSelection);

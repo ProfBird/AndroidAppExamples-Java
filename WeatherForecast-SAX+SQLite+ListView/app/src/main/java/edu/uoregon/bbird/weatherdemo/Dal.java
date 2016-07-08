@@ -2,19 +2,19 @@ package edu.uoregon.bbird.weatherdemo;
 
 
 
-import java.io.InputStream;
-
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-
-import org.xml.sax.InputSource;
-import org.xml.sax.XMLReader;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
+
+import org.xml.sax.InputSource;
+import org.xml.sax.XMLReader;
+
+import java.io.InputStream;
+
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 
 // Data Access Layer
 
@@ -27,13 +27,13 @@ public class Dal {
 	}
 	
 	// This is a temporary method for loading fixed data into the db
-	public void loadTestData()
+	public void loadTestData(String zipCode)
 	{
 		  // Initialize database
         WeatherSQLiteHelper helper = new WeatherSQLiteHelper(context);
         SQLiteDatabase db = helper.getWritableDatabase();	
 	   // load the database with test data if it isn't already loaded
-	   if (db.rawQuery("SELECT * FROM Forecast WHERE Zip = 97405", null).getCount() == 0)
+	   if (db.rawQuery("SELECT * FROM Forecast WHERE Zip = " + zipCode, null).getCount() == 0)
 	   {
 		   loadDbFromXML("97405");	// Eugene
 		   loadDbFromXML("97439"); // Florence
@@ -74,6 +74,9 @@ public class Dal {
 	
     public Cursor getForcastByLocation(String location)
     {
+        // Ensure there is data in the database for this location
+        loadTestData(location);
+
         // Initialize the database
         WeatherSQLiteHelper helper = new WeatherSQLiteHelper(context);
         SQLiteDatabase db = helper.getReadableDatabase();
