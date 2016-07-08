@@ -25,7 +25,7 @@ only want code for one app.
     depending on screen size and orientation. Activities have a Toolbar and the
     second activity has an up button on the Toolbar.
 * XMLParsePractice
-  * An app that demonstrates parsing XML using SAX. The assets folder contains an XML weather forecast file that is parsed and displayed in a ListView
+  * An app that demonstrates parsing XML using SAX. The assets folder contains an XML weather forecast file that is parsed and displayed in a ListView with a SimpleAdapter.
 * WeatherForecast-SAX+ListView
   * Similar to the XMLParsePractice app, but it displays weather icons in the ListView along with the weather data.
 * WeatherForecast-SAX+SQLite+ListView
