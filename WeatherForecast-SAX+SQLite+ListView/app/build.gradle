@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "23.0.0"
+    compileSdkVersion 23
+    buildToolsVersion "24.0.0"
 
     defaultConfig {
         applicationId "edu.uoregon.bbird.weatherdemo"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 19
     }
 
@@ -19,6 +19,5 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:21.0.3'
-    compile files('libs/ksoap2-android-assembly-3.3.0-jar-with-dependencies.jar')
+    compile 'com.android.support:support-v4:23.4.0'
 }

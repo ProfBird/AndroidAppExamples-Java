@@ -6,38 +6,22 @@ package edu.uoregon.bbird.weatherdemo;
 // http://stackoverflow.com/questions/5457699/cursor-adapter-and-sqlite-example
 // http://developer.android.com/reference/android/widget/SimpleCursorAdapter.html
 
-import java.io.IOException;
-import java.net.Proxy;
-
-import org.ksoap2.SoapEnvelope;
-import org.ksoap2.serialization.SoapObject;
-import org.ksoap2.serialization.SoapSerializationEnvelope;
-import org.ksoap2.transport.HttpResponseException;
-import org.ksoap2.transport.HttpTransportSE;
-import org.xmlpull.v1.XmlPullParserException;
-
 import edu.uoregon.bbird.weatherdemo.R;
 import android.app.Activity;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnKeyListener;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.widget.SimpleCursorAdapter;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.EditText;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.TextView.OnEditorActionListener;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class MainActivity extends Activity 
-				implements OnItemClickListener, OnEditorActionListener {
+				implements OnItemClickListener, OnItemSelectedListener {
 
 	private Dal dal = new Dal(this);
 	Cursor cursor = null;
@@ -50,9 +34,15 @@ public class MainActivity extends Activity
         setContentView(R.layout.activity_main);
         
         // Set up location selection spinner
-        EditText zipEditText = (EditText)findViewById(R.id.zipEditText);
-        zipEditText.setOnEditorActionListener(this);
-               
+        Spinner locationSpinner = (Spinner)findViewById(R.id.locationSpinner);
+        locationSpinner.setOnItemSelectedListener(this);
+        
+        // Initialize the database
+        dal.loadTestData();
+        
+        // Get Forecast for the default location
+        cursor = dal.getForcastByLocation(locationSelection);
+        
         // Set up the adapter for the ListView to display the forecast info
         adapter = new SimpleCursorAdapter(
                 this, 
@@ -86,100 +76,40 @@ public class MainActivity extends Activity
 	}
 
 	@Override
-	public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-		int keyCode = -1; 
-        if (event != null) {
-           keyCode = event.getKeyCode();
-        }
-        if (actionId == EditorInfo.IME_ACTION_DONE ||
-            actionId == EditorInfo.IME_ACTION_UNSPECIFIED ||
-            keyCode == KeyEvent.KEYCODE_DPAD_CENTER || 
-            keyCode == KeyEvent.KEYCODE_ENTER) {
-			    // Get a weather forecast the selected location
-	        	locationSelection = v.getText().toString();
-			    cursor = dal.getForcastFromDb(locationSelection);
-			    if(cursor.getCount() == 0)
-			    {
-			        // Get weather forecast from the web service
-			        WeatherTask weatherTask = new WeatherTask();
-			        weatherTask.execute(locationSelection);		// get's the forecast and puts it in the db    	
-			        // Can't get cursor data here, have to do it in onPostExecute
-			        //  cursor = dal.getForcastByLocation(locationSelection);	// reads it back from the db
-			    }
-			    else
-			    {
-			    	adapter.changeCursor(cursor);	
-			    }
+	public void onItemSelected(AdapterView<?> parent, View view, int position,
+			long id) {
+		switch (position){
+		case 0:
+			locationSelection = "97405";
+			break;
+		case 1:
+			locationSelection = "97439";
+			break;
+		case 2:
+			locationSelection = "99515";	
 		}
-		return false;		// false means the action wasn't consumed, it is passed on to the EditText widget97405
-	}  
-
-	
-	/*** Background task to get a forecast from the web service ***/
-	private class WeatherTask extends AsyncTask<String, Void, String> {
-	
-		@Override
-		protected String doInBackground(String... params) {
-			
-			// Create a SOAP request object and put it in an envelope
-			SoapObject request = new SoapObject("http://ws.cdyne.com/WeatherWS/", "GetCityForecastByZIP");
-			request.addProperty("ZIP", params[0]);
-			
-			SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER12);
-			envelope.dotNet = true;
-			envelope.setOutputSoapObject(request);
-			
-			// Send the request (call the SOAP method)
-			HttpTransportSE ht = new HttpTransportSE(Proxy.NO_PROXY,
-					"http://wsf.cdyne.com/WeatherWS/Weather.asmx", 60000);
-			ht.setXmlVersionTag("<!--?xml version=\"1.0\" encoding= \"UTF-8\" ?-->");
-			ht.debug = true;
-			
-			try {
-				ht.call("http://ws.cdyne.com/WeatherWS/GetCityForecastByZIP", envelope);
-			} catch (HttpResponseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (XmlPullParserException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			// Get the response from the SOAP service
-			/*
-			// This works, but doesn't give us the raw XML
-			SoapObject response = null;
-			try {
-				response = (SoapObject)envelope.getResponse();
-			} catch (SoapFault e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			weatherXml = response.getPropertyAsString("GetCityForecastByZIPResult");
-			*/
-			
-			// This gives us the raw XML
-			String weatherXml = ht.responseDump;
-			return weatherXml;
-		}
-	
-		@Override
-		protected void onPostExecute(String result) {
-			dal.loadDbFromWebService(result, locationSelection);;
-			super.onPostExecute(result);
-		    cursor = dal.getForcastFromDb(locationSelection);	// reads it back from the db
-		    if(cursor.getCount() == 0)
-		    {
-		    	Toast.makeText(MainActivity.this, "No data available", Toast.LENGTH_SHORT).show();
-		    }
-		    else
-		    {
-		    	adapter.changeCursor(cursor);	
-		    }
-		}
-		
+        // Get a weather forecast the selected location
+        cursor = dal.getForcastByLocation(locationSelection);
+        adapter.changeCursor(cursor);
 	}
+
+	@Override
+	public void onNothingSelected(AdapterView<?> parent) {
+		// TODO Auto-generated method stub	
+	}    
 }
+
+/* 
+for (WeatherItem item : weatherItems)
+{
+	HashMap<String, String> map = new HashMap<String, String>();
+	map.put("date", item.getForecastDateFormatted());
+	// map.put("lowTemp", getString(R.string.low) + item.getLowTemp());
+	// map.put("highTemp", getString(R.string.high) + item.getHighTemp());
+	map.put("imageName", 
+			Integer.toString(getResources().getIdentifier(
+					item.getDescription().toLowerCase().replaceAll("\\s+",""), "drawable", getPackageName() 
+					)));
+	data.add(map);
+}
+*/

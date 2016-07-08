@@ -8,24 +8,22 @@
         android:id="@+id/locationLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/enter_location"
+        android:text="@string/choose_location"
         android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/zipEditText"
+    <Spinner
+        android:id="@+id/locationSpinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/locationLabel"
-        android:ems="10"
-        android:inputType="number" >
-    </EditText>
+        android:entries="@array/locations_array" />
 
     <ListView
         android:id="@+id/forecastListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
-        android:layout_below="@id/zipEditText" >
+        android:layout_below="@id/locationSpinner" >
 
     </ListView>
 

@@ -1,10 +1,15 @@
 package edu.uoregon.bbird.weatherdemo;
 
-import java.io.StringReader;
+
+
+import java.io.InputStream;
+
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
+
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -21,11 +26,28 @@ public class Dal {
 		this.context = context;
 	}
 	
+	// This is a temporary method for loading fixed data into the db
+	public void loadTestData()
+	{
+		  // Initialize database
+        WeatherSQLiteHelper helper = new WeatherSQLiteHelper(context);
+        SQLiteDatabase db = helper.getWritableDatabase();	
+	   // load the database with test data if it isn't already loaded
+	   if (db.rawQuery("SELECT * FROM Forecast WHERE Zip = 97405", null).getCount() == 0)
+	   {
+		   loadDbFromXML("97405");	// Eugene
+		   loadDbFromXML("97439"); // Florence
+		   loadDbFromXML("99515"); // Anchorage
+	   }
+	   db.close();	
+	}
+
 	
 	// Parse the XML files and put the data in the db
-	public void loadDbFromWebService(String xmlData, String zipCode) {
-		// Get the data from the XML string
-		WeatherItems items = parseXml(xmlData);
+	public void loadDbFromXML(String zipCode) {
+		// Get the data from the XML file
+		String fileName = "weather" + zipCode +".xml";
+		WeatherItems items = parseXmlFile(fileName);
 		items.setZip(zipCode);	// This field isn't in the xml file, so we add it here
 		
 		  // Initialize database
@@ -50,7 +72,7 @@ public class Dal {
         db.close();
 	}
 	
-    public Cursor getForcastFromDb(String location)
+    public Cursor getForcastByLocation(String location)
     {
         // Initialize the database
         WeatherSQLiteHelper helper = new WeatherSQLiteHelper(context);
@@ -58,12 +80,11 @@ public class Dal {
  
         // Get a weather forecast for one location
         String query = "SELECT * FROM Forecast WHERE Zip = ? ORDER BY Date ASC";
-        // "SELECT * FROM Forecast WHERE Zip = ? AND Date = ? ORDER BY Date ASC";
         String[] variables = new String[]{location};    // rawQuery must not include a trailing ';'
         return db.rawQuery(query, variables); 
     }
 
-    public WeatherItems parseXml(String xmlData) {
+    public WeatherItems parseXmlFile(String fileName) {
         try {
             // get the XML reader
             SAXParserFactory factory = SAXParserFactory.newInstance();
@@ -74,8 +95,12 @@ public class Dal {
             ParseHandler handler = new ParseHandler();
             xmlreader.setContentHandler(handler);
 
+            // read the file from internal storage
+            InputStream in = context.getAssets().open(fileName);
+
             // parse the data
-            xmlreader.parse(new InputSource(new StringReader(xmlData)));
+            InputSource is = new InputSource(in);
+            xmlreader.parse(is);
 
             // set the feed in the activity
             WeatherItems items = handler.getItems();
@@ -85,7 +110,5 @@ public class Dal {
             Log.e("News reader", e.toString());
             return null;
         }
-    }
-    
-   
+    }	
 }

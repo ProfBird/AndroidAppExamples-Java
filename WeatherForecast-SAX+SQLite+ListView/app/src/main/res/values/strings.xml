@@ -10,6 +10,6 @@
         <item>Florence</item>
         <item>Anchorage</item>
     </string-array>
-        <string name="enter_location">"Enter a zip code: "</string>
+        <string name="choose_location">"Choose a location: "</string>
     
 </resources>
