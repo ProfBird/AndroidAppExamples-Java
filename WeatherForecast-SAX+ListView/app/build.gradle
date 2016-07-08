@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "edu.uoregon.bbird.weatherdemo"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 19
     }
 

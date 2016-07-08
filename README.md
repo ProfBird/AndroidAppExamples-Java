@@ -26,6 +26,12 @@ only want code for one app.
     second activity has an up button on the Toolbar.
 * XMLParsePractice
   * An app that demonstrates parsing XML using SAX. The assets folder contains an XML weather forecast file that is parsed and displayed in a ListView
+* WeatherForecast-SAX+ListView
+  * Similar to the XMLParsePractice app, but it displays weather icons in the ListView along with the weather data.
+* WeatherForecast-SAX+SQLite+ListView
+  * Similar to XMLParsePractice, except it stores multiple weather forecasts in an SQLite database. It also uses a CursorAdapter with the ListView.
+* WeatherForecast-kSOAP+SQLite+ListView
+  * Similar to WeatherForecast-SAX+SQLite+ListView, but it gets it's weather forecast data from a SOAP web service instead of from XML files. It uses kSOAP as the web service client.
 
 I wrote these apps for use with a class I teach at University of Oregon, CIS 399, Android Mobile Application Development.
 

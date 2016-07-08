@@ -1,4 +1,7 @@
-An app that demonstrates parsing XML using SAX. The assets folder contains an XML weather forecast file that is parsed and displayed in a ListView
+An app that demonstrates parsing XML. The assets folder contains an XML weather forecast file that is parsed and displayed in a ListView.
+  * A SAX Parser is used to parse the weather XML file.
+  * Parsed results are copied into an ArrayList of HashMaps.
+  * A SimpleAdapter is used with a ListView to display the weather data.
 
 Note: This app is just one app in the class demo repository. To get the source code for this app you will need to clone or download the whole repository, https://github.com/UO-CIS/CIS399AndroidDemos.
 
