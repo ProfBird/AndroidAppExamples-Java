@@ -1,5 +1,5 @@
 # CIS399AndroidDemos
-Demos of Android apps for CIS 399 at the University of Oregon. Apps were created using Android Studio.
+Demos of Android apps for CIS 399 at the University of Oregon. Apps were written in Java using Android Studio.
 
 Note: All these apps are in one repository, so you will
 need to download or clone the whole repository even if you
@@ -33,7 +33,7 @@ only want code for one app.
 * WeatherForecast-kSOAP+SQLite+ListView
   * Similar to WeatherForecast-SAX+SQLite+ListView, but it gets it's weather forecast data from a SOAP web service instead of from XML files. It uses kSOAP as the web service client.
 
-I wrote these apps for use with a class I teach at University of Oregon, CIS 399, Android Mobile Application Development.
+I wrote these apps for use with my Android Mobile Application Development course, CIS 399, at the University of Oregon.
 
-Read my blog, BirdsBits:
+Read about Android programming and other Software Development topics on my blog, BirdsBits:
 https://birdsbits.wordpress.com

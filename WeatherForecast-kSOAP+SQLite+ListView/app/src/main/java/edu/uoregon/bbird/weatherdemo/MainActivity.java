@@ -120,7 +120,9 @@ public class  MainActivity extends Activity
 		protected String doInBackground(String... params) {
 			
 			// Create a SOAP request object and put it in an envelope
-			SoapObject request = new SoapObject("http://ws.cdyne.com/WeatherWS/", "GetCityForecastByZIP");
+            final String REQUEST_URL = "http://ws.cdyne.com/WeatherWS/";
+            final String SOAP_OP = "GetCityForecastByZIP";
+			SoapObject request = new SoapObject(REQUEST_URL, SOAP_OP);
 			request.addProperty("ZIP", params[0]);
 			
 			SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER12);
@@ -129,12 +131,12 @@ public class  MainActivity extends Activity
 			
 			// Send the request (call the SOAP method)
 			HttpTransportSE ht = new HttpTransportSE(Proxy.NO_PROXY,
-					"http://wsf.cdyne.com/WeatherWS/Weather.asmx", 60000);
+					REQUEST_URL + "Weather.asmx", 60000);
 			ht.setXmlVersionTag("<!--?xml version=\"1.0\" encoding= \"UTF-8\" ?-->");
 			ht.debug = true;
-			
+
 			try {
-				ht.call("98370", envelope);
+				ht.call(REQUEST_URL + SOAP_OP, envelope); // first parameter is soapAction
 			} catch (HttpResponseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -145,7 +147,8 @@ public class  MainActivity extends Activity
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
+
 			// Get the response from the SOAP service
 			/*
 			// This works, but doesn't give us the raw XML
@@ -166,17 +169,21 @@ public class  MainActivity extends Activity
 	
 		@Override
 		protected void onPostExecute(String result) {
-			dal.loadDbFromWebService(result, locationSelection);;
 			super.onPostExecute(result);
-		    cursor = dal.getForcastFromDb(locationSelection);	// reads it back from the db
-		    if(cursor.getCount() == 0)
-		    {
-		    	Toast.makeText(MainActivity.this, "No data available", Toast.LENGTH_SHORT).show();
-		    }
-		    else
-		    {
-		    	adapter.changeCursor(cursor);	
-		    }
+
+            if (result.contains("resource cannot be found")) {
+                Toast.makeText(MainActivity.this, "Web Service:No data available", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                dal.loadDbFromWebService(result, locationSelection);
+            }
+
+            cursor = dal.getForcastFromDb(locationSelection);    // reads it back from the db
+            if (cursor.getCount() == 0) {
+                Toast.makeText(MainActivity.this, "Database:No data available", Toast.LENGTH_SHORT).show();
+            } else {
+                adapter.changeCursor(cursor);
+            }
 		}
 		
 	}
