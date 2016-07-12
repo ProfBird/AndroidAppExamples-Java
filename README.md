@@ -35,7 +35,7 @@ only want code for one app.
 * kSoapWaterTempDemo
   * A very simple app that demonstrates using the kSoap2-Android library to read from a web service. It reads the ocean temperature from a NOAA SOAP web service.
 
-I wrote these apps for The Android Mobile Application Development course, CIS 399, I teach at the University of Oregon.
+I wrote these apps for CIS 399, Android Mobile Application Development, a course I teach at the University of Oregon.
 
-Read about Android programming on my blog, BirdsBits:
+Read about Android programming on my blog:
 https://birdsbits.wordpress.com/tag/android/
