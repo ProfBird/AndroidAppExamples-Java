@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     /* nested class for doing a web service call on a background thread
-     Generic types:
+     Note: Generic types
      1. Params, the type of the parameters sent to the task upon execution.
      2. Progress, the type of the progress units published during the background computation.
      3. Result, the type of the result of the background computation.
@@ -58,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
             // 2. create SOAP envelope and add the request to it
             SoapSerializationEnvelope envelope =
                     new SoapSerializationEnvelope(SoapEnvelope.VER11);
+            /* Note: version was identified from wsdlsoap:binding, transport attribute:
+            <wsdl:binding name="WaterTemperatureSoapBinding" type="impl:WaterTemperaturePortType">
+                <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+             */
             envelope.dotNet = false;
             // envelope.implicitTypes = true;  // we only need this if we use the wrong type in addProperty
             envelope.setOutputSoapObject(request);
@@ -65,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
             // 3. setup the trasport object
             final String ENDPOINT =
                     "http://opendap.co-ops.nos.noaa.gov/axis/services/WaterTemperature";
+            /* Note:endpoint is the <wsdlsoap:address location in the wsdl file:
+            <wsdl:port binding="impl:WaterTemperatureSoapBinding" name="WaterTemperature">
+                <wsdlsoap:address location="http://opendap.co-ops.nos.noaa.gov/axis/services/WaterTemperature"/>
+             */
             HttpTransportSE transport = new HttpTransportSE(Proxy.NO_PROXY, ENDPOINT, 10000);
             transport.debug = true;
             final String SOAP_ACTION = ENDPOINT + "/" + OPERATION_NAME;
