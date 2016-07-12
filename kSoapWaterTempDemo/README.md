@@ -5,4 +5,4 @@ Note: This app is just one app in the class demo repository. To get the source c
 
 This demo was written for CIS399, Android App Development, at the University of Oregon.
 
-Read more about android programming on my blog, BirdsBits: https://birdsbits.wordpress.com
+Read more about android programming on my blog, BirdsBits: https://birdsbits.wordpress.com/tag/android/
