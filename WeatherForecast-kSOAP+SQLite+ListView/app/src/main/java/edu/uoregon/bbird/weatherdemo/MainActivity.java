@@ -128,6 +128,7 @@ public class  MainActivity extends Activity
 			
 			SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER12);
 			envelope.dotNet = true;
+			envelope.implicitTypes = true;
 			envelope.setOutputSoapObject(request);
 			
 			// Send the request (call the SOAP method)
