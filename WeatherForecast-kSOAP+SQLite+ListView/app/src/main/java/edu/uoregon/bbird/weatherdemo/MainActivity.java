@@ -6,6 +6,7 @@ package edu.uoregon.bbird.weatherdemo;
 // http://stackoverflow.com/questions/5457699/cursor-adapter-and-sqlite-example
 // http://developer.android.com/reference/android/widget/SimpleCursorAdapter.html
 
+
 import android.app.Activity;
 import android.database.Cursor;
 import android.os.AsyncTask;
