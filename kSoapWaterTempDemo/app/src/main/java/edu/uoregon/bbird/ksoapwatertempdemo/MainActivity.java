@@ -48,17 +48,18 @@ public class MainActivity extends AppCompatActivity {
                     "http://opendap.co-ops.nos.noaa.gov/axis/webservices/watertemperature/wsdl";
             final String OPERATION_NAME = "getWaterTemperature";
             SoapObject request = new SoapObject(TARGET_NAMESPACE, OPERATION_NAME);
-            request.addProperty("stationId", "9432780");
-            request.addProperty("beginDate", "20160712 00:00");
-            request.addProperty("endDate", "20160712 23:59");
-            request.addProperty("unit", "Celsius");
-            request.addProperty("timeZone", "1");
+            request.addProperty("stationId", "9432780");         // type="xsd:string"
+            request.addProperty("beginDate", "20160712 00:00");  // type="xsd:string"
+            request.addProperty("endDate", "20160712 23:59");    // type="xsd:string"
+            // the following parameter is optional, celsius is the default:
+            // request.addProperty("unit", "Celsius");              // nillable="true" type="xsd:string"
+            request.addProperty("timeZone", 1);                  // type="xsd:int"
 
             // 2. create SOAP envelope and add the request to it
             SoapSerializationEnvelope envelope =
                     new SoapSerializationEnvelope(SoapEnvelope.VER11);
             envelope.dotNet = false;
-            envelope.implicitTypes = true;
+            // envelope.implicitTypes = true;  // we only need this if we use the wrong type in addProperty
             envelope.setOutputSoapObject(request);
 
             // 3. setup the trasport object
