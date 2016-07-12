@@ -32,6 +32,9 @@ only want code for one app.
   * Similar to XMLParsePractice, except it stores multiple weather forecasts in an SQLite database. It also uses a CursorAdapter with the ListView.
 * WeatherForecast-kSOAP+SQLite+ListView
   * Similar to WeatherForecast-SAX+SQLite+ListView, but it gets it's weather forecast data from a SOAP web service instead of from XML files. It uses kSOAP as the web service client.
+  * kSoapWaterTempDemo
+    * A very simple app that demonstrates using the kSoap2-Android library to Read
+    from a web service. It reads the ocean temperature from a NOAA SOAP web service.
 
 I wrote these apps for use with my Android Mobile Application Development course, CIS 399, at the University of Oregon.
 

@@ -10,7 +10,8 @@
     tools:context="edu.uoregon.bbird.ksoapwatertempdemo.MainActivity">
 
     <TextView
+        android:id="@+id/xmlTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="The XML response will be here soon..." />
 </RelativeLayout>
