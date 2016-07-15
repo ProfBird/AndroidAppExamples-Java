@@ -1,11 +1,15 @@
 package edu.uoregon.bbird.geodistancecalculator;
+
 // By Brian Bird, July 15, 2016
 // Demonstrates: 1) getting location using the Fused Location API provided by Google Play Services
 // 2) using the Android Geocoder to get an address from latitude and longitude
 // 3) using the Android Location class to determine distance between two locaitons
 
 // Android classes
+
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -16,6 +20,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 // Google Play Services classes and interfaces
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
@@ -23,6 +28,12 @@ import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListe
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+
+// Java classes
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
 
 public class MainActivity extends AppCompatActivity
@@ -110,7 +121,18 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onLocationChanged(Location location) {
-        // Here it is!! This is where we finally get the location !!!
-        currentLocationTextView.setText(location.toString());
+        // Here it is! This is where we get the current location!
+        Geocoder geo = new Geocoder(this,
+                Locale.getDefault());
+        List<Address> addresses = null;
+        try {
+            addresses = geo.getFromLocation(
+                    location.getLatitude(),
+                    location.getLongitude(), 1);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        currentLocationTextView.setText(addresses.get(0).getLocality());
     }
 }
