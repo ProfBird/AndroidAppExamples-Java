@@ -1,5 +1,6 @@
 package edu.uoregon.bbird.geodistancecalculator;
 
+import android.app.Activity;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -8,7 +9,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -19,7 +19,8 @@ import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 
-public class MainActivity extends AppCompatActivity
+//public class MainActivity extends AppCompatActivity
+public class MainActivity extends Activity
         implements
         ConnectionCallbacks, OnConnectionFailedListener, LocationListener {
 
@@ -36,8 +37,6 @@ public class MainActivity extends AppCompatActivity
         currentLocationTextView = (TextView)findViewById(R.id.currentLocationTextView);
 
         googleApiClient = new GoogleApiClient.Builder(this)
-                .enableAutoManage(this /* FragmentActivity */,
-                        this /* OnConnectionFailedListener */)
                 .addApi(LocationServices.API)
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
@@ -65,7 +64,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
-        final int MY_PERMISSION_ACCESS_COURSE_LOCATION = 12;  // This is an arbitrary value
+        final int MY_PERMISSION_ACCESS_COURSE_LOCATION = 42;  // This is an arbitrary value
         if( ContextCompat.checkSelfPermission( this,
                 android.Manifest.permission.ACCESS_FINE_LOCATION )
                 != PackageManager.PERMISSION_GRANTED )
@@ -73,7 +72,6 @@ public class MainActivity extends AppCompatActivity
             ActivityCompat.requestPermissions( this,
                     new String[] {  android.Manifest.permission.ACCESS_FINE_LOCATION  },
                     MY_PERMISSION_ACCESS_COURSE_LOCATION );
-
         }
         else
         {
