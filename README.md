@@ -35,11 +35,9 @@ only want code for one app.
 * kSoapWaterTempDemo
   * A very simple app that demonstrates using the kSoap2-Android library to read from a web service. It reads the ocean temperature from a NOAA SOAP web service.
 * GeoDistanceCalcuator
-  * Uses the Fused Location Provider to get the current latitude and longitude.
-  * The following features haven't been implemented yet:
-    * Use a Geocoder object to convert latitude and longitude to an address.
-    * Use a Geocoder object to convert the address entered by the user into latitude and longitude.
-    * Use Location objects to calculate the distance between the two locations.
+  * Uses the Fused Location Provider (Google Play Services) to get the current latitude and longitude.
+  * Use an Android Geocoder object to convert latitude and longitude to an address and vice-versa.
+  * Uses Android Location objects to calculate the distance between the two locations.
 
 I wrote these apps for CIS 399, Android Mobile Application Development, a course I teach at the University of Oregon.
 

@@ -1,10 +1,9 @@
 # GeoDistanceCalcuator
-  This app demonstrates using the Fused Location Provider (one of the Google Play services APIs). Functions of the app:
-  * Use the Fused Location Provider to get the current latitude and longitude.
-  * The following features haven't been implemented yet:
-    * Use a Geocoder object to convert latitude and longitude to an address.
-    * Use a Geocoder object to convert the address entered by the user into latitude and longitude.
-    * Use Location objects to calculate the distance between the two locations.
+  This app demonstrates using the Fused Location Provider (one of the Google Play services APIs). Features of the app:
+  * Uses the Fused Location Provider from Google Play Services (aka Google APIs) to get the current latitude and longitude.
+  * Uses an Android Geocoder object to convert latitude and longitude to an address.
+  * Uses an Android Geocoder object to convert the address entered by the user into latitude and longitude.
+  * Uses Android Location objects to calculate the distance between the two locations.
 
 Note: This app is just one app in the class demo repository. To get the source code for this app you will need to clone or download the whole repository, https://github.com/UO-CIS/CIS399AndroidDemos.
 
