@@ -17,9 +17,9 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
-
-// Google Play Services classes and interfaces
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -29,11 +29,12 @@ import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 
-// Java classes
-
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
+
+// Google Play Services classes and interfaces
+// Java classes
 
 
 public class MainActivity extends AppCompatActivity
@@ -44,12 +45,20 @@ public class MainActivity extends AppCompatActivity
     LocationRequest locationRequest;
 
     TextView currentLocationTextView;
+    TextView distanceTextView;
+    TextView latLonTextView;
+    EditText cityEditText;
+    EditText stateEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         currentLocationTextView = (TextView)findViewById(R.id.currentLocationTextView);
+        distanceTextView = (TextView)findViewById(R.id.distanceTextView);
+        latLonTextView = (TextView)findViewById(R.id.latLonTextView);
+        cityEditText = (EditText)findViewById(R.id.cityEditText);
+        stateEditText = (EditText)findViewById(R.id.stateEditText);
 
         // Get the Location API and register the callbacks that it uses
         googleApiClient = new GoogleApiClient.Builder(this)
@@ -122,17 +131,44 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onLocationChanged(Location location) {
         // Here it is! This is where we get the current location!
+        myLocation = location;
         Geocoder geo = new Geocoder(this,
                 Locale.getDefault());
         List<Address> addresses = null;
         try {
             addresses = geo.getFromLocation(
-                    location.getLatitude(),
-                    location.getLongitude(), 1);
+                    myLocation.getLatitude(),
+                    myLocation.getLongitude(), 1);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         currentLocationTextView.setText(addresses.get(0).getLocality());
+    }
+
+    public void calcDistance(View v) {
+        String locationName = cityEditText.getText() + ", " + stateEditText.getText();
+        Geocoder geo = new Geocoder(this);
+        List<Address> addresses = null;
+        try {
+            addresses = geo.getFromLocationName(locationName, 1);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (addresses != null) {
+            Address address = addresses.get(0);
+            double lat = address.getLatitude();
+            double lon = address.getLongitude();
+            latLonTextView.setText(Double.toString(lat) + ", " + Double.toString(lon));
+
+            Location destinationLocation = new Location("Destination");
+            destinationLocation.setLatitude(lat);
+            destinationLocation.setLongitude(lon);
+            float distance = myLocation.distanceTo(destinationLocation);
+            // distance is in meters, will convert to km
+            distanceTextView.setText(Float.toString(distance / 1000.0F));
+        } else {
+            distanceTextView.setText("Destination city not found");
+        }
     }
 }

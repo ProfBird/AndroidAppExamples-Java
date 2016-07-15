@@ -12,17 +12,111 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Current Location"
-        android:id="@+id/textView"
-        android:textSize="@dimen/abc_text_size_large_material" />
+        android:text="Current Location:"
+        android:textSize="@dimen/abc_text_size_large_material"
+        android:id="@+id/textView1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
     <TextView
         android:id ="@+id/currentLocationTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Location information"
-        android:layout_below="@+id/textView"
+        android:text="City name"
+        android:textSize="@dimen/abc_text_size_large_material"
+        android:layout_below="@+id/textView1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter destination city name:"
+        android:textSize="@dimen/abc_text_size_large_material"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/currentLocationTextView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="29dp"
-        android:textSize="@dimen/abc_text_size_large_material" />
+        android:layout_marginTop="32dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cityEditText"
+        android:layout_below="@+id/textView2"
+        android:layout_alignRight="@+id/calcDistanceButton"
+        android:layout_alignEnd="@+id/calcDistanceButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter destination state name:"
+        android:textSize="@dimen/abc_text_size_large_material"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/cityEditText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/stateEditText"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/cityEditText"
+        android:layout_alignEnd="@+id/cityEditText" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate Distance"
+        android:id="@+id/calcDistanceButton"
+        android:onClick="calcDistance"
+        android:layout_below="@+id/stateEditText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Distance in km"
+        android:id="@+id/textView3"
+        android:textSize="@dimen/abc_text_size_large_material"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/calcDistanceButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/distanceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Distance"
+        android:textSize="@dimen/abc_text_size_large_material"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/latLonTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="lat, lon"
+        android:textSize="@dimen/abc_text_size_large_material"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Destination latitude, longitude"
+        android:id="@+id/textView"
+        android:textSize="@dimen/abc_text_size_large_material"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/distanceTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>
