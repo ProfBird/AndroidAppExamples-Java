@@ -6,6 +6,7 @@ import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity
         locationRequest = LocationRequest.create()
                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)  // Can't test with PRIORITY_LOW_POWER
                 .setNumUpdates(1)
-                .setExpirationDuration(10000)
+                .setExpirationDuration(60000)
                 .setInterval(100);
     }
 
@@ -64,11 +65,18 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
+        final int MY_PERMISSION_ACCESS_COURSE_LOCATION = 12;  // This is an arbitrary value
         if( ContextCompat.checkSelfPermission( this,
-                android.Manifest.permission.ACCESS_FINE_LOCATION ) != PackageManager.PERMISSION_GRANTED ) {
-            currentLocationTextView.setText("Permission for fine location not granted");
+                android.Manifest.permission.ACCESS_FINE_LOCATION )
+                != PackageManager.PERMISSION_GRANTED )
+        {
+            ActivityCompat.requestPermissions( this,
+                    new String[] {  android.Manifest.permission.ACCESS_FINE_LOCATION  },
+                    MY_PERMISSION_ACCESS_COURSE_LOCATION );
+
         }
-        else {
+        else
+        {
             LocationServices.FusedLocationApi.requestLocationUpdates(
                     googleApiClient, locationRequest, this);
         }
