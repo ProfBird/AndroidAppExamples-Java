@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
 
-        Hand humanHand = Hand.paper;
+        Hand humanHand;
         // The user might enter an invalid choice, so catch it and propmt for the right choices
         try {
             humanHand = Hand.valueOf(rpsText.getText().toString().toLowerCase());
@@ -60,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
        }
         rpsImage.setImageResource(id);
     }
+
+    /* ------- Callback Methods ---------- */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
