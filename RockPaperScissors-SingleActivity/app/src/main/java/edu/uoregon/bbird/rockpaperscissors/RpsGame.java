@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * Created by Brian Bird on 7/1/2015.
  */
-public class RpcGame {
+public class RpsGame {
 
     private Random rand = new Random();
 

@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    RpcGame game = new RpcGame();
+    RpsGame game = new RpsGame();
     ImageView rpsImage;
     EditText rpsText;
     TextView winnerText;
