@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     TextView compMoveText;
 
 
-    // Handler for the paly click event
+    // Handler for the playButton onClick event
     public void play(View v) {
         // Get the player's hand choice
         String humanHand = rpsEditText.getText().toString();
