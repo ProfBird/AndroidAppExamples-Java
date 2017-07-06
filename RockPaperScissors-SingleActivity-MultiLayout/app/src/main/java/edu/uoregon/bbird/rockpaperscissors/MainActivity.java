@@ -4,8 +4,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -22,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     TextView compMoveText;
     private static final String RPS_GAME = "MainActivity";
 
+    // Event handler for the playButton's onClick event (handler is set in the layout XML)
     public void play(View v) {
 
         // Close the soft keyboard
@@ -39,12 +38,14 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
+        // Android makes a random hand choice and the winner is determined
         Hand compHand = game.computerMove();
         compMoveText.setText(compHand.toString());
         displayImage(compHand);
         winnerText.setText( game.whoWon(compHand, humanHand).toString());
     }
 
+    // Display the correct hand image based on a Hand enum
     private void displayImage(Hand hand) {
         int id = 0;
 
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             case scissors:
                 id = R.drawable.scissors;
                 break;
-       }
+        }
         rpsImage.setImageResource(id);
     }
 
@@ -77,51 +78,4 @@ public class MainActivity extends AppCompatActivity {
         Log.d(RPS_GAME,"In OnCreate");
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d(RPS_GAME, "in onResume");
-    }
-
-    @Override
-    protected void onPause(){
-        super.onPause();
-        Log.d(RPS_GAME, "in onPause");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d(RPS_GAME, "in onStop");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d(RPS_GAME, "in onDestroy");
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }
