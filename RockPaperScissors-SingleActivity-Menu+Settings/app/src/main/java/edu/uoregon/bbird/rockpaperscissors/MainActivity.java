@@ -26,9 +26,9 @@ public class MainActivity extends AppCompatActivity {
     TextView compMoveText;
     // Instance variables for preferences
     SharedPreferences prefs;
-    boolean showImages;
+    boolean showImages;         // if true, images are displayed for the computer's hand choices
 
-    // Event handler for the playButton's onClick event (handler is set in the layout XML)
+    // Event handler for the playButton's onClick event (handler is set in activity_main.xml)
     public void play(View v) {
 
         // Close the soft keyboard
