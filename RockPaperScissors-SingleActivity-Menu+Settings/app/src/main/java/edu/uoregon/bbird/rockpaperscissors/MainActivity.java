@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     TextView compMoveText;
     // Instance variables for preferences
     SharedPreferences prefs;
-    boolean showImageAtStart;
+    boolean showImages;
 
     // Event handler for the playButton's onClick event (handler is set in the layout XML)
     public void play(View v) {
@@ -48,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
         // Android makes a random hand choice and the winner is determined
         Hand compHand = game.computerMove();
         compMoveText.setText(compHand.toString());
-        displayImage(compHand);
+        if (showImages)
+            displayImage(compHand);
         winnerText.setText( game.whoWon(compHand, humanHand).toString());
     }
 
@@ -79,14 +81,30 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        // Get refrences to widgets for use elsewhere
+        // Get references to UI widgets
         rpsImage = (ImageView)findViewById(R.id.rpsImage);
         rpsText = (EditText)findViewById(R.id.rpsEditText);
         winnerText = (TextView)findViewById(R.id.winnerLabel);
         compMoveText = (TextView)findViewById(R.id.compMoveTextView);
 
-        // Set default value for preference
-        PrefrenceManager.setDefaultValues(this, R.xml.perferences, false);
+        // Set preferences to the default values defined in preferences.xml
+        // readAgain is false, so the values will only be set once
+        PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        showImages = prefs.getBoolean(
+                getResources().getString(R.string.pref_show_images),
+                true);
+
+        if (!showImages)
+            rpsImage.setVisibility(View.GONE);
+        else
+            rpsImage.setVisibility(View.VISIBLE);
     }
 
 
@@ -104,7 +122,8 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.menu_settings) {
-            startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
+            startActivity(new Intent(
+                    getApplicationContext(), SettingsActivity.class));
             return true;
         }
         else if (id == R.id.menu_about) {

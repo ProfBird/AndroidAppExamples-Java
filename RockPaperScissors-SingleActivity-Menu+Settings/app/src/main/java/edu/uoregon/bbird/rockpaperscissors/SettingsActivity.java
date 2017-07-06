@@ -16,6 +16,6 @@ public class SettingsActivity extends PreferenceActivity {
         // addPreferencesFromResource is deprecated.
         // The preferred technique is to put preferences in a Fragment
         // TODO: We'll use a PreferenceFragment in the next version of this app
-        addPreferencesFromResource(R.xml.perferences);
+        addPreferencesFromResource(R.xml.preferences);
     }
 }
