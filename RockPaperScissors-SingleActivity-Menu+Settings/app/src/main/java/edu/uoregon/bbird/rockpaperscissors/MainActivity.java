@@ -1,9 +1,10 @@
 package edu.uoregon.bbird.rockpaperscissors;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,12 +16,16 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Instance variable for game logic
     RpsGame game = new RpsGame();
+    // Instance variables for UI Widgets
     ImageView rpsImage;
     EditText rpsText;
     TextView winnerText;
     TextView compMoveText;
-    private static final String RPS_GAME = "MainActivity";
+    // Instance variables for preferences
+    SharedPreferences prefs;
+    boolean showImageAtStart;
 
     // Event handler for the playButton's onClick event (handler is set in the layout XML)
     public void play(View v) {
@@ -73,12 +78,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
+        // Get refrences to widgets for use elsewhere
         rpsImage = (ImageView)findViewById(R.id.rpsImage);
         rpsText = (EditText)findViewById(R.id.rpsEditText);
         winnerText = (TextView)findViewById(R.id.winnerLabel);
         compMoveText = (TextView)findViewById(R.id.compMoveTextView);
-        Log.d(RPS_GAME,"In OnCreate");
+
+        // Set default value for preference
+        PrefrenceManager.setDefaultValues(this, R.xml.perferences, false);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -89,17 +99,21 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+        // Handle action bar item clicks here.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.menu_settings) {
+            startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
             return true;
         }
-
-        return super.onOptionsItemSelected(item);
+        else if (id == R.id.menu_about) {
+            Toast.makeText(this, "This game was written by Brian Bird", Toast.LENGTH_LONG).show();
+            return true;
+        }
+        else {
+            return super.onOptionsItemSelected(item);
+        }
     }
 
 }
