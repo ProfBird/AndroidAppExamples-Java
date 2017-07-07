@@ -18,7 +18,7 @@
         android:layout_alignParentEnd="true" />
 
      <ImageView
-         android:id="@+id/rpsImage"
+         android:id="@+id/compImageView"
          android:layout_width="300dp"
          android:layout_height="200dp"
          android:src="@drawable/rock"
@@ -36,7 +36,7 @@
         android:text="@string/none"
         android:layout_above="@+id/winnerTextView"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/rpsImage" />
+        android:layout_below="@+id/compImageView" />
 
     <TextView
         android:id="@+id/winnerTextView"
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/waiting"
-        android:layout_below="@+id/rpsImage"
+        android:layout_below="@+id/compImageView"
         android:layout_toRightOf="@+id/compMoveTextView"
         android:layout_toEndOf="@+id/compMoveTextView"
         android:layout_marginTop="48dp" />

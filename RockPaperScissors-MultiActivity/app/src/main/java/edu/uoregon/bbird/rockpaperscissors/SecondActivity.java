@@ -13,7 +13,7 @@ import android.widget.TextView;
 public class SecondActivity extends AppCompatActivity {
 
     private RpsGame game;
-    ImageView rpsImageView;
+    ImageView compImageView;
     TextView compMoveTextView;
 
     @Override
@@ -33,13 +33,13 @@ public class SecondActivity extends AppCompatActivity {
 
         // Get the game state sent from the FirstActivity
         Intent intent = getIntent();
-        String handString = intent.getExtras().getString("humanHand");
+        String handString = intent.getExtras().getString(MainActivity.HUMAN_HAND);
         if (game == null)   // We might already have a game object
             game = new RpsGame();
         game.setHumanHand(handString);
 
         // Display the computer's move
-        rpsImageView = (ImageView)findViewById(R.id.rpsImage);
+        compImageView = (ImageView)findViewById(R.id.compImageView);
         compMoveTextView = (TextView)findViewById(R.id.compMoveTextView);
         displayImage(game.computerMove());   // Computer makes a move and we display it
 
@@ -62,7 +62,7 @@ public class SecondActivity extends AppCompatActivity {
                 id = R.drawable.scissors;
                 break;
         }
-        rpsImageView.setImageResource(id);
+        compImageView.setImageResource(id);
         compMoveTextView.setText(hand.toString());
     }
 }

@@ -2,63 +2,70 @@ package edu.uoregon.bbird.rockpaperscissors;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+    implements RadioGroup.OnCheckedChangeListener {
 
     RpsGame game = new RpsGame();
-    ImageView rpsImage;
-    EditText rpsEditText;
-    TextView compMoveText;
+    ImageView humanImageView;
+    RadioButton rockRadioButton;
+    RadioButton paperRadioButton;
+    RadioButton scissorsRadioButton;
+    Hand humanHand;
+    public static final String HUMAN_HAND = "humanHand";
 
-
-    // Handler for the playButton onClick event
-    public void play(View v) {
-        // Get the player's hand choice
-        String humanHand = rpsEditText.getText().toString();
-
-        // Start second activity and send it the player's hand selection
-        Intent intent = new Intent(this, SecondActivity.class);
-        intent.putExtra("humanHand", humanHand);  // send data to 2nd activity
-        startActivity(intent);
-    }
-
+    /* --------- Activity Callback Methods --------- */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        rpsImage = (ImageView)findViewById(R.id.rpsImage);
-        rpsEditText = (EditText)findViewById(R.id.rpsEditText);
-        compMoveText = (TextView)findViewById(R.id.compMoveTextView);
+        humanImageView = (ImageView)findViewById(R.id.humanImageView);
+        rockRadioButton = (RadioButton)findViewById(R.id.rockRadioButton);
+        paperRadioButton = (RadioButton)findViewById(R.id.paperRadioButton);
+        scissorsRadioButton = (RadioButton)findViewById(R.id.scissorsRadioButton);
+        RadioGroup rpsRadioGroup = (RadioGroup)findViewById(R.id.rpsRadioGroup);
+        rpsRadioGroup.setOnCheckedChangeListener(this);
     }
 
-/*
-    @Override
-    public boolean onCreateOptionsMroenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+    /* ---------------- Event Handlers ---------------------- */
+
+    // Handler for the playButton's onClick event defined in activity_main.xml
+    public void play(View v) {
+        // Start second activity and send it the player's hand selection
+        Intent intent = new Intent(this, SecondActivity.class);
+        intent.putExtra(HUMAN_HAND, humanHand.toString());  // send data to 2nd activity
+        startActivity(intent);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    // Radio Button Listener Callback Method
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    @Override
+    public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+        int id = 0;
+        switch (checkedId)
+        {
+            case R.id.rockRadioButton:
+                id = R.drawable.rock;
+                humanHand = Hand.rock;
+                break;
+            case R.id.paperRadioButton:
+                id = R.drawable.paper;
+                humanHand = Hand.paper;
+                break;
+            case R.id.scissorsRadioButton:
+                id = R.drawable.scissors;
+                humanHand = Hand.scissors;
+                break;
         }
-
-        return super.onOptionsItemSelected(item);
+        humanImageView.setImageResource(id);
+        humanImageView.setVisibility(View.VISIBLE);
     }
-    */
 }
