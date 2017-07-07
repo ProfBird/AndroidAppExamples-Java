@@ -19,14 +19,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="528f7858-45a9-49da-9e09-a5b4ca2f0d26" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/animated_vector_drawable_23_4_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_23_4_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/constraint_layout_1_0_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/constraint_layout_solver_1_0_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_annotations_23_4_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_23_4_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_vector_drawable_23_4_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RockPaperScissors-MultiActivity.iws" />
@@ -2332,7 +2324,14 @@
       <option name="project" value="LOCAL" />
       <updated>1499392114897</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added support files">
+      <created>1499395222521</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1499395222521</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2417,7 +2416,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added radio buttons for selecting the hand&#10;Everything works!" />
     <MESSAGE value="Removed an unused attribute" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed an unused attribute" />
+    <MESSAGE value="Added support files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added support files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
