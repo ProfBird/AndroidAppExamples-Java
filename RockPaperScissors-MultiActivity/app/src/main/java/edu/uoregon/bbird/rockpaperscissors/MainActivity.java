@@ -9,6 +9,10 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+/**
+ * Created by Brian Bird on 7/15/2015, revised 7/6/17
+ */
+
 public class MainActivity extends AppCompatActivity
     implements RadioGroup.OnCheckedChangeListener {
 

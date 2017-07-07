@@ -3,12 +3,11 @@ package edu.uoregon.bbird.rockpaperscissors;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * Created by Brian Bird on 7/15/2015, revised 6/30/2016
+ * Created by Brian Bird on 7/15/2015, revised 7/6/17
  */
 public class SecondActivity extends AppCompatActivity {
 
@@ -20,9 +19,6 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second_activity);
-        // Add an app bar to this activity
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         // Add an "up" button to the app bar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

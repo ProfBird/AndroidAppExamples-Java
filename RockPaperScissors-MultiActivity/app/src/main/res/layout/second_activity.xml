@@ -1,10 +1,9 @@
-
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    <!--
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -16,17 +15,25 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
-
-     <ImageView
-         android:id="@+id/compImageView"
-         android:layout_width="300dp"
-         android:layout_height="200dp"
-         android:src="@drawable/rock"
-         android:scaleType="fitCenter"
-         android:contentDescription="The hand chosen by the computer"
-         android:layout_marginTop="39dp"
-         android:layout_below="@+id/toolbar"
-         android:layout_centerHorizontal="true" />
+-->
+    <ImageView
+        android:id="@+id/compImageView"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:contentDescription="The hand chosen by the computer"
+        android:scaleType="fitCenter"
+        android:src="@drawable/rock"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginStart="42dp"
+        android:layout_marginEnd="42dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="39dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="42dp"
+        android:layout_marginRight="42dp" />
 
     <TextView
         android:id="@+id/compMoveTextView"
@@ -34,29 +41,36 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/none"
-        android:layout_above="@+id/winnerTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/compImageView" />
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="21dp"
+        app:layout_constraintTop_toBottomOf="@+id/compImageView"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
         android:id="@+id/winnerTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="83dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="74dp"
         android:text="@string/waiting"
-        android:layout_below="@+id/compImageView"
-        android:layout_toRightOf="@+id/compMoveTextView"
-        android:layout_toEndOf="@+id/compMoveTextView"
-        android:layout_marginTop="48dp" />
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        app:layout_constraintLeft_toRightOf="@+id/winnerLabelTextView"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/compImageView"
+        tools:layout_editor_absoluteX="241dp" />
 
     <TextView
         android:id="@+id/winnerLabelTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="99dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="74dp"
         android:text="@string/winner"
-        android:layout_alignTop="@+id/winnerTextView"
-        android:layout_toLeftOf="@+id/compMoveTextView"
-        android:layout_toStartOf="@+id/compMoveTextView" />
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/winnerTextView"
+        app:layout_constraintTop_toBottomOf="@+id/compImageView"
+        tools:layout_constraintTop_creator="1" />
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
