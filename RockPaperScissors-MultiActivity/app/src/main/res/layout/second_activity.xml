@@ -20,7 +20,7 @@
         android:id="@+id/compImageView"
         android:layout_width="0dp"
         android:layout_height="200dp"
-        android:contentDescription="The hand chosen by the computer"
+        android:contentDescription="@string/the_hand_chosen_by_the_computer"
         android:scaleType="fitCenter"
         android:src="@drawable/rock"
         tools:layout_constraintTop_creator="1"
