@@ -8,18 +8,35 @@ only want code for one app.
 ## Directory
 
 * RockPaperScissors-SingleActivity
-  * A game with one activity. It demonstrates constructing a relative layout,
-  and adding app logic in a separate class.
+  * A game with one activity and:
+     * a ConstraintLayout
+     * putting logic code in a separate class
+     * setting an onClick handler using an XML widget attribute
+     
+* RockPaperScissors-SingleActivity-Menu+Settings
+   * A game with one activity and:
+     * a menu in the app bar
+     * a settings activity and xml layout with a CheckBoxPreference
+
+* RockPaperScissors-SingleActivity-MultiLayout
+   * A game with a single activity and:
+      * layouts for both screen orientations:
+         *  portrait
+         *  landscape
+
 * Multi-ActivityDemo
   * A very simple app that demonstrates starting a second activity
+  
 * RockPaperScissors-MultiActivity
-   * A game with two activities. The second activity has a Toolbar with an up button.
+   * A game with two activities. The second activity has an app bar with an up button.
+   
 * SimpleFragmentDemo
- * A simple app that has two activities and two fragments.
-    * In portrait orientation each fragment is loaded into a separate activity.
-    * In landscape orientation both fragments are loaded in one activity.
+  * A simple app that has two activities and two fragments.
+      * In portrait orientation each fragment is loaded into a separate activity.
+      * In landscape orientation both fragments are loaded in one activity.
     * The state of the first activity is saved during rotation, the second activity has configuration change disabled.
     * When a button on the first fragment is clicked, a message is sent to the second fragment.
+    
 * RockPaperScssors-Fragments
     * A game with two activities and two fragments which are loaded differently
     depending on screen size and orientation. Activities have a Toolbar and the

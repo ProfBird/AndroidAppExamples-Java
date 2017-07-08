@@ -3,4 +3,12 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="computer_s_choice">Computer\'s Choice</string>
+    <string name="computer_s_hand">Computer\'s hand</string>
+    <string name="enter_rock_paper_or_scissors">Enter rock, paper, or scissors</string>
+    <string name="human_s_choice">Human\'s Choice</string>
+    <string name="play">Play</string>
+    <string name="waiting">Waiting…</string>
+    <string name="winner">Winner:</string>
+    <string name="rock">Rock</string>
 </resources>

@@ -14,10 +14,10 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     RpsGame game = new RpsGame();
-    ImageView rpsImage;
-    EditText rpsText;
-    TextView winnerText;
-    TextView compMoveText;
+    ImageView rpsImageView;
+    EditText rpsEditText;
+    TextView winnerTextView;
+    TextView compMoveTextView;
     private static final String RPS_GAME = "MainActivity";
 
     // Event handler for the playButton's onClick event (handler is set in the layout XML)
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         Hand humanHand;
         // The user might enter an invalid choice, so catch it and propmt for the right choices
         try {
-            humanHand = Hand.valueOf(rpsText.getText().toString().toLowerCase());
+            humanHand = Hand.valueOf(rpsEditText.getText().toString().toLowerCase());
         }
         catch(Exception e)
         {
@@ -40,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Android makes a random hand choice and the winner is determined
         Hand compHand = game.computerMove();
-        compMoveText.setText(compHand.toString());
+        compMoveTextView.setText(compHand.toString());
         displayImage(compHand);
-        winnerText.setText( game.whoWon(compHand, humanHand).toString());
+        winnerTextView.setText( game.whoWon(compHand, humanHand).toString());
     }
 
     // Display the correct hand image based on a Hand enum
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 id = R.drawable.scissors;
                 break;
        }
-        rpsImage.setImageResource(id);
+        rpsImageView.setImageResource(id);
     }
 
     /* ------- Callback Methods ---------- */
@@ -71,10 +71,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        rpsImage = (ImageView)findViewById(R.id.rpsImage);
-        rpsText = (EditText)findViewById(R.id.rpsEditText);
-        winnerText = (TextView)findViewById(R.id.winnerLabel);
-        compMoveText = (TextView)findViewById(R.id.compMoveTextView);
+        rpsImageView = (ImageView)findViewById(R.id.rpsImage);
+        rpsEditText = (EditText)findViewById(R.id.rpsEditText);
+        winnerTextView = (TextView)findViewById(R.id.winnerTextView);
+        compMoveTextView = (TextView)findViewById(R.id.compMoveTextView);
         Log.d(RPS_GAME,"In OnCreate");
     }
 

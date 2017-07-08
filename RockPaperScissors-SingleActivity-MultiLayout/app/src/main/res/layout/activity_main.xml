@@ -1,5 +1,5 @@
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,14 +8,25 @@
     tools:layout_editor_absoluteY="81dp"
     tools:layout_editor_absoluteX="0dp">
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Computer's Choice"
+        android:textSize="30sp"
+        android:layout_marginTop="17dp"
+        app:layout_constraintTop_toBottomOf="@+id/playButton"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
     <Button
         android:id="@+id/playButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="play"
         android:text="Play"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/rpsEditText"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -25,34 +36,33 @@
         android:layout_height="145dp"
         android:scaleType="fitCenter"
         android:src="@drawable/rock"
-        android:layout_marginTop="24dp"
-        app:layout_constraintTop_toBottomOf="@+id/rpsEditText"
+        android:contentDescription="Computer's hand"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:contentDescription="Computer's hand" />
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <EditText
         android:id="@+id/rpsEditText"
         android:layout_width="235dp"
         android:layout_height="53dp"
-        android:layout_marginTop="19dp"
         android:inputType="text"
         android:maxLines="1"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
-        android:layout_width="125dp"
-        android:layout_height="30dp"
+        android:layout_width="137dp"
+        android:layout_height="27dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Waiting..."
         android:id="@+id/winnerLabel"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="34dp"
         app:layout_constraintTop_toBottomOf="@+id/compMoveTextView"
-        android:layout_marginLeft="22dp"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/textView2" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -60,8 +70,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Enter rock, paper, or scissors"
         android:id="@+id/textView"
-        android:layout_marginTop="17dp"
-        app:layout_constraintTop_toBottomOf="@+id/playButton"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -70,28 +80,40 @@
         android:layout_height="32dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/compMoveTextView"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/rpsImage"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.497" />
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
-        android:layout_width="79dp"
-        android:layout_height="27dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Winner: "
         android:id="@+id/textView2"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="34dp"
         app:layout_constraintTop_toBottomOf="@+id/compMoveTextView"
-        app:layout_constraintRight_toLeftOf="@+id/guideline"
-        android:layout_marginRight="21dp" />
+        app:layout_constraintRight_toLeftOf="@+id/winnerLabel"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/guideline"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.5"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="206dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Human's Choice"
+        android:textSize="30sp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

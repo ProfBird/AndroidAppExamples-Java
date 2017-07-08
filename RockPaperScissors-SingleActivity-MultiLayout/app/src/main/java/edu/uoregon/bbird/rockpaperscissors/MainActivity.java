@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    RpsGame game = new RpsGame();
+    RpsGame game = new RpsGame(0, 0);
     ImageView rpsImage;
     EditText rpsText;
     TextView winnerText;
