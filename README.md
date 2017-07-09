@@ -23,6 +23,7 @@ only want code for one app.
       * layouts for both screen orientations:
          *  portrait
          *  landscape
+      *  Activity state is saved in a Bundle using the onSaveInstanceState callback method.
 
 * Multi-ActivityDemo
   * A very simple app that demonstrates starting a second activity
