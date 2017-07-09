@@ -3,7 +3,6 @@ package edu.uoregon.bbird.rockpaperscissors;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -13,12 +12,18 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    RpsGame game = new RpsGame(0, 0);
+    RpsGame game;
+    Hand humanHand;
     ImageView rpsImage;
     EditText rpsText;
     TextView winnerText;
     TextView compMoveText;
-    private static final String RPS_GAME = "MainActivity";
+    TextView hScoreTextView;
+    TextView cScoreTextView;
+    private static final String HUMAN_WINS = "human_wins";
+    private static final String COMP_WINS = "comp_wins";
+    private static final String COMP_CHOICE = "comp_choice";
+    private static final String HUMAN_CHOICE = "human_choice";
 
     // Event handler for the playButton's onClick event (handler is set in the layout XML)
     public void play(View v) {
@@ -27,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
 
-        Hand humanHand;
         // The user might enter an invalid choice, so catch it and propmt for the right choices
         try {
             humanHand = Hand.valueOf(rpsText.getText().toString().toLowerCase());
@@ -41,8 +45,9 @@ public class MainActivity extends AppCompatActivity {
         // Android makes a random hand choice and the winner is determined
         Hand compHand = game.computerMove();
         compMoveText.setText(compHand.toString());
+        game.play(humanHand);
         displayImage(compHand);
-        winnerText.setText( game.whoWon(compHand, humanHand).toString());
+        displayScores();
     }
 
     // Display the correct hand image based on a Hand enum
@@ -64,6 +69,12 @@ public class MainActivity extends AppCompatActivity {
         rpsImage.setImageResource(id);
     }
 
+    private void displayScores() {
+        hScoreTextView.setText(Integer.toString(game.getHumanWins()));
+        cScoreTextView.setText(Integer.toString(game.getCompWins()));
+        winnerText.setText( game.getWinner(humanHand).toString());
+    }
+
     /* ------- Callback Methods ---------- */
 
     @Override
@@ -75,7 +86,28 @@ public class MainActivity extends AppCompatActivity {
         rpsText = (EditText)findViewById(R.id.rpsEditText);
         winnerText = (TextView)findViewById(R.id.winnerLabel);
         compMoveText = (TextView)findViewById(R.id.compMoveTextView);
-        Log.d(RPS_GAME,"In OnCreate");
+        hScoreTextView = (TextView)findViewById(R.id.hScoreTextView);
+        cScoreTextView = (TextView)findViewById(R.id.cScoreTextView);
+
+        int humanWins = 0, compWins = 0;
+        Hand compChoice = Hand.none;
+        if(savedInstanceState != null) {
+            humanWins = savedInstanceState.getInt(HUMAN_WINS);
+            compWins = savedInstanceState.getInt(COMP_WINS);
+            compChoice = Hand.values()[savedInstanceState.getInt(COMP_CHOICE)];
+            humanHand = Hand.values()[savedInstanceState.getInt(HUMAN_CHOICE)];
+        }
+        game = new RpsGame(humanWins, compWins, compChoice);
+        displayScores();
+        displayImage(compChoice);
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt(HUMAN_WINS, game.getHumanWins());
+        outState.putInt(COMP_WINS, game.getCompWins());
+        outState.putInt(COMP_CHOICE, game.getCompChoice().ordinal());
+        outState.putInt(HUMAN_CHOICE, humanHand.ordinal());
+        super.onSaveInstanceState(outState);
+    }
 }

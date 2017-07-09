@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">RockPaperScissors</string>
-
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="winner">Winner:</string>
+    <string name="_0">0</string>
+    <string name="comp_score">Comp Score</string>
+    <string name="computer_s_choice">Computer\'s Choice</string>
+    <string name="computer_s_hand">Computer\'s hand</string>
+    <string name="enter_rock_paper_or_scissors">Enter rock, paper, or scissors</string>
+    <string name="human_score">Human Score</string>
+    <string name="human_s_choice">Human\'s Choice</string>
+    <string name="play">Play</string>
+    <string name="waiting">Waiting...</string>
 </resources>

@@ -4,23 +4,77 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteY="73dp"
     tools:layout_editor_absoluteX="0dp">
+
+    <TextView
+        android:id="@+id/hScoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_0"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:layout_marginLeft="88dp"
+        android:layout_marginRight="88dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline2"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <TextView
+        android:id="@+id/cScoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_0"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/hScoreTextView"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintHorizontal_bias="0.709"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="127dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="6dp"
+        android:text="@string/comp_score"
+        android:textSize="18sp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/textView17"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/compMoveTextView"
+        app:layout_constraintHorizontal_bias="0.466" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="127dp"
+        android:layout_height="25dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginEnd="6dp"
+        android:text="@string/human_score"
+        android:textSize="18sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="11dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline2"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/compMoveTextView" />
 
     <Button
         android:id="@+id/playButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="play"
-        android:text="Play"
+        android:text="@string/play"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="25dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="8dp"
+        android:layout_marginTop="1dp"
         app:layout_constraintRight_toLeftOf="@+id/guideline2"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        android:layout_marginRight="113dp"
+        android:layout_marginEnd="113dp" />
 
     <ImageView
         android:id="@+id/rpsImage"
@@ -28,75 +82,73 @@
         android:layout_height="109dp"
         android:scaleType="fitCenter"
         android:src="@drawable/rock"
-        app:layout_constraintRight_toRightOf="parent"
-        android:contentDescription="Computer's hand"
-        android:layout_marginLeft="8dp"
+        android:contentDescription="@string/computer_s_hand"
+        android:layout_marginLeft="31dp"
+        android:layout_marginStart="31dp"
         app:layout_constraintLeft_toLeftOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="25dp"
-        app:layout_constraintHorizontal_bias="0.315"
-        android:layout_marginStart="8dp" />
+        android:layout_marginTop="16dp" />
 
     <EditText
         android:id="@+id/rpsEditText"
         android:layout_width="235dp"
         android:layout_height="53dp"
-        android:layout_marginTop="16dp"
         android:inputType="text"
         android:maxLines="1"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="18dp"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintRight_toLeftOf="@+id/guideline2"
-        android:layout_marginRight="8dp" />
+        android:layout_marginRight="34dp"
+        android:layout_marginEnd="34dp"/>
 
     <TextView
         android:layout_width="127dp"
         android:layout_height="28dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Waiting..."
+        android:text="@string/waiting"
         android:id="@+id/winnerLabel"
-        android:layout_marginTop="29dp"
-        app:layout_constraintTop_toBottomOf="@+id/compMoveTextView"
-        android:layout_marginRight="0dp"
-        app:layout_constraintRight_toRightOf="@+id/rpsImage" />
+        android:layout_marginTop="34dp"
+        app:layout_constraintTop_toBottomOf="@+id/rpsEditText"
+        app:layout_constraintRight_toLeftOf="@+id/guideline2"
+        android:layout_marginRight="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/textView2"
+        android:layout_marginLeft="8dp" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="246dp"
         android:layout_height="59dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="17dp"
-        android:text="Enter rock, paper, or scissors"
+        android:text="@string/enter_rock_paper_or_scissors"
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/playButton"
         app:layout_constraintRight_toLeftOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/playButton" />
+        android:layout_marginRight="34dp"
+        android:layout_marginEnd="34dp"/>
 
     <TextView
         android:layout_width="196dp"
         android:layout_height="32dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/compMoveTextView"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/rpsImage"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="49dp"
+        android:layout_marginStart="49dp"
         app:layout_constraintLeft_toLeftOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="0.372"
-        android:layout_marginStart="8dp" />
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/rpsImage" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Winner: "
+        android:text="@string/winner"
         android:id="@+id/textView2"
-        android:layout_marginTop="29dp"
-        app:layout_constraintTop_toBottomOf="@+id/compMoveTextView"
-        android:layout_marginLeft="26dp"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline2"
-        android:layout_marginStart="26dp" />
+        android:layout_marginTop="31dp"
+        app:layout_constraintTop_toBottomOf="@+id/rpsEditText"
+        android:layout_marginLeft="27dp"
+        android:layout_marginStart="27dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
