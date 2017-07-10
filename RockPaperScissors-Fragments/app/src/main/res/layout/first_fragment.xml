@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Enter rock, paper, or scissors"
+        android:text="@string/enter_rock_paper_or_scissors"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -18,18 +18,19 @@
         android:id="@+id/rpsEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/labelTextView"
-        android:layout_alignRight="@+id/labelTextView"
         android:layout_alignEnd="@+id/labelTextView"
         android:layout_alignLeft="@+id/labelTextView"
-        android:layout_alignStart="@+id/labelTextView" />
+        android:layout_alignRight="@+id/labelTextView"
+        android:layout_alignStart="@+id/labelTextView"
+        android:layout_below="@+id/labelTextView"
+        android:inputType="text" />
 
 
     <Button
         android:id="@+id/playButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Play"
+        android:text="@string/play"
         android:layout_below="@+id/rpsEditText"
         android:layout_centerHorizontal="true" />
 

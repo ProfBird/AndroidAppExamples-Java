@@ -6,13 +6,14 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".SecondFragment">
 
-     <ImageView
-         android:id="@+id/rpsImage"
-         android:layout_width="300dp"
-         android:layout_height="200dp"
-         android:src="@drawable/rock"
-         android:scaleType="fitCenter"
-         android:layout_centerHorizontal="true" />
+    <ImageView
+        android:id="@+id/rpsImage"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/computer_s_hand_choice"
+        android:scaleType="fitCenter"
+        android:src="@drawable/rock" />
 
     <TextView
         android:id="@+id/compMoveTextView"
@@ -28,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Waiting..."
+        android:text="@string/waiting"
         android:layout_alignTop="@+id/textView2"
         android:layout_toRightOf="@+id/compMoveTextView"
         android:layout_toEndOf="@+id/compMoveTextView" />
@@ -38,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Winner: "
+        android:text="@string/winner"
         android:layout_marginTop="36dp"
         android:layout_below="@+id/compMoveTextView"
         android:layout_toLeftOf="@+id/compMoveTextView"

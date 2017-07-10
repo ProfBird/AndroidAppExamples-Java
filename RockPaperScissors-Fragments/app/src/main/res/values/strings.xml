@@ -2,4 +2,9 @@
     <string name="app_name">Rock Paper Scissors</string>
     <string name="action_settings">Settings</string>
     <string name="none">None</string>
+    <string name="enter_rock_paper_or_scissors">Enter rock, paper, or scissors</string>
+    <string name="play">Play</string>
+    <string name="waiting">Waiting…</string>
+    <string name="winner">Winner:</string>
+    <string name="computer_s_hand_choice">Computer\'s hand choice</string>
 </resources>
