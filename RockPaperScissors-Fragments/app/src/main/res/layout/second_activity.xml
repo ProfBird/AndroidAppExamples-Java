@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent">
-
+<!--
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -13,11 +13,11 @@
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-
-    <fragment android:name="edu.uoregon.bbird.rps.SecondFragment"
+-->
+    <fragment android:name="edu.uoregon.bbird.rockpaperscissors_fragments.SecondFragment"
         android:id="@+id/second_fragment"
         android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="0dp" />
 
 </LinearLayout>

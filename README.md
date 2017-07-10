@@ -29,7 +29,10 @@ only want code for one app.
   * A very simple app that demonstrates starting a second activity
   
 * RockPaperScissors-MultiActivity
-   * A game with two activities. The second activity has an app bar with an up button.
+   * An RPS game with two activities
+     * Uses radio buttons for player's hand choice
+     * The second activity has an app bar with an up button
+     * The player's hand choice is sent to the second activity in an intent
    
 * SimpleFragmentDemo
   * A simple app that has two activities and two fragments.

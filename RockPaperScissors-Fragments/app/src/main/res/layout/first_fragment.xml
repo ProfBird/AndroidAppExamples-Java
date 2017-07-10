@@ -18,7 +18,6 @@
         android:id="@+id/rpsEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#ffbdf8ff"
         android:layout_below="@+id/labelTextView"
         android:layout_alignRight="@+id/labelTextView"
         android:layout_alignEnd="@+id/labelTextView"
