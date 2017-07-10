@@ -50,8 +50,8 @@ public class RpsGame {
 
     // Constructors
     public RpsGame() {
-        computerHand = edu.uoregon.bbird.rps.Hand.none;
-        humanHand = edu.uoregon.bbird.rps.Hand.none;
+        computerHand = Hand.none;
+        humanHand = Hand.none;
     }
 
     public RpsGame(Hand computerHand, Hand humanHand) {
