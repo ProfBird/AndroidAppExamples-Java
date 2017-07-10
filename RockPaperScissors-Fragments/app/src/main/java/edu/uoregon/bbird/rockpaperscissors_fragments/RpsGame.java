@@ -3,7 +3,7 @@ package edu.uoregon.bbird.rockpaperscissors_fragments;
 import java.util.Random;
 
 /**
- * Created by Brian Bird on 7/1/2015, revised 6/30/2016
+ * Created by Brian Bird on 7/1/2015, revised 6/30/2016, updted 7/10/2017.
  */
 
 public class RpsGame {
@@ -20,6 +20,7 @@ public class RpsGame {
     public void setHumanHand(Hand humanHand) {
         this.humanHand = humanHand;
     }
+
     public boolean setHumanHand(String hand) {
         boolean isValidHand = true;
         // Accomdate user entries of single letters as well as full words
@@ -39,13 +40,6 @@ public class RpsGame {
         humanHand = Hand.valueOf(hand);
         // return false if the hand wasn't a valid char or word
         return isValidHand;
-    }
-
-    public Hand getComputerHand() {
-        return computerHand;
-    }
-    public void setComputerHand(Hand computerHand) {
-        this.computerHand = computerHand;
     }
 
     // Constructors

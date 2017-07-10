@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 /**
- * Created by Brian Bird on 7/15/2015.
+ * Created by Brian Bird on 7/15/2015, updted 7/10/2017.
  */
 
 public class FirstActivity extends AppCompatActivity {
@@ -24,7 +24,6 @@ public class FirstActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.first_activity);
-    //    setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
     }
 
     // Only used when two fragments are loaded in this activity

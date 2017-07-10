@@ -1,12 +1,10 @@
 package edu.uoregon.bbird.rockpaperscissors_fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 
 /**
- * Created by Brian Bird on 7/15/2015.
+ * Created by Brian Bird on 7/15/2015, updted 7/10/2017.
  */
 public class SecondActivity extends AppCompatActivity {
 
@@ -17,29 +15,18 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.second_activity);
-      //  setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
-      //  getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        if (savedInstanceState != null)
-            Toast.makeText(this, savedInstanceState.getString("test","huh?"),
-                    Toast.LENGTH_LONG).show();
-    }
 
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        // Get the game state sent from the FirstActivity
-        Intent intent = getIntent();
-        int handNum = intent.getExtras().getInt("humanHand");
+        int handNum = getIntent().getExtras().getInt("humanHand");
         Hand humanHand = Hand.values()[handNum];
-        if (game == null)   // We might already have a game object
-            game = new RpsGame();
-        game.setHumanHand(humanHand);
+        // Crete a new game object.
+        // We don't need to initialize it with the computerHand, just the humanHand
+        game = new RpsGame(null, humanHand);
 
-        // Pass the fragment a game ref while calling the method invokes game play
+        // Pass the fragment a game ref while calling the method that invokes game play
         SecondFragment secondFragment = (SecondFragment)getFragmentManager()
                 .findFragmentById(R.id.second_fragment);
         secondFragment.computerMove(game);
+
     }
+
 }

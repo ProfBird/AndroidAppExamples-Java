@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * Created by Brian Bird on 7/15/2015.
+ * Created by Brian Bird on 7/15/2015, updted 7/10/2017.
  */
 
 public class SecondFragment extends Fragment {
