@@ -45,10 +45,12 @@ only want code for one app.
     * A game with two activities and two fragments which are loaded differently
     depending on screen size and orientation. Activities have a Toolbar and the
     second activity has an up button on the Toolbar.
-* XMLParsePractice
-  * An app that demonstrates parsing XML using SAX. The assets folder contains an XML weather forecast file that is parsed and displayed in a ListView with a SimpleAdapter.
+    
+* AsynchDemo
+  * A simple demo of calling asynchronous methods using AsynchTask
+
 * WeatherForecast-SAX+ListView
-  * Similar to the XMLParsePractice app, but it displays weather icons in the ListView along with the weather data.
+  * Parses an XML file of weather data using SAX and displays weather icons in the ListView along with the weather data.
 * WeatherForecast-SAX+SQLite+ListView
   * Similar to XMLParsePractice, except it stores multiple weather forecasts in an SQLite database. It also uses a CursorAdapter with the ListView.
 * WeatherForecast-kSOAP+SQLite+ListView
