@@ -43,7 +43,7 @@ public class MainActivity extends Activity implements OnClickListener {
         // This is called when we call: execute("the slow task"), above
         protected String doInBackground(String... params) {
             try {
-                Thread.sleep(5000);
+                Thread.sleep(10000);
             } catch (InterruptedException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
