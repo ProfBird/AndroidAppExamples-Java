@@ -1,9 +1,5 @@
 package edu.uoregon.bbird.weatherdemo;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
-import edu.uoregon.bbird.weatherdemo.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,10 +9,12 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class MainActivity extends Activity 
 				implements OnItemClickListener {
 
-	private FileIO io;
 	private WeatherItems weatherItems;
 	
     @Override
@@ -24,7 +22,7 @@ public class MainActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        io = new FileIO(getApplicationContext());
+        FileIO io = new FileIO(getApplicationContext());
         weatherItems = io.readFile();
            
         ArrayList<HashMap<String, String>> data = new
@@ -36,22 +34,22 @@ public class MainActivity extends Activity
         	map.put("date", item.getForecastDateFormatted());
         	// map.put("lowTemp", getString(R.string.low) + item.getLowTemp());
         	// map.put("highTemp", getString(R.string.high) + item.getHighTemp());
-        	map.put("imageName", 
+	    	map.put("imageName",
         			Integer.toString(getResources().getIdentifier(
         					item.getDescription().toLowerCase().replaceAll("\\s+",""), "drawable", getPackageName() 
         					)));
-        	data.add(map);
+       	data.add(map);
         }
         
         SimpleAdapter adapter = new SimpleAdapter(this,
         	data,
         	R.layout.listview_items,
-        	new String[]{"date", "imageName"},
+        	new String[]{"imageName", "date"},
         	new int[]{R.id.iconImageView,
         			  R.id.dateTextView, 
         			  }
         );
-        ListView itemsListView = (ListView)findViewById(R.id.listView1);
+        ListView itemsListView = (ListView)findViewById(R.id.weatherListView);
         itemsListView.setAdapter(adapter);
         itemsListView.setOnItemClickListener(this);
     }

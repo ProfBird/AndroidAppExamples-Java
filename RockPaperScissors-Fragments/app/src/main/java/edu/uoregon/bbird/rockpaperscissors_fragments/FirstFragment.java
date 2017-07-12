@@ -41,17 +41,8 @@ public class FirstFragment extends Fragment implements OnClickListener {
         activity = (FirstActivity)getActivity();
         rpsEditText = (EditText) activity.findViewById(R.id.rpsEditText);
 
-        // Make a new game object, use saved state if it exists
-        if(savedInstanceState != null) {
-            // Restore saved state
-            Hand humanHand = Hand.values()[savedInstanceState.getInt("humanHand", 0)];
-            rpsEditText.setText(humanHand.toString());
-            Hand computerHand = Hand.values()[savedInstanceState.getInt("computerHand", 0)];
-            game = new RpsGame(computerHand, humanHand);
-        }
-        else {
-            game = new RpsGame();
-        }
+        // Make a new game object
+        game = new RpsGame();
         // Give the host activity a reference to the game object
         activity.setGame(game);
 

@@ -1,29 +1,27 @@
 package com.example.xmlparsepractice;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class MainActivity extends Activity {
 
 	private TextView textView;
-	private FileIO io;
-	private WeatherItems weatherItems;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
+        FileIO io;
+        WeatherItems weatherItems;
         io = new FileIO(getApplicationContext());
         weatherItems = io.readFile();
-        
-        //textView = (TextView)findViewById(R.id.newsItems);
         
         ArrayList<HashMap<String, String>> data = new
         		ArrayList<HashMap<String, String>>();
@@ -45,7 +43,7 @@ public class MainActivity extends Activity {
         			  R.id.lowTempTextView,
         			  R.id.highTempTextView }
         );
-        ListView itemsListView = (ListView)findViewById(R.id.listView1);
+        ListView itemsListView = (ListView)findViewById(R.id.weatherListView);
         itemsListView.setAdapter(adapter);
     }
         
