@@ -51,8 +51,10 @@ only want code for one app.
 
 * WeatherForecast-SAX+ListView
   * Parses an XML file of weather data using SAX and displays weather icons in the ListView along with the weather data.
+ 
 * WeatherForecast-SAX+SQLite+ListView
-  * Similar to XMLParsePractice, except it stores multiple weather forecasts in an SQLite database. It also uses a CursorAdapter with the ListView.
+  * Uses a database to store multiple weather forecasts in an SQLite database. It also uses a CursorAdapter with the ListView.
+ 
 * WeatherForecast-kSOAP+SQLite+ListView
   * Similar to WeatherForecast-SAX+SQLite+ListView, but it gets it's weather forecast data from a SOAP web service instead of from XML files. It uses kSOAP as the web service client. 7/12/16: Unfortunately, the cdyne weather web service used by this app is defunct!
 * kSoapWaterTempDemo
@@ -61,6 +63,8 @@ only want code for one app.
   * Uses the Fused Location Provider (Google Play Services) to get the current latitude and longitude.
   * Use an Android Geocoder object to convert latitude and longitude to an address and vice-versa.
   * Uses Android Location objects to calculate the distance between the two locations.
+
+---------------------------
 
 I wrote these apps for CIS 399, Android Mobile Application Development, a course I teach at the University of Oregon.
 
