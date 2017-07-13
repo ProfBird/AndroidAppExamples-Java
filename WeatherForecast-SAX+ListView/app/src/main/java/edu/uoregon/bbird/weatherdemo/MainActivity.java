@@ -66,6 +66,8 @@ public class MainActivity extends Activity
         itemsListView.setOnItemClickListener(this);
     }
 
+    // ** Event Handler **
+
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		WeatherItem item = weatherItems.get(position);
