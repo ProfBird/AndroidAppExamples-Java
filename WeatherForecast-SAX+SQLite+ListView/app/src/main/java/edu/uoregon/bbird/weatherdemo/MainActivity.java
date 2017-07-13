@@ -44,7 +44,7 @@ public class MainActivity extends Activity
         // Get Forecast for the default location
         cursor = dal.getForcastByLocation(locationSelection);
         
-        // Set up the adapter for the ListView to display the forecast info
+        // Set up the adapter for the ListView to display the forecast
         adapter = new SimpleCursorAdapter(
                 this, 
                 R.layout.listview_items, 
