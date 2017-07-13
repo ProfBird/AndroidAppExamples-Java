@@ -1,5 +1,7 @@
 package edu.uoregon.bbird.weatherdemo;
 
+// Written by Brian Bird 7/11/15, updated 7/13/17
+
 // XML weather files can be manually downloaded from http://wsf.cdyne.com/WeatherWS/Weather.asmx
 // Interesting zip codes: Eugene 97405, Anchorage 99515, Florence 97439
 

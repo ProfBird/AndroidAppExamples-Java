@@ -1,6 +1,6 @@
 package edu.uoregon.bbird.weatherdemo;
 
-
+// Written by Brian Bird 7/11/15, updated 7/13/17
 
 import android.content.ContentValues;
 import android.content.Context;

@@ -1,5 +1,8 @@
 package edu.uoregon.bbird.weatherdemo;
-// references: 
+
+// Written by Brian Bird 7/11/15, updated 7/13/17
+
+// references:
 // www.drdobbs.com/database/using-sqlite-on-android/232900584?pgno=1
 // http://www.reigndesign.com/blog/using-your-own-sqlite-database-in-android-applications/
 // http://www.vogella.com/tutorials/AndroidSQLite/article.html
