@@ -21,10 +21,13 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.DAY_PRECIP;
+import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.NIGHT_PRECIP;
+
 public class MainActivity extends Activity 
 				implements OnItemClickListener, OnItemSelectedListener {
 
-	private Dal dal = new Dal(this);
+    private Dal dal = new Dal(this);
 	Cursor cursor = null;
 	String locationSelection = "97405";
 	SimpleCursorAdapter adapter = null; 
@@ -49,7 +52,11 @@ public class MainActivity extends Activity
             this,
             R.layout.listview_items,
             cursor,
-            new String[]{"Date", "Description", "ImageId", "LowTemp", "HighTemp"},
+            new String[]{WeatherSQLiteHelper.DATE,
+                    WeatherSQLiteHelper.DESCRIPTION,
+                    WeatherSQLiteHelper.IMAGE_ID,
+                    WeatherSQLiteHelper.MORNING_LOW,
+                    WeatherSQLiteHelper.DAYTIME_HIGH},
             new int[]{
                 R.id.dateTextView,
                 R.id.descriptionTextView,
@@ -67,8 +74,8 @@ public class MainActivity extends Activity
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		cursor.moveToPosition(position);
-		int dayPrecip = cursor.getInt(cursor.getColumnIndex("DayPrecip"));
-		int nightPrecip = cursor.getInt(cursor.getColumnIndex("NightPrecip"));		
+		int dayPrecip = cursor.getInt(cursor.getColumnIndex(DAY_PRECIP));
+		int nightPrecip = cursor.getInt(cursor.getColumnIndex(NIGHT_PRECIP));
 		//WeatherItem item = weatherItems.get(position);
 		Toast.makeText(this, 
 				"Daytime chance of precipitation: " + Integer.toString(dayPrecip) + "%" + "\r\n" +

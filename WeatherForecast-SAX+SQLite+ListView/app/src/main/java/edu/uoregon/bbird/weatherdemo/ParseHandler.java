@@ -33,27 +33,27 @@ public class ParseHandler extends DefaultHandler {
     public void startElement(String namespaceURI, String localName, 
             String qName, Attributes atts) throws SAXException {
         
-    	if (qName.equals("City")) {
+    	if (qName.equals(WeatherSQLiteHelper.CITY)) {
             isCity = true;;
         }
-    	else if (qName.equals("Forecast")) {
+    	else if (qName.equals(WeatherSQLiteHelper.FORECAST)) {
             item = new WeatherItem();
         }
-        else if (qName.equals("Date")) {
+        else if (qName.equals(WeatherSQLiteHelper.DATE)) {
             isDate = true;
         }
-        else if (qName.equals("Desciption")) {
+        else if (qName.equals(WeatherSQLiteHelper.DESCRIPTION)) {
             isDescription = true;
         }
-        else if (qName.equals("MorningLow")) {
+        else if (qName.equals(WeatherSQLiteHelper.MORNING_LOW)) {
             isMorningLow = true;
         }
-        else if (qName.equals("DaytimeHigh")) {
+        else if (qName.equals(WeatherSQLiteHelper.DAYTIME_HIGH)) {
             isDaytimeHigh = true;
         }
-        else if (qName.equals("Nighttime")) {
+        else if (qName.equals(WeatherSQLiteHelper.NIGHT_PRECIP)) {
             isNightPrecip = true;
-        }else if (qName.equals("Daytime")) {
+        }else if (qName.equals(WeatherSQLiteHelper.DAY_PRECIP)) {
             isDayPrecip = true;
         }
     }

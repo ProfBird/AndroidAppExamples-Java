@@ -11,6 +11,18 @@ public class WeatherSQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "weather.sqlite";
     private static final int DATABASE_VERSION = 1;
+
+    public static final String FORECAST = "Forecast";
+    public static final String DATE = "Date";
+    public static final String ZIP = "Zip";
+    public static final String CITY = "City";
+    public static final String DESCRIPTION = "Desciption";  // misspelled in the XML schema!
+    public static final String IMAGE_ID = "ImageId";
+    public static final String MORNING_LOW = "MorningLow";
+    public static final String DAYTIME_HIGH = "DaytimeHigh";
+    public static final String DAY_PRECIP = "Daytime";
+    public static final String NIGHT_PRECIP = "Nighttime";
+
     private Context context = null;
 
 	public WeatherSQLiteHelper(Context c) {
@@ -20,17 +32,17 @@ public class WeatherSQLiteHelper extends SQLiteOpenHelper {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		db.execSQL("CREATE TABLE Forecast"
+		db.execSQL("CREATE TABLE " + FORECAST
 				+ "( _id INTEGER PRIMARY KEY AUTOINCREMENT,"
-				+ "Date TEXT,"
-				+ "Zip INTEGER,"
-				+ "City TEXT,"
-				+ "Description TEXT,"
-				+ "ImageId TEXT,"
-				+ "LowTemp INTEGER,"
-				+ "HighTemp INTEGER,"
-				+ "NightPrecip INTEGER,"
-				+ "DayPrecip INTEGER"
+				+ DATE + " TEXT,"
+				+ ZIP + " INTEGER,"
+				+ CITY + " TEXT,"
+				+ DESCRIPTION + " TEXT,"
+				+ IMAGE_ID + " TEXT,"
+				+ MORNING_LOW + " INTEGER,"
+				+ DAYTIME_HIGH + " INTEGER,"
+				+ NIGHT_PRECIP + " INTEGER,"
+				+ DAY_PRECIP + " INTEGER"
 				+ ")" );
 	}
 	

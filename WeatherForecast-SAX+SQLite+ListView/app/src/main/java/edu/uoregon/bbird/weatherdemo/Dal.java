@@ -33,7 +33,8 @@ public class Dal {
         WeatherSQLiteHelper helper = new WeatherSQLiteHelper(context);
         SQLiteDatabase db = helper.getWritableDatabase();	
 	   // load the database with test data if it isn't already loaded
-	   if (db.rawQuery("SELECT * FROM Forecast WHERE Zip = " + zipCode, null).getCount() == 0)
+	   if (db.rawQuery("SELECT * FROM Forecast WHERE " + WeatherSQLiteHelper.ZIP
+               + " = " + zipCode, null).getCount() == 0)
 	   {
 		   loadDbFromXML("97405");	// Eugene
 		   loadDbFromXML("97439"); // Florence
@@ -59,19 +60,19 @@ public class Dal {
         
         for(WeatherItem item : items)
         {
-	        cv.put("Date", item.getForecastDateFormatted());
-	        cv.put("Zip", items.getZip());				// stored in items, not item
-	        cv.put("City", items.getCity());			// stored in items, not item
-	        cv.put("Description", item.getDescription());
-            cv.put("ImageId",
+	        cv.put(WeatherSQLiteHelper.DATE, item.getForecastDateFormatted());
+	        cv.put(WeatherSQLiteHelper.ZIP, items.getZip());				// stored in items, not item
+	        cv.put(WeatherSQLiteHelper.CITY, items.getCity());			// stored in items, not item
+	        cv.put(WeatherSQLiteHelper.DESCRIPTION, item.getDescription());
+            cv.put(WeatherSQLiteHelper.IMAGE_ID,
                     Integer.toString(context.getResources().getIdentifier(
                             item.getDescription().toLowerCase().replaceAll("\\s+",""),
                             "drawable", context.getPackageName())));
-	        cv.put("LowTemp", item.getLowTemp());
-	        cv.put("HighTemp", item.getHighTemp());
-	        cv.put("NightPrecip", item.getNightPrecip());
-	        cv.put("DayPrecip", item.getDayPrecip());
-	        db.insert("Forecast", null, cv);
+	        cv.put(WeatherSQLiteHelper.MORNING_LOW, item.getLowTemp());
+	        cv.put(WeatherSQLiteHelper.DAYTIME_HIGH, item.getHighTemp());
+	        cv.put(WeatherSQLiteHelper.NIGHT_PRECIP, item.getNightPrecip());
+	        cv.put(WeatherSQLiteHelper.DAY_PRECIP, item.getDayPrecip());
+	        db.insert(WeatherSQLiteHelper.FORECAST, null, cv);
         }
         db.close();
 	}
