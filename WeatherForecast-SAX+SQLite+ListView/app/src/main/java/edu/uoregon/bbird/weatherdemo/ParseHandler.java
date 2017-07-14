@@ -35,34 +35,26 @@ public class ParseHandler extends DefaultHandler {
         
     	if (qName.equals("City")) {
             isCity = true;;
-            return;
         }
     	else if (qName.equals("Forecast")) {
             item = new WeatherItem();
-            return;
         }
         else if (qName.equals("Date")) {
             isDate = true;
-            return;
         }
         else if (qName.equals("Desciption")) {
             isDescription = true;
-            return;
         }
         else if (qName.equals("MorningLow")) {
             isMorningLow = true;
-            return;
         }
         else if (qName.equals("DaytimeHigh")) {
             isDaytimeHigh = true;
-            return;
         }
         else if (qName.equals("Nighttime")) {
             isNightPrecip = true;
-            return;
         }else if (qName.equals("Daytime")) {
             isDayPrecip = true;
-            return;
         }
     }
     
@@ -73,7 +65,6 @@ public class ParseHandler extends DefaultHandler {
         if (qName.equals("Forecast")) {
             weatherItems.add(item);
         }
-        return;    
     }
     
     @Override

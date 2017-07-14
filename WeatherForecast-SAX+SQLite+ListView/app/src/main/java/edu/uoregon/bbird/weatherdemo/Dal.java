@@ -63,6 +63,10 @@ public class Dal {
 	        cv.put("Zip", items.getZip());				// stored in items, not item
 	        cv.put("City", items.getCity());			// stored in items, not item
 	        cv.put("Description", item.getDescription());
+            cv.put("ImageId",
+                    Integer.toString(context.getResources().getIdentifier(
+                            item.getDescription().toLowerCase().replaceAll("\\s+",""),
+                            "drawable", context.getPackageName())));
 	        cv.put("LowTemp", item.getLowTemp());
 	        cv.put("HighTemp", item.getHighTemp());
 	        cv.put("NightPrecip", item.getNightPrecip());

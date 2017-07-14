@@ -26,6 +26,7 @@ public class WeatherSQLiteHelper extends SQLiteOpenHelper {
 				+ "Zip INTEGER,"
 				+ "City TEXT,"
 				+ "Description TEXT,"
+				+ "ImageId TEXT,"
 				+ "LowTemp INTEGER,"
 				+ "HighTemp INTEGER,"
 				+ "NightPrecip INTEGER,"

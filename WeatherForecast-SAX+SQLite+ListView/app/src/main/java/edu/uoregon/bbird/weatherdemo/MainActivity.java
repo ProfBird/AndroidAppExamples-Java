@@ -46,19 +46,19 @@ public class MainActivity extends Activity
         
         // Set up the adapter for the ListView to display the forecast
         adapter = new SimpleCursorAdapter(
-                this, 
-                R.layout.listview_items, 
-                cursor, 
-                new String[]{"Date", "Description", "LowTemp", "HighTemp"}, 
-                new int[]{
-          			  		R.id.dateTextView, 
-          			  		R.id.descriptionTextView,
-          			  		R.id.lowTempTextView,
-          			  		R.id.highTempTextView
-          			  		}, 
-          		0 );	// no flags
-        
-               
+            this,
+            R.layout.listview_items,
+            cursor,
+            new String[]{"Date", "Description", "ImageId", "LowTemp", "HighTemp"},
+            new int[]{
+                R.id.dateTextView,
+                R.id.descriptionTextView,
+                R.id.iconImageView,
+                R.id.lowTempTextView,
+                R.id.highTempTextView
+                },
+            0 );	// no flags
+
         ListView itemsListView = (ListView)findViewById(R.id.forecastListView);
         itemsListView.setAdapter(adapter);
         itemsListView.setOnItemClickListener(this);
