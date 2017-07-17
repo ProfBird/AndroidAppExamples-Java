@@ -106,18 +106,3 @@ public class MainActivity extends Activity
 		// TODO Auto-generated method stub	
 	}    
 }
-
-/* 
-for (WeatherItem item : weatherItems)
-{
-	HashMap<String, String> map = new HashMap<String, String>();
-	map.put("date", item.getForecastDateFormatted());
-	// map.put("lowTemp", getString(R.string.low) + item.getLowTemp());
-	// map.put("highTemp", getString(R.string.high) + item.getHighTemp());
-	map.put("imageName", 
-			Integer.toString(getResources().getIdentifier(
-					item.getDescription().toLowerCase().replaceAll("\\s+",""), "drawable", getPackageName() 
-					)));
-	data.add(map);
-}
-*/
