@@ -27,9 +27,12 @@ import org.apache.http.protocol.HttpContext;
 import java.io.InputStream;
 import java.util.Date;
 
-import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.*;
-
-import static java.lang.System.in;
+import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.DATE;
+import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.FCT_TEXT;
+import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.ICON;
+import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.IMAGE_ID;
+import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.PERIOD;
+import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.POP;
 
 public class MainActivity extends Activity 
 				implements OnItemClickListener, OnItemSelectedListener {
@@ -39,6 +42,7 @@ public class MainActivity extends Activity
 	Cursor cursor = null;
 	String locationSelection = "Eugene";
 	SimpleCursorAdapter adapter = null;
+    ListView itemsListView;
 
 	/********* -------- Activity Lifecycle Callback Methods --------- ***********/
 
@@ -47,7 +51,10 @@ public class MainActivity extends Activity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
+        itemsListView = (ListView)findViewById(R.id.forecastListView);
+        itemsListView.setOnItemClickListener(this);
+
         // Set up location selection spinner
         Spinner locationSpinner = (Spinner)findViewById(R.id.locationSpinner);
         locationSpinner.setOnItemSelectedListener(this);
@@ -55,18 +62,9 @@ public class MainActivity extends Activity
         // Get Forecast for the default location
         // TODO: replace hard-coded state with selected state
         String state = "OR";
-        cursor = dal.getForcastFromDb(locationSelection,state, new Date());
-        if(cursor.getCount() == 0)
-        {
-            new RestTask().execute(state, locationSelection);
-        }
-        else {
-            displayForecast();
-        }
+    //    getForecast(locationSelection, state);
 
-        ListView itemsListView = (ListView)findViewById(R.id.forecastListView);
-        itemsListView.setAdapter(adapter);
-        itemsListView.setOnItemClickListener(this);
+
     }
 
 	@Override
@@ -94,9 +92,8 @@ public class MainActivity extends Activity
 		case 2:
 			locationSelection = "Anchorage";
 		}
-        // Get a weather forecast the selected location
-        cursor = dal.getForcastFromDb(locationSelection, "OR", new Date() );
-        adapter.changeCursor(cursor);
+        // Get a weather forecast for the selected location
+        getForecast(locationSelection, "OR");
 	}
 
 	@Override
@@ -112,7 +109,11 @@ public class MainActivity extends Activity
 		if(cursor.getCount() == 0) {
 			new RestTask().execute(state, city);
 		}
+        else {
+            displayForecast();
+        }
 	}
+
 	private void displayForecast() {
 		// Set up the adapter for the ListView to display the forecast
 		adapter = new SimpleCursorAdapter(
@@ -132,13 +133,13 @@ public class MainActivity extends Activity
 						R.id.highTempTextView
 				},
 				0 );	// no flags
-
+        itemsListView.setAdapter(adapter);
 	}
 
 
 	/************* ----------- Nested Class ------------- ***************/
 
-	public class RestTask extends AsyncTask<String, Void, InputStream> {
+	public class RestTask extends AsyncTask<String, Void, WeatherItems> {
 
         private String state;
 		private String city;
@@ -147,7 +148,7 @@ public class MainActivity extends Activity
 		// HTTPEntity Code adapted from: http://www.techrepublic.com/blog/software-engineer/calling-restful-services-from-your-android-app/
 
 		@Override
-		protected InputStream doInBackground(String... params) {
+		protected WeatherItems doInBackground(String... params) {
 
 			HttpClient httpClient = new DefaultHttpClient();
 			HttpContext localContext = new BasicHttpContext();
@@ -159,28 +160,28 @@ public class MainActivity extends Activity
 			String query = "/forecast/q/" + state + "/" + city + ".xml";
 			String uri = baseUri + apiKey + query;
 			HttpGet httpGet = new HttpGet(uri);
+			WeatherItems items = null;
 			try {
 				HttpResponse response = httpClient.execute(httpGet, localContext);
 				HttpEntity entity = response.getEntity();
-
-				// Call our helper method to extract a string from the response
-				//  text = getASCIIContentFromEntity(entity);
 				InputStream in = entity.getContent();
-				dal.parseXmlStream(in);
+				if (in != null)
+					items = dal.parseXmlStream(in);
 			} catch (Exception e) {
 				Log.e("weatherdemo", e.getLocalizedMessage());
 			}
-			return in;
+			return items;
 		}
 
 
 
 		@Override
-		protected void onPostExecute(InputStream in) {
-            WeatherItems items = dal.parseXmlStream(in);
-            dal.putForecastIntoDb(items);
-            dal.getForcastFromDb(state, city, new Date() );
-            displayForecast();
+		protected void onPostExecute(WeatherItems items) {
+			if (items != null && items.size() != 0) {
+				dal.putForecastIntoDb(items);
+				dal.getForcastFromDb(state, city, new Date());
+				displayForecast();
+			}
 		}
 	}
 }

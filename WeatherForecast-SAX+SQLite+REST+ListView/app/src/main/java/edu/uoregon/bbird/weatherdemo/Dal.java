@@ -52,29 +52,30 @@ public class Dal  {
     }
 
     protected WeatherItems parseXmlStream(InputStream in) {
-        try {
-            // get the XML reader
-            SAXParserFactory factory = SAXParserFactory.newInstance();
-            SAXParser parser = factory.newSAXParser();
-            XMLReader xmlreader = parser.getXMLReader();
+        WeatherItems items = null;
+        if (in != null) {
+            try {
+                // get the XML reader
+                SAXParserFactory factory = SAXParserFactory.newInstance();
+                SAXParser parser = factory.newSAXParser();
+                XMLReader xmlreader = parser.getXMLReader();
 
-            // set content handler
-            ParseHandler handler = new ParseHandler();
-            xmlreader.setContentHandler(handler);
+                // set content handler
+                ParseHandler handler = new ParseHandler();
+                xmlreader.setContentHandler(handler);
 
-            // parse the data
-            InputSource is = new InputSource(in);
-            xmlreader.parse(is);
-
-            // set the feed in the activity
-            return handler.getItems();
-        } catch (Exception e) {
-            Log.e("Weather", e.toString());
+                // parse the data
+                InputSource is = new InputSource(in);
+                xmlreader.parse(is);
+                items = handler.getItems();
+            } catch (Exception e) {
+                Log.e("Weather", e.toString());
+            }
         }
-        return null;
+        return items;
     }
 
-    protected Void putForecastIntoDb(WeatherItems items) {
+    protected void putForecastIntoDb(WeatherItems items) {
 
         // Initialize database
         WeatherSQLiteHelper helper = new WeatherSQLiteHelper(context);
@@ -99,7 +100,6 @@ public class Dal  {
             db.insert(WeatherSQLiteHelper.FORECAST, null, cv);
         }
         db.close();
-        return null;
     }
 }
 
