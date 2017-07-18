@@ -39,7 +39,7 @@ public class Dal  {
 
         // If there isn't a forecast in the db for this location (and date?), then get one from the web service
         if(cursor.getCount() == 0) {
-           new RestTask().execute(city, state);
+           new RestTask().execute(state, city);
             cursor = db.rawQuery(query, variables);
         }
 
