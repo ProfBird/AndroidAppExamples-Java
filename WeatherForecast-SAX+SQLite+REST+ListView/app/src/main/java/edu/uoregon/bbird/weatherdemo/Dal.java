@@ -2,11 +2,22 @@ package edu.uoregon.bbird.weatherdemo;
 
 // Written by Brian Bird 7/11/15, updated 7/18/17
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
+import org.xml.sax.InputSource;
+import org.xml.sax.XMLReader;
+
+import java.io.InputStream;
 import java.util.Date;
+
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
+import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.FCT_TEXT;
 
 // Data Access Layer
 
@@ -24,7 +35,7 @@ public class Dal  {
 
     /************ --- Public methods ---- ********************/
 
-    public Cursor getForcastByLocation(String city, String state, Date date)
+    public Cursor getForcastFromDb(String city, String state, Date date)
     {
         // Initialize the database for reading
         WeatherSQLiteHelper helper = new WeatherSQLiteHelper(context);
@@ -37,18 +48,10 @@ public class Dal  {
         // Do the query
         Cursor cursor = db.rawQuery(query, variables);
 
-        // If there isn't a forecast in the db for this location (and date?), then get one from the web service
-        if(cursor.getCount() == 0) {
-           new RestTask().execute(state, city);
-            cursor = db.rawQuery(query, variables);
-        }
-
         return cursor;
     }
 
-	/************ --- Private methods ---- *************/
-    /*
-    private Void parseXmlStream(InputStream in) {
+    protected WeatherItems parseXmlStream(InputStream in) {
         try {
             // get the XML reader
             SAXParserFactory factory = SAXParserFactory.newInstance();
@@ -64,14 +67,40 @@ public class Dal  {
             xmlreader.parse(is);
 
             // set the feed in the activity
-            items = handler.getItems();
+            return handler.getItems();
         } catch (Exception e) {
             Log.e("Weather", e.toString());
-            items = null;
         }
         return null;
     }
-    */
+
+    protected Void putForecastIntoDb(WeatherItems items) {
+
+        // Initialize database
+        WeatherSQLiteHelper helper = new WeatherSQLiteHelper(context);
+        SQLiteDatabase db = helper.getWritableDatabase();
+
+        // Put weather forecast in the database
+        ContentValues cv = new ContentValues();
+
+        for (WeatherItem item : items) {
+            cv.put(WeatherSQLiteHelper.DATE, item.getForecastDateFormatted());
+            cv.put(WeatherSQLiteHelper.STATE, items.getZip());
+            cv.put(WeatherSQLiteHelper.CITY, items.getCity());
+            cv.put(WeatherSQLiteHelper.ICON, item.getDescription());
+            cv.put(WeatherSQLiteHelper.IMAGE_ID,
+                    Integer.toString(context.getResources().getIdentifier(
+                            item.getDescription().toLowerCase().replaceAll("\\s+", ""),
+                            "drawable", context.getPackageName())));
+            cv.put(FCT_TEXT, item.getLowTemp());
+            cv.put(WeatherSQLiteHelper.TITLE, item.getHighTemp());
+            cv.put(WeatherSQLiteHelper.POP, item.getNightPrecip());
+            cv.put(WeatherSQLiteHelper.PERIOD, item.getDayPrecip());
+            db.insert(WeatherSQLiteHelper.FORECAST, null, cv);
+        }
+        db.close();
+        return null;
+    }
 }
 
     
