@@ -12,16 +12,16 @@ public class WeatherSQLiteHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "weather.sqlite";
     private static final int DATABASE_VERSION = 1;
 
-    public static final String FORECAST = "Forecast";
-    public static final String DATE = "Date";
-    public static final String ZIP = "Zip";
-    public static final String CITY = "City";
-    public static final String DESCRIPTION = "Desciption";  // misspelled in the XML schema!
-    public static final String IMAGE_ID = "ImageId";
-    public static final String MORNING_LOW = "MorningLow";
-    public static final String DAYTIME_HIGH = "DaytimeHigh";
-    public static final String DAY_PRECIP = "Daytime";
-    public static final String NIGHT_PRECIP = "Nighttime";
+    public static final String FORECAST = "forecast"; // There is just one forecast element
+    public static final String DATE = "date";  // The fist day of the forecast
+    public static final String STATE = "state";
+    public static final String CITY = "city";
+    public static final String ICON = "icon";
+    public static final String IMAGE_ID = "imageid";
+    public static final String FCT_TEXT = "fcttext";
+    public static final String TITLE = "title";   // Day and time of day
+    public static final String POP = "pop";       // percent chance of precipitation
+    public static final String PERIOD = "period";
 
     private Context context = null;
 
@@ -35,14 +35,14 @@ public class WeatherSQLiteHelper extends SQLiteOpenHelper {
 		db.execSQL("CREATE TABLE " + FORECAST
 				+ "( _id INTEGER PRIMARY KEY AUTOINCREMENT,"
 				+ DATE + " TEXT,"
-				+ ZIP + " INTEGER,"
+				+ STATE + " INTEGER,"
 				+ CITY + " TEXT,"
-				+ DESCRIPTION + " TEXT,"
+				+ ICON + " TEXT,"
 				+ IMAGE_ID + " TEXT,"
-				+ MORNING_LOW + " INTEGER,"
-				+ DAYTIME_HIGH + " INTEGER,"
-				+ NIGHT_PRECIP + " INTEGER,"
-				+ DAY_PRECIP + " INTEGER"
+				+ FCT_TEXT + " INTEGER,"
+				+ TITLE + " INTEGER,"
+				+ PERIOD + " INTEGER,"
+				+ POP + " INTEGER"
 				+ ")" );
 	}
 	

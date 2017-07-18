@@ -14,6 +14,7 @@ import android.widget.Toast;
 /**
  * A simple {@link Fragment} subclass.
  */
+
 public class SecondFragment extends Fragment {
 
     TextView messageTextView;

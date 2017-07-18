@@ -1,9 +1,7 @@
 package edu.uoregon.bbird.weatherdemo;
 
-// Written by Brian Bird 7/11/15, updated 7/13/17
+// Written by Brian Bird 7/11/15, updated 7/13/18
 
-// XML weather files can be manually downloaded from http://wsf.cdyne.com/WeatherWS/Weather.asmx
-// Interesting zip codes: Eugene 97405, Anchorage 99515, Florence 97439
 
 import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.*;
@@ -42,18 +40,18 @@ public class ParseHandler extends DefaultHandler {
         else if (qName.equals(WeatherSQLiteHelper.DATE)) {
             isDate = true;
         }
-        else if (qName.equals(WeatherSQLiteHelper.DESCRIPTION)) {
+        else if (qName.equals(WeatherSQLiteHelper.ICON)) {
             isDescription = true;
         }
-        else if (qName.equals(WeatherSQLiteHelper.MORNING_LOW)) {
+        else if (qName.equals(WeatherSQLiteHelper.FCT_TEXT)) {
             isMorningLow = true;
         }
-        else if (qName.equals(WeatherSQLiteHelper.DAYTIME_HIGH)) {
+        else if (qName.equals(WeatherSQLiteHelper.TITLE)) {
             isDaytimeHigh = true;
         }
-        else if (qName.equals(WeatherSQLiteHelper.NIGHT_PRECIP)) {
+        else if (qName.equals(WeatherSQLiteHelper.PERIOD)) {
             isNightPrecip = true;
-        }else if (qName.equals(WeatherSQLiteHelper.DAY_PRECIP)) {
+        }else if (qName.equals(WeatherSQLiteHelper.POP)) {
             isDayPrecip = true;
         }
     }

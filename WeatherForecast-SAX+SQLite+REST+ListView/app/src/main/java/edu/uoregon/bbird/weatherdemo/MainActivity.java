@@ -20,16 +20,18 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
+import java.util.Date;
 
-import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.DAY_PRECIP;
-import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.NIGHT_PRECIP;
+import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.*;
+import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.POP;
+import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.PERIOD;
 
 public class MainActivity extends Activity 
 				implements OnItemClickListener, OnItemSelectedListener {
 
     private Dal dal = new Dal(this);
 	Cursor cursor = null;
-	String locationSelection = "97405";
+	String locationSelection = "Eugene";
 	SimpleCursorAdapter adapter = null; 
 	
     @Override
@@ -41,22 +43,20 @@ public class MainActivity extends Activity
         Spinner locationSpinner = (Spinner)findViewById(R.id.locationSpinner);
         locationSpinner.setOnItemSelectedListener(this);
         
-        // Initialize the database
-        dal.loadTestData("97405");
-        
         // Get Forecast for the default location
-        cursor = dal.getForcastByLocation(locationSelection);
+        // TODO: replace hard-coded state with selected state
+        cursor = dal.getForcastByLocation(locationSelection,"OR", new Date());
         
         // Set up the adapter for the ListView to display the forecast
         adapter = new SimpleCursorAdapter(
             this,
             R.layout.listview_items,
             cursor,
-            new String[]{WeatherSQLiteHelper.DATE,
-                    WeatherSQLiteHelper.DESCRIPTION,
-                    WeatherSQLiteHelper.IMAGE_ID,
-                    WeatherSQLiteHelper.MORNING_LOW,
-                    WeatherSQLiteHelper.DAYTIME_HIGH},
+            new String[]{DATE,
+                    ICON,
+                    IMAGE_ID,
+					FCT_TEXT,
+                    POP},
             new int[]{
                 R.id.dateTextView,
                 R.id.descriptionTextView,
@@ -74,8 +74,8 @@ public class MainActivity extends Activity
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		cursor.moveToPosition(position);
-		int dayPrecip = cursor.getInt(cursor.getColumnIndex(DAY_PRECIP));
-		int nightPrecip = cursor.getInt(cursor.getColumnIndex(NIGHT_PRECIP));
+		int dayPrecip = cursor.getInt(cursor.getColumnIndex(POP));
+		int nightPrecip = cursor.getInt(cursor.getColumnIndex(PERIOD));
 		//WeatherItem item = weatherItems.get(position);
 		Toast.makeText(this, 
 				"Daytime chance of precipitation: " + Integer.toString(dayPrecip) + "%" + "\r\n" +
@@ -88,16 +88,16 @@ public class MainActivity extends Activity
 			long id) {
 		switch (position){
 		case 0:
-			locationSelection = "97405";
+			locationSelection = "Eugene";
 			break;
 		case 1:
-			locationSelection = "97439";
+			locationSelection = "Newport";
 			break;
 		case 2:
-			locationSelection = "99515";	
+			locationSelection = "Anchorage";
 		}
         // Get a weather forecast the selected location
-        cursor = dal.getForcastByLocation(locationSelection);
+        cursor = dal.getForcastByLocation(locationSelection, "OR", new Date() );
         adapter.changeCursor(cursor);
 	}
 

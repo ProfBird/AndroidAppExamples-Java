@@ -1,98 +1,54 @@
 package edu.uoregon.bbird.weatherdemo;
 
-// Written by Brian Bird 7/11/15, updated 7/13/17
+// Written by Brian Bird 7/11/15, updated 7/18/17
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
-import org.xml.sax.InputSource;
-import org.xml.sax.XMLReader;
-
-import java.io.InputStream;
-
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
+import java.util.Date;
 
 // Data Access Layer
 
-public class Dal {
+public class Dal  {
+
+    // Instance variables
 	private Context context = null;
-	
+
+    /************ ---- Constructor ----- ********************/
+
 	public Dal(Context context)
 	{
 		this.context = context;
 	}
-	
-	// This is a temporary method for loading fixed data into the db
-	public void loadTestData(String zipCode)
-	{
-		  // Initialize database
-        WeatherSQLiteHelper helper = new WeatherSQLiteHelper(context);
-        SQLiteDatabase db = helper.getWritableDatabase();	
-	   // load the database with test data if it isn't already loaded
-	   if (db.rawQuery("SELECT * FROM Forecast WHERE " + WeatherSQLiteHelper.ZIP
-               + " = " + zipCode, null).getCount() == 0)
-	   {
-		   loadDbFromXML("97405");	// Eugene
-		   loadDbFromXML("97439"); // Florence
-		   loadDbFromXML("99515"); // Anchorage
-	   }
-	   db.close();	
-	}
 
-	
-	// Parse the XML files and put the data in the db
-	public void loadDbFromXML(String zipCode) {
-		// Get the data from the XML file
-		String fileName = "weather" + zipCode +".xml";
-		WeatherItems items = parseXmlFile(fileName);
-		items.setZip(zipCode);	// This field isn't in the xml file, so we add it here
-		
-		  // Initialize database
-        WeatherSQLiteHelper helper = new WeatherSQLiteHelper(context);
-        SQLiteDatabase db = helper.getWritableDatabase();
-        
-        // Put weather forecast in the database
-        ContentValues cv = new ContentValues();
-        
-        for(WeatherItem item : items)
-        {
-	        cv.put(WeatherSQLiteHelper.DATE, item.getForecastDateFormatted());
-	        cv.put(WeatherSQLiteHelper.ZIP, items.getZip());				// stored in items, not item
-	        cv.put(WeatherSQLiteHelper.CITY, items.getCity());			// stored in items, not item
-	        cv.put(WeatherSQLiteHelper.DESCRIPTION, item.getDescription());
-            cv.put(WeatherSQLiteHelper.IMAGE_ID,
-                    Integer.toString(context.getResources().getIdentifier(
-                            item.getDescription().toLowerCase().replaceAll("\\s+",""),
-                            "drawable", context.getPackageName())));
-	        cv.put(WeatherSQLiteHelper.MORNING_LOW, item.getLowTemp());
-	        cv.put(WeatherSQLiteHelper.DAYTIME_HIGH, item.getHighTemp());
-	        cv.put(WeatherSQLiteHelper.NIGHT_PRECIP, item.getNightPrecip());
-	        cv.put(WeatherSQLiteHelper.DAY_PRECIP, item.getDayPrecip());
-	        db.insert(WeatherSQLiteHelper.FORECAST, null, cv);
-        }
-        db.close();
-	}
-	
-    public Cursor getForcastByLocation(String location)
+    /************ --- Public methods ---- ********************/
+
+    public Cursor getForcastByLocation(String city, String state, Date date)
     {
-        // Ensure there is data in the database for this location
-        loadTestData(location);
-
-        // Initialize the database
+        // Initialize the database for reading
         WeatherSQLiteHelper helper = new WeatherSQLiteHelper(context);
         SQLiteDatabase db = helper.getReadableDatabase();
- 
-        // Get a weather forecast for one location
-        String query = "SELECT * FROM Forecast WHERE Zip = ? ORDER BY Date ASC";
-        String[] variables = new String[]{location};    // rawQuery must not include a trailing ';'
-        return db.rawQuery(query, variables); 
+
+        // Set up a query for a weather forecast for one location
+        String query = "SELECT * FROM Forecast WHERE City = ? ORDER BY Date ASC";
+        String[] variables = new String[]{city};    // rawQuery must not include a trailing ';'
+
+        // Do the query
+        Cursor cursor = db.rawQuery(query, variables);
+
+        // If there isn't a forecast in the db for this location (and date?), then get one from the web service
+        if(cursor.getCount() == 0) {
+           new RestTask().execute(city, state);
+            cursor = db.rawQuery(query, variables);
+        }
+
+        return cursor;
     }
 
-    public WeatherItems parseXmlFile(String fileName) {
+	/************ --- Private methods ---- *************/
+    /*
+    private Void parseXmlStream(InputStream in) {
         try {
             // get the XML reader
             SAXParserFactory factory = SAXParserFactory.newInstance();
@@ -103,20 +59,19 @@ public class Dal {
             ParseHandler handler = new ParseHandler();
             xmlreader.setContentHandler(handler);
 
-            // read the file from internal storage
-            InputStream in = context.getAssets().open(fileName);
-
             // parse the data
             InputSource is = new InputSource(in);
             xmlreader.parse(is);
 
             // set the feed in the activity
-            WeatherItems items = handler.getItems();
-            return items;
-        } 
-        catch (Exception e) {
-            Log.e("News reader", e.toString());
-            return null;
+            items = handler.getItems();
+        } catch (Exception e) {
+            Log.e("Weather", e.toString());
+            items = null;
         }
-    }	
+        return null;
+    }
+    */
 }
+
+    
