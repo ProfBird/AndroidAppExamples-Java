@@ -1,9 +1,12 @@
-package edu.uoregon.bbird.mulit_activitydemo;
+package edu.uoregon.bbird.multi_activitydemo;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import edu.uoregon.bbird.mulit_activitydemo.ActivityTwo;
+import edu.uoregon.bbird.mulit_activitydemo.R;
 
 public class MainActivity extends Activity {
 
@@ -15,5 +18,6 @@ public class MainActivity extends Activity {
 
     public void startActivityTwo(View v) {
         startActivity(new Intent(getApplicationContext(), ActivityTwo.class));
+
     }
 }
