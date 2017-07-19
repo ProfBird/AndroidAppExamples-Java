@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity
             double lat = address.getLatitude();
             double lon = address.getLongitude();
             latLonTextView.setText(Double.toString(lat) + ", " + Double.toString(lon));
-            if( ContextCompat.checkSelfPermission( this,
+           if( ContextCompat.checkSelfPermission( this,
                     android.Manifest.permission.ACCESS_FINE_LOCATION )
                     != PackageManager.PERMISSION_GRANTED ) {
                 myLocation = LocationServices.FusedLocationApi.getLastLocation(googleApiClient);

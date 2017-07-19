@@ -49,6 +49,9 @@ only want code for one app.
 * AsynchDemo
   * A simple demo of calling asynchronous methods using AsynchTask
 
+* DatePickerDemo
+  * A simple app with just a DatePicker widget and a TextView that shows the date selected. The Calendar class is used to get the current date and the SimpleDateFormat class is used to format the date obtained from the picker.
+
 * WeatherForecast-SAX+ListView
   * Parses an XML file of weather data using SAX and displays weather icons in the ListView along with the weather data.
 
