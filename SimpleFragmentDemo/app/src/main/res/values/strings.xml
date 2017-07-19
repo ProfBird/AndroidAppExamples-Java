@@ -3,4 +3,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="copy_of_message">Copy of message</string>
+    <string name="hello_fragment">Hello fragment!</string>
+    <string name="send_message_to_2nd_fragment">Send message to 2nd fragment</string>
 </resources>

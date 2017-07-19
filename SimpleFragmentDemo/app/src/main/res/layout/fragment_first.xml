@@ -8,20 +8,21 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello fragment!"
-        android:id="@+id/messageEditText" />
+        android:text="@string/hello_fragment"
+        android:id="@+id/messageEditText"
+        android:inputType="" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Copy of message"
+        android:text="@string/copy_of_message"
         android:id="@+id/messageTextView" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Send message to 2nd fragment"
+        android:text="@string/send_message_to_2nd_fragment"
         android:id="@+id/startButton" />
 
 </LinearLayout>
