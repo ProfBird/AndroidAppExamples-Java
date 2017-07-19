@@ -12,11 +12,11 @@ public class ParseHandler extends DefaultHandler {
     private WeatherItems weatherItems;
     private WeatherItem item;
     private boolean isDate = false;
-    private boolean isDescription = false;
-    private boolean isMorningLow = false;
-    private boolean isDaytimeHigh = false;
-    private boolean isDayPrecip = false;
-    private boolean isNightPrecip = false;
+    private boolean isIcon = false;
+    private boolean isForecastText = false;
+    private boolean isTitle = false;
+    private boolean isPOP = false;
+    private boolean isPeriod = false;
     
     public WeatherItems getItems() {
         return weatherItems;
@@ -40,18 +40,18 @@ public class ParseHandler extends DefaultHandler {
             isDate = true;
         }
         else if (qName.equals(ICON)) {
-            isDescription = true;
+            isIcon = true;
         }
         else if (qName.equals(FCT_TEXT)) {
-            isMorningLow = true;
+            isForecastText = true;
         }
         else if (qName.equals(TITLE)) {
-            isDaytimeHigh = true;
+            isTitle = true;
         }
         else if (qName.equals(PERIOD)) {
-            isNightPrecip = true;
+            isPeriod = true;
         }else if (qName.equals(POP)) {
-            isDayPrecip = true;
+            isPOP = true;
         }
     }
     
@@ -72,25 +72,25 @@ public class ParseHandler extends DefaultHandler {
             item.setForecastDate(s);
             isDate = false;
     }
-        else if (isDescription) {
-            item.setDescription(s);
-            isDescription = false;
+        else if (isIcon) {
+            item.setIcon(s);
+            isIcon = false;
         }
-         else if (isMorningLow) {
-            item.setLowTemp(s);
-            isMorningLow = false;
+         else if (isForecastText) {
+            item.setForecastText(s);
+            isForecastText = false;
         }
-        else if (isDaytimeHigh) {
-            item.setHighTemp(s);
-            isDaytimeHigh = false;
+        else if (isTitle) {
+            item.setTitle(s);
+            isTitle = false;
         }
-        else if (isNightPrecip) {
-            item.setNightPrecip(s);
-            isNightPrecip = false;
+        else if (isPeriod) {
+            item.setPeriod(s);
+            isPeriod = false;
         }
-        else if (isDayPrecip) {
-            item.setDayPrecip(s);
-            isDayPrecip = false;
+        else if (isPOP) {
+            item.setPOP(s);
+            isPOP = false;
         }
     }
 }

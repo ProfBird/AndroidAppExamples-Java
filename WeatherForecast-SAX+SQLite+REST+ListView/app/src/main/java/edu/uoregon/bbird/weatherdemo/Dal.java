@@ -88,19 +88,18 @@ public class Dal  {
 
         for (WeatherItem item : items) {
 //            cv.put(WeatherSQLiteHelper.DATE, item.getForecastDateFormatted());
-            cv.put(TITLE, item.getHighTemp() );
+            cv.put(TITLE, item.getTitle() );
             cv.put(STATE, items.getState() );
             cv.put(CITY, items.getCity() );
-            cv.put(ICON, item.getDescription() );
-//            cv.put(WeatherSQLiteHelper.IMAGE_ID,
-//                    Integer.toString(context.getResources().getIdentifier(
-//                            item.getDescription().toLowerCase().replaceAll("\\s+", ""),
-//                            "drawable", context.getPackageName())));
-            cv.put(IMAGE_ID, 0);
-            cv.put(FCT_TEXT, item.getLowTemp());
-            cv.put(TITLE, item.getHighTemp());
-            cv.put(POP, item.getNightPrecip());
-            cv.put(PERIOD, item.getDayPrecip());
+            cv.put(ICON, item.getIcon() );
+            cv.put(IMAGE_ID,
+                    Integer.toString(context.getResources().getIdentifier(
+                            item.getIcon().toLowerCase().replaceAll("\\s+", ""),
+                            "drawable", context.getPackageName())));
+            cv.put(FCT_TEXT, item.getForecastText());
+            cv.put(TITLE, item.getTitle());
+            cv.put(POP, item.getPeriod());
+            cv.put(PERIOD, item.getPOP());
             db.insert(FORECAST_TABLE, null, cv);
         }
         db.close();

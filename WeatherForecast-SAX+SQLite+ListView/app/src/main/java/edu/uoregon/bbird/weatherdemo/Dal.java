@@ -16,6 +16,8 @@ import java.io.InputStream;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
+import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.*;
+
 // Data Access Layer
 
 public class Dal {
@@ -33,7 +35,7 @@ public class Dal {
         WeatherSQLiteHelper helper = new WeatherSQLiteHelper(context);
         SQLiteDatabase db = helper.getWritableDatabase();	
 	   // load the database with test data if it isn't already loaded
-	   if (db.rawQuery("SELECT * FROM Forecast WHERE " + WeatherSQLiteHelper.ZIP
+	   if (db.rawQuery("SELECT * FROM Forecast WHERE " + ZIP
                + " = " + zipCode, null).getCount() == 0)
 	   {
 		   loadDbFromXML("97405");	// Eugene
@@ -60,19 +62,19 @@ public class Dal {
         
         for(WeatherItem item : items)
         {
-	        cv.put(WeatherSQLiteHelper.DATE, item.getForecastDateFormatted());
-	        cv.put(WeatherSQLiteHelper.ZIP, items.getZip());				// stored in items, not item
-	        cv.put(WeatherSQLiteHelper.CITY, items.getCity());			// stored in items, not item
-	        cv.put(WeatherSQLiteHelper.DESCRIPTION, item.getDescription());
-            cv.put(WeatherSQLiteHelper.IMAGE_ID,
+	        cv.put(DATE, item.getForecastDateFormatted());
+	        cv.put(ZIP, items.getZip());				// stored in items, not item
+	        cv.put(CITY, items.getCity());			// stored in items, not item
+	        cv.put(DESCRIPTION, item.getDescription());
+            cv.put(IMAGE_ID,
                     Integer.toString(context.getResources().getIdentifier(
                             item.getDescription().toLowerCase().replaceAll("\\s+",""),
                             "drawable", context.getPackageName())));
-	        cv.put(WeatherSQLiteHelper.MORNING_LOW, item.getLowTemp());
-	        cv.put(WeatherSQLiteHelper.DAYTIME_HIGH, item.getHighTemp());
-	        cv.put(WeatherSQLiteHelper.NIGHT_PRECIP, item.getNightPrecip());
-	        cv.put(WeatherSQLiteHelper.DAY_PRECIP, item.getDayPrecip());
-	        db.insert(WeatherSQLiteHelper.FORECAST, null, cv);
+	        cv.put(MORNING_LOW, item.getLowTemp());
+	        cv.put(DAYTIME_HIGH, item.getHighTemp());
+	        cv.put(NIGHT_PRECIP, item.getNightPrecip());
+	        cv.put(DAY_PRECIP, item.getDayPrecip());
+	        db.insert(FORECAST, null, cv);
         }
         db.close();
 	}

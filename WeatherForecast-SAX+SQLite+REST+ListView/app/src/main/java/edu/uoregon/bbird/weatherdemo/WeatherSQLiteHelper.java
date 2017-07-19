@@ -36,12 +36,12 @@ public class WeatherSQLiteHelper extends SQLiteOpenHelper {
 		db.execSQL("CREATE TABLE " + FORECAST_TABLE
 				+ "( _id INTEGER PRIMARY KEY AUTOINCREMENT,"
 				+ DATE + " TEXT,"
-				+ STATE + " INTEGER,"
+				+ STATE + " TEXT,"
 				+ CITY + " TEXT,"
 				+ ICON + " TEXT,"
-				+ IMAGE_ID + " TEXT,"
-				+ FCT_TEXT + " INTEGER,"
-				+ TITLE + " INTEGER,"
+				+ IMAGE_ID + " INTEGER,"
+				+ FCT_TEXT + " TEXT,"
+				+ TITLE + " TEXT,"
 				+ PERIOD + " INTEGER,"
 				+ POP + " INTEGER"
 				+ ")" );

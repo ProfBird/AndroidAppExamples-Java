@@ -5,7 +5,7 @@ android {
     buildToolsVersion '25.0.0'
 
     defaultConfig {
-        applicationId "edu.uoregon.bbird.weatherdemo"
+        applicationId "edu.uoregon.bbird.weatherdemo3"
         minSdkVersion 16
         targetSdkVersion 23
     }

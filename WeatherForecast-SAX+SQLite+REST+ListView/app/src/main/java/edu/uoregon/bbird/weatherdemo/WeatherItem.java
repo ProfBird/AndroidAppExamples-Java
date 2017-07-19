@@ -11,11 +11,11 @@ import java.util.Date;
 public class WeatherItem {
     
     private String forecastDate = null;
-    private String description = null;
-    private String lowTemp = null;
-    private String highTemp = null;
-    private String nightPrecip	 = null;
-    private String dayPrecip = null;
+    private String icon = null;
+    private String forecastText = null;
+    private String title = null;
+    private String period = null;
+    private String pop = null;
     
     // This is the format used in the weather XML file
     private SimpleDateFormat dateInFormat = 
@@ -45,43 +45,43 @@ public class WeatherItem {
     	return forecastDate;
     }
 
-	public String getDescription() {
-		return description;
+	public String getIcon() {
+		return icon;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setIcon(String icon) {
+		this.icon = icon;
 	}
 
-	public String getLowTemp() {
-		return lowTemp;
+	public String getForecastText() {
+		return forecastText;
 	}
 
-	public void setLowTemp(String lowTemp) {
-		this.lowTemp = lowTemp;
+	public void setForecastText(String forecastText) {
+		this.forecastText = forecastText;
 	}
 
-	public String getHighTemp() {
-		return highTemp;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setHighTemp(String highTemp) {
-		this.highTemp = highTemp;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public String getNightPrecip() {
-		return nightPrecip;
+	public String getPeriod() {
+		return period;
 	}
 
-	public void setNightPrecip(String nightPrecip) {
-		this.nightPrecip = nightPrecip;
+	public void setPeriod(String period) {
+		this.period = period;
 	}
 	
-	public String getDayPrecip() {
-		return nightPrecip;
+	public String getPOP() {
+		return pop;
 	}
 
-	public void setDayPrecip(String dayPrecip) {
-		this.dayPrecip = dayPrecip;
+	public void setPOP(String pop) {
+		this.pop = pop;
 	}
 }
