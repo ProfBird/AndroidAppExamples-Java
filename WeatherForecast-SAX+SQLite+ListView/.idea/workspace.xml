@@ -12,11 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7705c121-d031-4aea-aaf7-fe1d9a8e04ab" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/java/edu/uoregon/bbird/weatherdemo/MainActivity.java" afterPath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/java/edu/uoregon/bbird/weatherdemo/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/java/edu/uoregon/bbird/weatherdemo/ParseHandler.java" afterPath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/java/edu/uoregon/bbird/weatherdemo/ParseHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/values/strings.xml" />
     </list>
     <ignored path="WeatherForecast-SAX+SQLite+ListView.iws" />
     <ignored path=".idea/workspace.xml" />

@@ -54,9 +54,17 @@ only want code for one app.
  
 * WeatherForecast-SAX+SQLite+ListView
   * Uses a database to store multiple weather forecasts in an SQLite database. It also uses a CursorAdapter with the ListView.
+
+* WeatherForecast-SAX+SQLite+REST+ListView
+  * Pulls forecast data from the Weather Underground REST service
+  * Parse the XML forecast data using SAX
+  * Stores the forecasts in a SQLite database 
+  * Uses a CursorAdapter to display a forecast in a ListView.
+
  
 * WeatherForecast-kSOAP+SQLite+ListView
   * Similar to WeatherForecast-SAX+SQLite+ListView, but it gets it's weather forecast data from a SOAP web service instead of from XML files. It uses kSOAP as the web service client. 7/12/16: Unfortunately, the cdyne weather web service used by this app is defunct!
+  
 * kSoapWaterTempDemo
   * A very simple app that demonstrates using the kSoap2-Android library to read from a web service. It reads the ocean temperature from a NOAA SOAP web service.
 * GeoDistanceCalcuator

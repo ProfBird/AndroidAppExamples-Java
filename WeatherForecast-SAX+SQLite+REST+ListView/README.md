@@ -1,5 +1,6 @@
-* WeatherForecast-SAX+SQLite+ListView
-  * Parses XML weather data files using SAX. The files are manually downloaded and put in the project assets folder.
+* WeatherForecast-SAX+SQLite+REST+ListView
+  * Parses XML weather data files using SAX. 
+  * Data is automatically pulled from the Weather Underground REST service if it isn't alerady in the database.
   * Stores the data in an SQLite database (if it hasn't already been stored)
   * User selects the forecast for a city using a Spinner
   * Displays forecast data in a ListView using a CursorAdapter
