@@ -1,6 +1,6 @@
 package edu.uoregon.bbird.geodistancecalculator;
 
-// By Brian Bird, July 15, 2016
+// By Brian Bird, July 15, 2016, updated July 19, 2017
 // Demonstrates: 1) getting location using the Fused Location API provided by Google Play Services
 // 2) using the Android Geocoder to get an address from latitude and longitude
 // 3) using the Android Location class to determine distance between two locaitons
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity
                 android.Manifest.permission.ACCESS_FINE_LOCATION )
                 != PackageManager.PERMISSION_GRANTED )
         {
-            // In API 23 and later user's must give permission after the activity runs
+            // In API 23 and later users must give permission after the activity runs
             ActivityCompat.requestPermissions( this,
                     new String[] {  android.Manifest.permission.ACCESS_FINE_LOCATION  },
                     MY_PERMISSION_ACCESS_COURSE_LOCATION );
@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onLocationChanged(Location location) {
-        // Here it is! This is where we get the current location!
+        // Here it is! This is where we get the current location
         myLocation = location;
         Geocoder geo = new Geocoder(this,
                 Locale.getDefault());
@@ -160,13 +160,22 @@ public class MainActivity extends AppCompatActivity
             double lat = address.getLatitude();
             double lon = address.getLongitude();
             latLonTextView.setText(Double.toString(lat) + ", " + Double.toString(lon));
+            if( ContextCompat.checkSelfPermission( this,
+                    android.Manifest.permission.ACCESS_FINE_LOCATION )
+                    != PackageManager.PERMISSION_GRANTED ) {
+                myLocation = LocationServices.FusedLocationApi.getLastLocation(googleApiClient);
+            }
+            if (myLocation != null) {
+                Location destinationLocation = new Location("Destination");
+                destinationLocation.setLatitude(lat);
+                destinationLocation.setLongitude(lon);
+                float distance = myLocation.distanceTo(destinationLocation);
+                // distance is in meters, will convert to km
+                distanceTextView.setText(Float.toString(distance / 1000.0F));                }
+            else {
+                distanceTextView.setText("Can't determine your location");
+            }
 
-            Location destinationLocation = new Location("Destination");
-            destinationLocation.setLatitude(lat);
-            destinationLocation.setLongitude(lon);
-            float distance = myLocation.distanceTo(destinationLocation);
-            // distance is in meters, will convert to km
-            distanceTextView.setText(Float.toString(distance / 1000.0F));
         } else {
             distanceTextView.setText("Destination city not found");
         }
