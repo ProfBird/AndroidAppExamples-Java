@@ -14,15 +14,9 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ListView;
 import android.widget.Spinner;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.protocol.BasicHttpContext;
-import org.apache.http.protocol.HttpContext;
-
 import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Date;
 
 import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.FCT_TEXT;
@@ -125,29 +119,33 @@ public class MainActivity extends Activity
 		@Override
 		protected WeatherItems doInBackground(String... params) {
 
-			HttpClient httpClient = new DefaultHttpClient();
-			HttpContext localContext = new BasicHttpContext();
+
 			String apiKey = "0e3e69302fba4e56";  // put your own API key here
 			// Get a free API key at: https://www.wunderground.com/?apiref=5cdccc9428586099
-			String baseUri = "http://api.wunderground.com/api/";
+			String baseUrl = "http://api.wunderground.com/api/";
 			state = params[0];
 			city = params[1];
 			String query = "/forecast/q/" + state + "/" + city + ".xml";
-			String uri = baseUri + apiKey + query;
-			HttpGet httpGet = new HttpGet(uri);
-			WeatherItems items = null;
-			try {
-				HttpResponse response = httpClient.execute(httpGet, localContext);
-				HttpEntity entity = response.getEntity();
-				InputStream in = entity.getContent();
+            WeatherItems items = null;
+            try {
+                URL url = new URL(baseUrl + apiKey + query);
+                HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+                connection.setRequestProperty("User-Agent", "");
+                connection.setRequestMethod("GET");
+                connection.setDoInput(true);
+                connection.connect();
+                InputStream in = connection.getInputStream();
+
 				if (in != null) {
                     items = dal.parseXmlStream(in);
                     items.setState(state);
                     items.setCity(city);
                 }
+
 			} catch (Exception e) {
 				Log.e("weather", "doInBackground error: " + e.getLocalizedMessage());
 			}
+
 			return items;
 		}
 
