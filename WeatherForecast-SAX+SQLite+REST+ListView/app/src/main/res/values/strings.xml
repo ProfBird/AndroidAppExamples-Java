@@ -8,7 +8,7 @@
     <string-array name="locations_array">
         <item>Eugene</item>
         <item>Newport</item>
-        <item>Anchorage</item>
+        <item>Sisters</item>
     </string-array>
         <string name="choose_location">"Choose a location: "</string>
     

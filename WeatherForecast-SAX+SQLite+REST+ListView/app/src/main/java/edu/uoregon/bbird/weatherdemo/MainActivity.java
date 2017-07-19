@@ -60,7 +60,7 @@ public class MainActivity extends Activity
 			locationSelection = "Newport";
 			break;
 		case 2:
-			locationSelection = "Anchorage";
+			locationSelection = "Sisters";
 		}
         // Get a weather forecast for the selected location
         getForecast("OR", locationSelection);

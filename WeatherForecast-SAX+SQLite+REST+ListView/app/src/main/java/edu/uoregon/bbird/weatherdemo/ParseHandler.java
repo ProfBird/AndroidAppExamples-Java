@@ -17,6 +17,7 @@ public class ParseHandler extends DefaultHandler {
     private boolean isTitle = false;
     private boolean isPOP = false;
     private boolean isPeriod = false;
+    private boolean isDone = false;
     
     public WeatherItems getItems() {
         return weatherItems;
@@ -33,7 +34,10 @@ public class ParseHandler extends DefaultHandler {
             String qName, Attributes atts) throws SAXException {
         
 
-    	if (qName.equals(FORECAST_DAY)) {
+    	if (isDone) {
+            // Do nothing because we've parsed everything we need
+        }
+        else if (qName.equals(FORECAST_DAY)) {
             item = new WeatherItem();
         }
         else if (qName.equals(DATE)) {
@@ -59,8 +63,11 @@ public class ParseHandler extends DefaultHandler {
     public void endElement(String namespaceURI, String localName, 
             String qName) throws SAXException
     {
-        if (qName.equals(FORECAST_DAY)) {
+        if (!isDone && qName.equals(FORECAST_DAY)) {
             weatherItems.add(item);
+        }
+        else if (qName.equals("txt_forecast")) {
+            isDone = true;
         }
     }
     
