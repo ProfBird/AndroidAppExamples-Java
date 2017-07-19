@@ -13,11 +13,11 @@ public class WeatherItems extends ArrayList<WeatherItem> {
 	private String zip = "";
 	private String city = "";
 	
-	public String getZip() {
+	public String getState() {
 		return zip;
 	}
 	
-	public void setZip(String zip) {
+	public void setState(String zip) {
 		this.zip = zip;
 	}
 	

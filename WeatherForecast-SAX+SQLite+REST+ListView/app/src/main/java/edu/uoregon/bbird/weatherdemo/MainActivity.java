@@ -27,12 +27,12 @@ import org.apache.http.protocol.HttpContext;
 import java.io.InputStream;
 import java.util.Date;
 
-import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.DATE;
 import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.FCT_TEXT;
 import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.ICON;
 import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.IMAGE_ID;
 import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.PERIOD;
 import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.POP;
+import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.TITLE;
 
 public class MainActivity extends Activity 
 				implements OnItemClickListener, OnItemSelectedListener {
@@ -93,7 +93,7 @@ public class MainActivity extends Activity
 			locationSelection = "Anchorage";
 		}
         // Get a weather forecast for the selected location
-        getForecast(locationSelection, "OR");
+        getForecast("OR", locationSelection);
 	}
 
 	@Override
@@ -105,7 +105,7 @@ public class MainActivity extends Activity
 
 	private void getForecast(String state, String city) {
 		// If there isn't a forecast in the db for this location (and date?), then get one from the web service
-		Cursor cursor = dal.getForcastFromDb(state, city, new Date());
+		cursor = dal.getForcastFromDb(state, city, new Date());
 		if(cursor.getCount() == 0) {
 			new RestTask().execute(state, city);
 		}
@@ -120,7 +120,7 @@ public class MainActivity extends Activity
 				this,
 				R.layout.listview_items,
 				cursor,
-				new String[]{DATE,
+				new String[]{TITLE,
 						ICON,
 						IMAGE_ID,
 						FCT_TEXT,
@@ -165,10 +165,13 @@ public class MainActivity extends Activity
 				HttpResponse response = httpClient.execute(httpGet, localContext);
 				HttpEntity entity = response.getEntity();
 				InputStream in = entity.getContent();
-				if (in != null)
-					items = dal.parseXmlStream(in);
+				if (in != null) {
+                    items = dal.parseXmlStream(in);
+                    items.setState(state);
+                    items.setCity(city);
+                }
 			} catch (Exception e) {
-				Log.e("weatherdemo", e.getLocalizedMessage());
+				Log.e("weather", "doInBackground error: " + e.getLocalizedMessage());
 			}
 			return items;
 		}
@@ -179,7 +182,7 @@ public class MainActivity extends Activity
 		protected void onPostExecute(WeatherItems items) {
 			if (items != null && items.size() != 0) {
 				dal.putForecastIntoDb(items);
-				dal.getForcastFromDb(state, city, new Date());
+				cursor = dal.getForcastFromDb(state, city, new Date());
 				displayForecast();
 			}
 		}

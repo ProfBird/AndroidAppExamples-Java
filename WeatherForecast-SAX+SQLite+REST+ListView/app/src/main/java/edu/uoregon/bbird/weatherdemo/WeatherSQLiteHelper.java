@@ -12,7 +12,8 @@ public class WeatherSQLiteHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "weather.sqlite";
     private static final int DATABASE_VERSION = 1;
 
-    public static final String FORECAST = "forecast"; // There is just one forecast element
+	public static final String FORECAST_TABLE = "forecast"; // There is just one forecast element
+	public static final String FORECAST_DAY = "forecastday"; // There is just one forecast element
     public static final String DATE = "date";  // The fist day of the forecast
     public static final String STATE = "state";
     public static final String CITY = "city";
@@ -32,7 +33,7 @@ public class WeatherSQLiteHelper extends SQLiteOpenHelper {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		db.execSQL("CREATE TABLE " + FORECAST
+		db.execSQL("CREATE TABLE " + FORECAST_TABLE
 				+ "( _id INTEGER PRIMARY KEY AUTOINCREMENT,"
 				+ DATE + " TEXT,"
 				+ STATE + " INTEGER,"

@@ -6,10 +6,11 @@ package edu.uoregon.bbird.weatherdemo;
 import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.*;
 
+import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.*;
+
 public class ParseHandler extends DefaultHandler {
     private WeatherItems weatherItems;
     private WeatherItem item;
-    private boolean isCity = false;
     private boolean isDate = false;
     private boolean isDescription = false;
     private boolean isMorningLow = false;
@@ -31,27 +32,25 @@ public class ParseHandler extends DefaultHandler {
     public void startElement(String namespaceURI, String localName, 
             String qName, Attributes atts) throws SAXException {
         
-    	if (qName.equals(WeatherSQLiteHelper.CITY)) {
-            isCity = true;;
-        }
-    	else if (qName.equals(WeatherSQLiteHelper.FORECAST)) {
+
+    	if (qName.equals(FORECAST_DAY)) {
             item = new WeatherItem();
         }
-        else if (qName.equals(WeatherSQLiteHelper.DATE)) {
+        else if (qName.equals(DATE)) {
             isDate = true;
         }
-        else if (qName.equals(WeatherSQLiteHelper.ICON)) {
+        else if (qName.equals(ICON)) {
             isDescription = true;
         }
-        else if (qName.equals(WeatherSQLiteHelper.FCT_TEXT)) {
+        else if (qName.equals(FCT_TEXT)) {
             isMorningLow = true;
         }
-        else if (qName.equals(WeatherSQLiteHelper.TITLE)) {
+        else if (qName.equals(TITLE)) {
             isDaytimeHigh = true;
         }
-        else if (qName.equals(WeatherSQLiteHelper.PERIOD)) {
+        else if (qName.equals(PERIOD)) {
             isNightPrecip = true;
-        }else if (qName.equals(WeatherSQLiteHelper.POP)) {
+        }else if (qName.equals(POP)) {
             isDayPrecip = true;
         }
     }
@@ -60,7 +59,7 @@ public class ParseHandler extends DefaultHandler {
     public void endElement(String namespaceURI, String localName, 
             String qName) throws SAXException
     {
-        if (qName.equals("Forecast")) {
+        if (qName.equals(FORECAST_DAY)) {
             weatherItems.add(item);
         }
     }
@@ -69,14 +68,10 @@ public class ParseHandler extends DefaultHandler {
     public void characters(char ch[], int start, int length)
     {
         String s = new String(ch, start, length);
-        if (isCity) {
-    		weatherItems.setCity(s);
-    		isCity = false;
-        }   
-        else if (isDate) {
-        		item.setForecastDate(s);
-        		isDate = false;
-        }
+        if (isDate) {
+            item.setForecastDate(s);
+            isDate = false;
+    }
         else if (isDescription) {
             item.setDescription(s);
             isDescription = false;

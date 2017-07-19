@@ -17,7 +17,9 @@ import java.util.Date;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
+import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.*;
 import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.FCT_TEXT;
+import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.FORECAST_TABLE;
 
 // Data Access Layer
 
@@ -35,14 +37,14 @@ public class Dal  {
 
     /************ --- Public methods ---- ********************/
 
-    public Cursor getForcastFromDb(String city, String state, Date date)
+    public Cursor getForcastFromDb(String state, String city, Date date)
     {
         // Initialize the database for reading
         WeatherSQLiteHelper helper = new WeatherSQLiteHelper(context);
         SQLiteDatabase db = helper.getReadableDatabase();
 
         // Set up a query for a weather forecast for one location
-        String query = "SELECT * FROM Forecast WHERE City = ? ORDER BY Date ASC";
+        String query = "SELECT * FROM " + FORECAST_TABLE + " WHERE " + CITY + " = ? ORDER BY Date ASC";
         String[] variables = new String[]{city};    // rawQuery must not include a trailing ';'
 
         // Do the query
@@ -69,7 +71,7 @@ public class Dal  {
                 xmlreader.parse(is);
                 items = handler.getItems();
             } catch (Exception e) {
-                Log.e("Weather", e.toString());
+                Log.e("Weather", "parseXMLStream error: " + e.toString());
             }
         }
         return items;
@@ -85,19 +87,21 @@ public class Dal  {
         ContentValues cv = new ContentValues();
 
         for (WeatherItem item : items) {
-            cv.put(WeatherSQLiteHelper.DATE, item.getForecastDateFormatted());
-            cv.put(WeatherSQLiteHelper.STATE, items.getZip());
-            cv.put(WeatherSQLiteHelper.CITY, items.getCity());
-            cv.put(WeatherSQLiteHelper.ICON, item.getDescription());
-            cv.put(WeatherSQLiteHelper.IMAGE_ID,
-                    Integer.toString(context.getResources().getIdentifier(
-                            item.getDescription().toLowerCase().replaceAll("\\s+", ""),
-                            "drawable", context.getPackageName())));
+//            cv.put(WeatherSQLiteHelper.DATE, item.getForecastDateFormatted());
+            cv.put(TITLE, item.getHighTemp() );
+            cv.put(STATE, items.getState() );
+            cv.put(CITY, items.getCity() );
+            cv.put(ICON, item.getDescription() );
+//            cv.put(WeatherSQLiteHelper.IMAGE_ID,
+//                    Integer.toString(context.getResources().getIdentifier(
+//                            item.getDescription().toLowerCase().replaceAll("\\s+", ""),
+//                            "drawable", context.getPackageName())));
+            cv.put(IMAGE_ID, 0);
             cv.put(FCT_TEXT, item.getLowTemp());
-            cv.put(WeatherSQLiteHelper.TITLE, item.getHighTemp());
-            cv.put(WeatherSQLiteHelper.POP, item.getNightPrecip());
-            cv.put(WeatherSQLiteHelper.PERIOD, item.getDayPrecip());
-            db.insert(WeatherSQLiteHelper.FORECAST, null, cv);
+            cv.put(TITLE, item.getHighTemp());
+            cv.put(POP, item.getNightPrecip());
+            cv.put(PERIOD, item.getDayPrecip());
+            db.insert(FORECAST_TABLE, null, cv);
         }
         db.close();
     }
