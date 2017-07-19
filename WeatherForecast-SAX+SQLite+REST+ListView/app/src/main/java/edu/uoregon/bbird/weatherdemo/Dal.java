@@ -98,8 +98,8 @@ public class Dal  {
                             "drawable", context.getPackageName())));
             cv.put(FCT_TEXT, item.getForecastText());
             cv.put(TITLE, item.getTitle());
-            cv.put(POP, item.getPeriod());
-            cv.put(PERIOD, item.getPOP());
+            cv.put(POP, item.getPOP());
+            cv.put(PERIOD, item.getPeriod());
             db.insert(FORECAST_TABLE, null, cv);
         }
         db.close();

@@ -4,6 +4,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
     <ImageView
         android:id="@+id/iconImageView"
         android:layout_width="wrap_content"
@@ -12,43 +20,36 @@
         android:src="@drawable/clear" />
 
     <TextView
-        android:id="@+id/dateTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
-    <TextView
         android:id="@+id/descriptionTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:textSize="18sp" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1" >
-        <TextView
-        android:id="@+id/lowTempLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/low" />
 
         <TextView
-            android:id="@+id/lowTempTextView"
+            android:id="@+id/popLabelTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/lowTempLabel" />
+            android:text="@string/pop"
+            android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/highTempLabel"
+            android:id="@+id/popTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/lowTempTextView"
-            android:text="@string/high" />
-
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/popLabelTextView"
+            android:textSize="18sp" />
         <TextView
-            android:id="@+id/highTempTextView"
+            android:id="@+id/percentLabelTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/highTempLabel" />
-
+            android:text="%"
+            android:layout_toRightOf="@id/popTextView"
+            android:textSize="18sp" />
     </RelativeLayout>
 </LinearLayout>

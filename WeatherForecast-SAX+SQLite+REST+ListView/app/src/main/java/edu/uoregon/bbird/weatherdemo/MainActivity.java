@@ -10,11 +10,9 @@ import android.support.v4.widget.SimpleCursorAdapter;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -28,14 +26,12 @@ import java.io.InputStream;
 import java.util.Date;
 
 import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.FCT_TEXT;
-import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.ICON;
 import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.IMAGE_ID;
-import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.PERIOD;
 import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.POP;
 import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.TITLE;
 
 public class MainActivity extends Activity 
-				implements OnItemClickListener, OnItemSelectedListener {
+				implements OnItemSelectedListener {
 
     /******* ------  Instance Variables -------------- *************/
     private Dal dal = new Dal(this);
@@ -53,31 +49,11 @@ public class MainActivity extends Activity
         setContentView(R.layout.activity_main);
 
         itemsListView = (ListView)findViewById(R.id.forecastListView);
-        itemsListView.setOnItemClickListener(this);
 
         // Set up location selection spinner
         Spinner locationSpinner = (Spinner)findViewById(R.id.locationSpinner);
         locationSpinner.setOnItemSelectedListener(this);
-        
-        // Get Forecast for the default location
-        // TODO: replace hard-coded state with selected state
-        String state = "OR";
-    //    getForecast(locationSelection, state);
-
-
-    }
-
-	@Override
-	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-		cursor.moveToPosition(position);
-		int dayPrecip = cursor.getInt(cursor.getColumnIndex(POP));
-		int nightPrecip = cursor.getInt(cursor.getColumnIndex(PERIOD));
-		//WeatherItem item = weatherItems.get(position);
-		Toast.makeText(this, 
-				"Daytime chance of precipitation: " + Integer.toString(dayPrecip) + "%" + "\r\n" +
-				"Nighttime chance of preciptiation: " + Integer.toString(nightPrecip) + "%",
-				Toast.LENGTH_LONG).show();
-	}
+       }
 
 	@Override
 	public void onItemSelected(AdapterView<?> parent, View view, int position,
@@ -94,7 +70,8 @@ public class MainActivity extends Activity
 		}
         // Get a weather forecast for the selected location
         getForecast("OR", locationSelection);
-	}
+        // TODO: replace hard-coded state with selected state
+    }
 
 	@Override
 	public void onNothingSelected(AdapterView<?> parent) {
@@ -121,16 +98,14 @@ public class MainActivity extends Activity
 				R.layout.listview_items,
 				cursor,
 				new String[]{TITLE,
-						ICON,
 						IMAGE_ID,
 						FCT_TEXT,
 						POP},
 				new int[]{
 						R.id.dateTextView,
+                        R.id.iconImageView,
 						R.id.descriptionTextView,
-						R.id.iconImageView,
-						R.id.lowTempTextView,
-						R.id.highTempTextView
+						R.id.popTextView
 				},
 				0 );	// no flags
         itemsListView.setAdapter(adapter);

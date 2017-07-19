@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Weather Forecast</string>
-    <string name="low">Low: \t</string>
+    <string name="pop">Chance Precipitation: </string>
     <string name="high">\tHigh: \t</string>
     <string name="weather_icon">weather icon</string>
     <string-array name="locations_array">

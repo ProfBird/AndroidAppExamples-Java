@@ -12,31 +12,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7705c121-d031-4aea-aaf7-fe1d9a8e04ab" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable-mdpi/blowingsnow.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable-mdpi/drizzle.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable-mdpi/fog.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable-mdpi/haze.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable-mdpi/mostlycloudy.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable-mdpi/na.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable-mdpi/partlycloudy.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable-mdpi/rain.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable-mdpi/showers.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable-mdpi/snow.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable-mdpi/sunny.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable-mdpi/thunderstorms.gif" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/chanceflurries.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/chancerain.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/chancesleet.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/chancesnow.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/chancetstorms.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/clear.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/cloudy.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/flurries.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/fog.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/hazy.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/mostlycloudy.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/mostlysunny.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/na.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/nt_chanceflurries.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/nt_chancerain.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/nt_chancesleet.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/nt_chancesnow.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/nt_chancetstorms.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/nt_clear.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/nt_cloudy.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/nt_flurries.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/nt_fog.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/nt_hazy.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/nt_mostlycloudy.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/nt_mostlysunny.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/nt_partlycloudy.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/nt_partlysunny.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/nt_rain.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/nt_sleet.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/nt_snow.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/nt_sunny.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/nt_tstorms.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/partlycloudy.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/partlysunny.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/rain.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/sleet.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/snow.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/sunny.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/drawable/tstorms.gif" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/Dal.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/Dal.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/build.gradle" afterPath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/java/edu/uoregon/bbird/weatherdemo/Dal.java" afterPath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/java/edu/uoregon/bbird/weatherdemo/Dal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/java/edu/uoregon/bbird/weatherdemo/ParseHandler.java" afterPath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/java/edu/uoregon/bbird/weatherdemo/ParseHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/java/edu/uoregon/bbird/weatherdemo/WeatherItem.java" afterPath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/java/edu/uoregon/bbird/weatherdemo/WeatherItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/java/edu/uoregon/bbird/weatherdemo/WeatherSQLiteHelper.java" afterPath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/java/edu/uoregon/bbird/weatherdemo/WeatherSQLiteHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/layout/activity_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/java/edu/uoregon/bbird/weatherdemo/MainActivity.java" afterPath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/java/edu/uoregon/bbird/weatherdemo/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/layout/listview_items.xml" afterPath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/layout/listview_items.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/app/src/main/res/values/strings.xml" />
     </list>
     <ignored path="WeatherForecast-SAX+SQLite+ListView.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,11 +87,11 @@
     <favorites_list name="WeatherForecast-SAX+SQLite+ListView" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
+            <state relative-caret-position="230">
               <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -83,7 +103,7 @@
       <file leaf-file-name="Dal.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/Dal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="893">
+            <state relative-caret-position="536">
               <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
               <folding />
             </state>
@@ -93,7 +113,7 @@
       <file leaf-file-name="ActivityThread.java" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Library/Developer/Xamarin/android-sdk-macosx/sources/android-23/android/app/ActivityThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42503">
+            <state relative-caret-position="536">
               <caret line="2414" column="0" selection-start-line="2414" selection-start-column="0" selection-end-line="2414" selection-end-column="0" />
               <folding />
             </state>
@@ -103,7 +123,7 @@
       <file leaf-file-name="WeatherSQLiteHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/WeatherSQLiteHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
+            <state relative-caret-position="461">
               <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
               <folding />
             </state>
@@ -113,7 +133,7 @@
       <file leaf-file-name="ParseHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/ParseHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="988">
+            <state relative-caret-position="536">
               <caret line="55" column="54" selection-start-line="55" selection-start-column="54" selection-end-line="55" selection-end-column="54" />
               <folding />
             </state>
@@ -140,12 +160,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listview_items.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="listview_items.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/listview_items.xml">
-          <provider editor-type-id="android-designer2">
+          <provider selected="true" editor-type-id="android-designer2">
             <state />
           </provider>
-          <provider selected="true" editor-type-id="text-editor">
+          <provider editor-type-id="text-editor">
             <state relative-caret-position="95">
               <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
@@ -153,7 +173,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider editor-type-id="android-manifest">
             <state />
@@ -1829,6 +1849,24 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeatherForecast-SAX+SQLite+ListView" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2723,64 +2761,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/weather97405.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Developer/Xamarin/android-sdk-macosx/sources/android-23/android/app/ActivityThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42503">
-          <caret line="2414" column="0" selection-start-line="2414" selection-start-column="0" selection-end-line="2414" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/ParseHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="988">
-          <caret line="55" column="54" selection-start-line="55" selection-start-column="54" selection-end-line="55" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/Dal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="893">
-          <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/WeatherSQLiteHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/listview_items.xml">
-      <provider editor-type-id="android-designer2">
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2792,11 +2780,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/weather97405.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/ParseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="55" column="54" selection-start-line="55" selection-start-column="54" selection-end-line="55" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/WeatherSQLiteHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Developer/Xamarin/android-sdk-macosx/sources/android-23/android/app/ActivityThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="2414" column="0" selection-start-line="2414" selection-start-column="0" selection-end-line="2414" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/Dal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/listview_items.xml">
+      <provider selected="true" editor-type-id="android-designer2">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="text-editor">
+      <provider editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
