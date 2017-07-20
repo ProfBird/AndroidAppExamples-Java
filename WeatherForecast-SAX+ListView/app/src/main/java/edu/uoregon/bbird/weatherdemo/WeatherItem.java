@@ -16,7 +16,7 @@ public class WeatherItem {
     
     // This is the format used in the weather XML file
     private SimpleDateFormat dateInFormat = 
-        new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");  // <Date>2014-06-28T00:00:00</Date>
+        new SimpleDateFormat("yyyy-MM-dd");  // <Date>2014-06-28T00:00:00</Date>
     
     // This is the format we want in our output
     private SimpleDateFormat dateOutFormat = 

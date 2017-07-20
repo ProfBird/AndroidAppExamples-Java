@@ -46,8 +46,8 @@ only want code for one app.
     depending on screen size and orientation. Activities have a Toolbar and the
     second activity has an up button on the Toolbar.
 
-* AsynchDemo
-  * A simple demo of calling asynchronous methods using AsynchTask
+* AsyncDemo
+  * A simple demo of running a task on a non-UI thread using AsyncTask.
 
 * DatePickerDemo
   * A simple app with just a DatePicker widget and a TextView that shows the date selected. The Calendar class is used to get the current date and the SimpleDateFormat class is used to format the date obtained from the picker.

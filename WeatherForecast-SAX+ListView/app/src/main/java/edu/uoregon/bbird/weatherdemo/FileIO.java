@@ -1,16 +1,20 @@
 package edu.uoregon.bbird.weatherdemo;
 
-import java.io.InputStream;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-import org.xml.sax.InputSource;
-import org.xml.sax.XMLReader;
 import android.content.Context;
 import android.util.Log;
 
+import org.xml.sax.InputSource;
+import org.xml.sax.XMLReader;
+
+import java.io.InputStream;
+
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
 public class FileIO {
     
-    private final String FILENAME = "weather.xml";
+    //private final String FILENAME = "weather.xml";
+    private final String FILENAME= "daily.xml";
     private Context context = null;
     
     public FileIO (Context context) {

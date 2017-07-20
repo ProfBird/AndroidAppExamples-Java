@@ -7,10 +7,10 @@ public class ParseHandler extends DefaultHandler {
     private WeatherItems weatherItems;
     private WeatherItem item;
     
-    private boolean isDate = false;
-    private boolean isDescription = false;
-    private boolean isMorningLow = false;
-    private boolean isDaytimeHigh = false;
+    private boolean isTime = false;
+    private boolean isClouds = false;
+    private boolean isTemperature = false;
+    private boolean isPrecipitation = false;
     
     public WeatherItems getItems() {
         return weatherItems;
@@ -25,20 +25,21 @@ public class ParseHandler extends DefaultHandler {
     public void startElement(String namespaceURI, String localName, 
             String qName, Attributes atts) throws SAXException {
         
-        if (qName.equals("Forecast")) {
+        if (qName.equals("forecast")) {
             item = new WeatherItem();
         }
-        else if (qName.equals("Date")) {
-            isDate = true;
+        else if (qName.equals("time")) {
+            isTime = true;
+            item.setForecastDate(atts.getValue(0));
         }
-        else if (qName.equals("Desciption")) {
-            isDescription = true;
+        else if (qName.equals("clouds")) {
+            isClouds = true;
         }
-        else if (qName.equals("MorningLow")) {
-            isMorningLow = true;
+        else if (qName.equals("temperature")) {
+            isTemperature = true;
         }
-        else if (qName.equals("DaytimeHigh")) {
-            isDaytimeHigh = true;
+        else if (qName.equals("precipitation")) {
+            isPrecipitation = true;
         }
     }
     
@@ -46,31 +47,25 @@ public class ParseHandler extends DefaultHandler {
     public void endElement(String namespaceURI, String localName, 
             String qName) throws SAXException
     {
-        if (qName.equals("Forecast")) {
+        if (qName.equals("forecast")) {
             weatherItems.add(item);
         }
     }
-    
+
+
     @Override
     public void characters(char ch[], int start, int length)
     {
         String s = new String(ch, start, length);
-        if (isDate) {
-        		item.setForecastDate(s);
-        		isDate = false;
-        }
-        else if (isDescription) {
+       if (isClouds) {
             item.setDescription(s);
-            isDescription = false;
+            isClouds = false;
         }
-         else if (isMorningLow) {
-            item.setLowTemp(s);
-            isMorningLow = false;
-        }
-        else if (isDaytimeHigh) {
+        else if (isPrecipitation) {
             item.setHighTemp(s);
-            isDaytimeHigh = false;
+            isPrecipitation = false;
         }
     }
+
 }
 
