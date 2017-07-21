@@ -14,7 +14,7 @@ import javax.xml.parsers.SAXParserFactory;
 public class FileIO {
     
     //private final String FILENAME = "weather.xml";
-    private final String FILENAME= "daily.xml";
+    private final String FILENAME= "owm5day.xml";
     private Context context = null;
     
     public FileIO (Context context) {

@@ -7,11 +7,6 @@ public class ParseHandler extends DefaultHandler {
     private WeatherItems weatherItems;
     private WeatherItem item;
     
-    private boolean isTime = false;
-    private boolean isClouds = false;
-    private boolean isTemperature = false;
-    private boolean isPrecipitation = false;
-    
     public WeatherItems getItems() {
         return weatherItems;
     }
@@ -24,48 +19,32 @@ public class ParseHandler extends DefaultHandler {
     @Override
     public void startElement(String namespaceURI, String localName, 
             String qName, Attributes atts) throws SAXException {
-        
-        if (qName.equals("forecast")) {
+
+        if (qName.equals("time")) {
             item = new WeatherItem();
-        }
-        else if (qName.equals("time")) {
-            isTime = true;
             item.setForecastDate(atts.getValue(0));
         }
         else if (qName.equals("clouds")) {
-            isClouds = true;
+            item.setDescription(atts.getValue(0));
         }
         else if (qName.equals("temperature")) {
-            isTemperature = true;
+            item.setLowTemp(atts.getValue(2));
+            item.setHighTemp(atts.getValue(3));
         }
         else if (qName.equals("precipitation")) {
-            isPrecipitation = true;
+            item.setPrecipitation(atts.getValue(0));
         }
-    }
+        else if (qName.equals("symbol")) {
+            item.setSymbol(atts.getValue(2));
+        }    }
     
     @Override
     public void endElement(String namespaceURI, String localName, 
             String qName) throws SAXException
     {
-        if (qName.equals("forecast")) {
+        if (qName.equals("time")) {
             weatherItems.add(item);
         }
     }
-
-
-    @Override
-    public void characters(char ch[], int start, int length)
-    {
-        String s = new String(ch, start, length);
-       if (isClouds) {
-            item.setDescription(s);
-            isClouds = false;
-        }
-        else if (isPrecipitation) {
-            item.setHighTemp(s);
-            isPrecipitation = false;
-        }
-    }
-
 }
 

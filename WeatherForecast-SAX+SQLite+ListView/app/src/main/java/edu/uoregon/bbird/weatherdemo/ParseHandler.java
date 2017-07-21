@@ -8,6 +8,8 @@ package edu.uoregon.bbird.weatherdemo;
 import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.*;
 
+import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.*;
+
 public class ParseHandler extends DefaultHandler {
     private WeatherItems weatherItems;
     private WeatherItem item;
@@ -33,27 +35,27 @@ public class ParseHandler extends DefaultHandler {
     public void startElement(String namespaceURI, String localName, 
             String qName, Attributes atts) throws SAXException {
         
-    	if (qName.equals(WeatherSQLiteHelper.CITY)) {
+    	if (qName.equals(CITY)) {
             isCity = true;;
         }
-    	else if (qName.equals(WeatherSQLiteHelper.FORECAST)) {
+    	else if (qName.equals(FORECAST)) {
             item = new WeatherItem();
         }
-        else if (qName.equals(WeatherSQLiteHelper.DATE)) {
+        else if (qName.equals(DATE)) {
             isDate = true;
         }
-        else if (qName.equals(WeatherSQLiteHelper.DESCRIPTION)) {
+        else if (qName.equals(DESCRIPTION)) {
             isDescription = true;
         }
-        else if (qName.equals(WeatherSQLiteHelper.MORNING_LOW)) {
+        else if (qName.equals(MORNING_LOW)) {
             isMorningLow = true;
         }
-        else if (qName.equals(WeatherSQLiteHelper.DAYTIME_HIGH)) {
+        else if (qName.equals(DAYTIME_HIGH)) {
             isDaytimeHigh = true;
         }
-        else if (qName.equals(WeatherSQLiteHelper.NIGHT_PRECIP)) {
+        else if (qName.equals(NIGHT_PRECIP)) {
             isNightPrecip = true;
-        }else if (qName.equals(WeatherSQLiteHelper.DAY_PRECIP)) {
+        }else if (qName.equals(DAY_PRECIP)) {
             isDayPrecip = true;
         }
     }
@@ -62,7 +64,7 @@ public class ParseHandler extends DefaultHandler {
     public void endElement(String namespaceURI, String localName, 
             String qName) throws SAXException
     {
-        if (qName.equals("Forecast")) {
+        if (qName.equals(FORECAST)) {
             weatherItems.add(item);
         }
     }
