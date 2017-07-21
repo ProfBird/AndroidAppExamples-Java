@@ -13,8 +13,9 @@ public class WeatherSQLiteHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
 	public static final String FORECAST_TABLE = "forecast"; // There is just one forecast element
-	public static final String FORECAST_DAY = "forecastday"; // There is just one forecast element
-    public static final String DATE = "date";  // The fist day of the forecast
+	public static final String FORECAST_DAY = "forecastday"; // There are 7 forecastday elements
+    public static final String DATE = "date";  // The time of the forecast (not really the date)
+	public static final String START_DATE = "startdate";  // The first date of the forecast
     public static final String STATE = "state";
     public static final String CITY = "city";
     public static final String ICON = "icon";
@@ -22,7 +23,7 @@ public class WeatherSQLiteHelper extends SQLiteOpenHelper {
     public static final String FCT_TEXT = "fcttext";
     public static final String TITLE = "title";   // Day and time of day
     public static final String POP = "pop";       // percent chance of precipitation
-    public static final String PERIOD = "period";
+    public static final String PERIOD = "period"; // sequential number of forecast day
 
     private Context context = null;
 
@@ -36,6 +37,7 @@ public class WeatherSQLiteHelper extends SQLiteOpenHelper {
 		db.execSQL("CREATE TABLE " + FORECAST_TABLE
 				+ "( _id INTEGER PRIMARY KEY AUTOINCREMENT,"
 				+ DATE + " TEXT,"
+				+ START_DATE + " TEXT,"
 				+ STATE + " TEXT,"
 				+ CITY + " TEXT,"
 				+ ICON + " TEXT,"

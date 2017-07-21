@@ -1,12 +1,11 @@
 package edu.uoregon.bbird.weatherdemo;
 
-import android.annotation.SuppressLint;
+// Written by Brian Bird July 2015, updated July 2017
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@SuppressLint("SimpleDateFormat")
 public class WeatherItem {
     
     private String lowTemp = null;

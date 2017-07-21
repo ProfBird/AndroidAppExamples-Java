@@ -1,6 +1,6 @@
 package edu.uoregon.bbird.weatherdemo;
 
-// Written by Brian Bird 7/11/15, updated 7/13/18
+// Written by Brian Bird 7/11/15, updated 7/20/18
 
 
 import org.xml.sax.helpers.DefaultHandler;
@@ -76,7 +76,7 @@ public class ParseHandler extends DefaultHandler {
     {
         String s = new String(ch, start, length);
         if (isDate) {
-            item.setForecastDate(s);
+            weatherItems.setForecastTime(s);
             isDate = false;
     }
         else if (isIcon) {

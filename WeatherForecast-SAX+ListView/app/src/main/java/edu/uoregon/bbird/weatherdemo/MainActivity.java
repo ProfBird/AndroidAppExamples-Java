@@ -1,5 +1,7 @@
 package edu.uoregon.bbird.weatherdemo;
 
+// Written by Brian Bird July 2015, updated July 2017
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
