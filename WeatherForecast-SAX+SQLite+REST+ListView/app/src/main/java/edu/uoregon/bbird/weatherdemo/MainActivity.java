@@ -17,7 +17,6 @@ import android.widget.Spinner;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Date;
 
 import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.FCT_TEXT;
 import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.IMAGE_ID;
@@ -28,14 +27,15 @@ public class MainActivity extends Activity
 				implements OnItemSelectedListener {
 
     /******* ------  Instance Variables -------------- *************/
+
     private Dal dal = new Dal(this);
 	Cursor cursor = null;
 	String locationSelection = "Eugene";
 	SimpleCursorAdapter adapter = null;
     ListView itemsListView;
 
-	/********* -------- Activity Lifecycle Callback Methods --------- ***********/
 
+	/********* -------- Activity Lifecycle Callback Methods --------- ***********/
 
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,15 +75,15 @@ public class MainActivity extends Activity
 	/************* ----------- Private Methods ------------- ***************/
 
 	private void getForecast(String state, String city) {
-		// If there isn't a forecast in the db for this location (and date?), then get one from the web service
-		cursor = dal.getForcastFromDb(state, city, new Date());
-		if(cursor.getCount() == 0) {
-			new RestTask().execute(state, city);
-		}
-        else {
+        // If there isn't a forecast in the db for this location (and date?), then get one from the web service
+        cursor = dal.getForcastFromDb(state, city);
+        if (cursor.getCount() == 0) {
+            // Get a forecast from the web service, put it in the dB, get it back out again, and display it
+            new RestTask().execute(state, city);
+        } else {
             displayForecast();
         }
-	}
+    }
 
 	private void displayForecast() {
 		// Set up the adapter for the ListView to display the forecast
@@ -107,32 +107,30 @@ public class MainActivity extends Activity
 
 
 	/************* ----------- Nested Class ------------- ***************/
+	/********************************************************************/
 
 	public class RestTask extends AsyncTask<String, Void, WeatherItems> {
 
         private String state;
 		private String city;
 
-		// TODO:Replace deprecated HTTPEntity with a more up-to-date class
-		// HTTPEntity Code adapted from: http://www.techrepublic.com/blog/software-engineer/calling-restful-services-from-your-android-app/
-
 		@Override
 		protected WeatherItems doInBackground(String... params) {
 
-
+			// build the string used for the REST query
 			String apiKey = "0e3e69302fba4e56";  // put your own API key here
 			// Get a free API key at: https://www.wunderground.com/?apiref=5cdccc9428586099
 			String baseUrl = "http://api.wunderground.com/api/";
 			state = params[0];
 			city = params[1];
 			String query = "/forecast/q/" + state + "/" + city + ".xml";
+
             WeatherItems items = null;
             try {
                 URL url = new URL(baseUrl + apiKey + query);
                 HttpURLConnection connection = (HttpURLConnection)url.openConnection();
-                connection.setRequestProperty("User-Agent", "");
-                connection.setRequestMethod("GET");
-                connection.setDoInput(true);
+                connection.setRequestProperty("User-Agent", "weatherdemo-app");  // Identifies the sender (our app), can be an empty string
+                connection.setRequestMethod("GET");   // The HTTP request type
                 connection.connect();
                 InputStream in = connection.getInputStream();
 
@@ -141,6 +139,7 @@ public class MainActivity extends Activity
                     items.setState(state);
                     items.setCity(city);
                 }
+                connection.disconnect();
 
 			} catch (Exception e) {
 				Log.e("weather", "doInBackground error: " + e.getLocalizedMessage());
@@ -155,8 +154,8 @@ public class MainActivity extends Activity
 		protected void onPostExecute(WeatherItems items) {
 			if (items != null && items.size() != 0) {
 				dal.putForecastIntoDb(items);
-				cursor = dal.getForcastFromDb(state, city, new Date());
-				displayForecast();
+                cursor = dal.getForcastFromDb(state, city);
+                displayForecast();
 			}
 		}
 	}

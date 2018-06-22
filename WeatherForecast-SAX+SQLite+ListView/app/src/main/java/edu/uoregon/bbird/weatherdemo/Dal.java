@@ -91,7 +91,7 @@ public class Dal {
         // Get a weather forecast for one location
         String query = "SELECT * FROM Forecast WHERE Zip = ? ORDER BY Date ASC";
         String[] variables = new String[]{location};    // rawQuery must not include a trailing ';'
-        return db.rawQuery(query, variables); 
+        return db.rawQuery(query, variables);
     }
 
     public WeatherItems parseXmlFile(String fileName) {
