@@ -1,8 +1,8 @@
 package edu.uoregon.bbird.rockpaperscissors;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     RpsGame game;
     Hand humanHand;
@@ -97,6 +97,10 @@ public class MainActivity extends AppCompatActivity {
             compChoice = Hand.values()[savedInstanceState.getInt(COMP_CHOICE)];
             humanHand = Hand.values()[savedInstanceState.getInt(HUMAN_CHOICE)];
         }
+        else {
+            humanHand = Hand.none;
+        }
+        
         game = new RpsGame(humanWins, compWins, compChoice);
         displayScores();
         displayImage(compChoice);
