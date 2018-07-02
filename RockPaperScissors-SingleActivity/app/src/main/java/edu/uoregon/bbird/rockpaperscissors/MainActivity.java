@@ -1,8 +1,8 @@
 package edu.uoregon.bbird.rockpaperscissors;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     RpsGame game = new RpsGame();
     ImageView rpsImageView;
@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Android makes a random hand choice and the winner is determined
         Hand compHand = game.computerMove();
+
         compMoveTextView.setText(compHand.toString());
         displayImage(compHand);
         winnerTextView.setText( game.whoWon(compHand, humanHand).toString());
