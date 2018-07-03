@@ -100,7 +100,7 @@ public class MainActivity extends Activity {
         else {
             humanHand = Hand.none;
         }
-        
+
         game = new RpsGame(humanWins, compWins, compChoice);
         displayScores();
         displayImage(compChoice);
