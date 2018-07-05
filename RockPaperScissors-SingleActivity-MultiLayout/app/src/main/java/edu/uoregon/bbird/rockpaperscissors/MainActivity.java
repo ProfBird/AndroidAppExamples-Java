@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Locale;
+
 public class MainActivity extends Activity {
 
     RpsGame game;
@@ -70,8 +72,8 @@ public class MainActivity extends Activity {
     }
 
     private void displayScores() {
-        hScoreTextView.setText(Integer.toString(game.getHumanWins()));
-        cScoreTextView.setText(Integer.toString(game.getCompWins()));
+        hScoreTextView.setText(String.format(Locale.US, "%d", game.getHumanWins()));
+        cScoreTextView.setText(String.format(Locale.US, "%d", game.getCompWins()));
         winnerText.setText( game.getWinner(humanHand).toString());
     }
 
