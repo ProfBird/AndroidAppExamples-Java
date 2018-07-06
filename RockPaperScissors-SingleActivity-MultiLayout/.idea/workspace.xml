@@ -9,11 +9,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7743d94-8c70-468a-ac8e-efa4b8a378fd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../RockPaperScissors-MultiActivity/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../RockPaperScissors-MultiActivity/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/rockpaperscissors/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/rockpaperscissors/MainActivity.java" />
-    </list>
+    <list default="true" id="c7743d94-8c70-468a-ac8e-efa4b8a378fd" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
