@@ -9,6 +9,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * Created by Brian Bird on 7/15/2015, updted 7/10/2017.
@@ -16,6 +17,7 @@ import android.widget.EditText;
 
 public class FirstFragment extends Fragment implements OnClickListener {
 
+    public static final String HUMAN_HAND = "humanHand";
     private RpsGame game;
     private boolean twoPaneLayout;
     private EditText rpsEditText;
@@ -54,15 +56,21 @@ public class FirstFragment extends Fragment implements OnClickListener {
     public void onClick(View v) {
         if (v.getId() == R.id.playButton) {
             String humanHand = rpsEditText.getText().toString();
-            game.setHumanHand(humanHand);
+            if (!humanHand.isEmpty()) {
+                game.setHumanHand(humanHand);
 
-            if (twoPaneLayout) {
-                activity.computerMove(game);
-            } else {
-                Intent intent = new Intent(getActivity(), SecondActivity.class);
-                int humanHandNum = game.getHumanHand().ordinal();
-                intent.putExtra("humanHand", humanHandNum);  // send state to 2nd activity
-                startActivity(intent);
+                if (twoPaneLayout) {
+                    activity.computerMove(game);
+                } else {
+                    Intent intent = new Intent(getActivity(), SecondActivity.class);
+                    int humanHandNum = game.getHumanHand().ordinal();
+                    intent.putExtra(HUMAN_HAND, humanHandNum);  // send state to 2nd activity
+                    startActivity(intent);
+                }
+            }
+            else
+            {
+                Toast.makeText(getActivity(), "Please enter a move", Toast.LENGTH_SHORT).show();
             }
         }
     }
