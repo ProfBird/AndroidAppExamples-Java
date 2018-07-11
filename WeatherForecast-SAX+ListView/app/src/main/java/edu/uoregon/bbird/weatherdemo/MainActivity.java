@@ -58,7 +58,7 @@ public class MainActivity extends Activity
         	R.layout.listview_items,
         	new String[]{IMAGE_NAME, DATE},
         	new int[]{R.id.iconImageView,
-        			  R.id.dateTextView, 
+        			  R.id.dateTextView
         			  }
         );
 
