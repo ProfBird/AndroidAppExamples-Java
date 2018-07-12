@@ -21,7 +21,7 @@ public class WeatherSQLiteHelper extends SQLiteOpenHelper {
     public static final String ICON = "icon";
     public static final String IMAGE_ID = "imageid";
     public static final String FCT_TEXT = "fcttext";
-    public static final String TITLE = "title";   // Day and time of day
+    public static final String TITLE = "title";   // Day plus optionally Morning, Evening
     public static final String POP = "pop";       // percent chance of precipitation
     public static final String PERIOD = "period"; // sequential number of forecast day
 

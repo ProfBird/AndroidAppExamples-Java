@@ -35,8 +35,8 @@ public class WeatherItem {
         }
     }
     
-    public void setForecastDate(String pubDate) {
-        this.forecastDate = pubDate;
+    public void setForecastDate(String date) {
+        this.forecastDate = date;
     }
     public String getForecastDate() {
     	return forecastDate;
