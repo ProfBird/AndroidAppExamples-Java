@@ -1,4 +1,4 @@
-* WeatherForecast-SAX+SQLite+ListView
+WeatherForecast-SAX+SQLite+ListView
   * Parses XML weather data files using SAX. The files are manually downloaded and put in the project assets folder.
   * Stores the data in an SQLite database (if it hasn't already been stored)
   * User selects the forecast for a city using a Spinner

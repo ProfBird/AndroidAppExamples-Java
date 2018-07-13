@@ -1,4 +1,7 @@
-An app that demonstrates parsing XML using SAX. The assets folder contains an XML weather forecast file that is parsed and displayed in a ListView. The weather file was obtained from an Open Weather Map REST API. Documentation is here: https://openweathermap.org/forecast5 
+An app that demonstrates parsing XML using SAX. 
+  * The assets folder contains an XML weather forecast file that will be parsed and displayed in a ListView. 
+  * The weather XML file was obtained from an Open Weather Map REST API. 
+  * Documentation is here: https://openweathermap.org/forecast5 
 
 --------------------------
 

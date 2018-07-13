@@ -12,12 +12,12 @@ package edu.uoregon.bbird.weatherdemo;
 import android.app.Activity;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -30,7 +30,7 @@ public class MainActivity extends Activity
     private Dal dal = new Dal(this);
 	Cursor cursor = null;
 	String locationSelection = "97405";
-	SimpleCursorAdapter adapter = null; 
+	SimpleCursorAdapter adapter = null;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
