@@ -53,10 +53,14 @@ only want code for one app.
   * A simple app with just a DatePicker widget and a TextView that shows the date selected. The Calendar class is used to get the current date and the SimpleDateFormat class is used to format the date obtained from the picker.
 
 * WeatherForecast-SAX+ListView
-  * Parses an XML file of weather data using SAX and displays weather icons in the ListView along with the weather data. The data is from Open Weather Map.
+  * Parses an XML file of weather data using SAX
+  * Displays weather icons in the ListView along with the weather data. 
+  * The data is from [Open Weather Map](https://openweathermap.org).
 
 * WeatherForecast-SAX+SQLite+ListView
-  * Uses a database to store multiple weather forecasts in an SQLite database. It also uses a CursorAdapter with the ListView.
+  * Uses a database to store multiple weather forecasts in an SQLite database. 
+  * Uses a SimpleCursorAdapter with the ListView.
+  * Data is in the form of XML files downloaded from [CDYNE Weather](http://wiki.cdyne.com/?title=CDYNE_Weather)
 
 * WeatherForecast-SAX+SQLite+REST+ListView
   * Pulls forecast data from the Weather Underground REST service
