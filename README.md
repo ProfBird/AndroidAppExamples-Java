@@ -80,7 +80,7 @@ only want code for one app.
 
 ---------------------------
 
-I wrote these apps for [CIS 399, Android Mobile Application Development(https://github.com/UO-CIS/CIS399Android-CourseMaterials), a course I teach at the University of Oregon.
+I wrote these apps for [CIS 399, Android Mobile Application Development](https://github.com/UO-CIS/CIS399Android-CourseMaterials), a course I teach at the University of Oregon.
 
 Read about Android programming on my blog:
 https://birdsbits.wordpress.com/tag/android/
