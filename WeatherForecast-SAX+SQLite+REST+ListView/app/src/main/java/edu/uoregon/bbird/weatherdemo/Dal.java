@@ -1,6 +1,6 @@
 package edu.uoregon.bbird.weatherdemo;
 
-// Written by Brian Bird 7/11/15, updated 7/21/17
+// Written by Brian Bird 7/11/15, updated 7/18/18
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -63,9 +63,10 @@ public class Dal  {
         // We're looking for a forecast that was downloaded today, if the forecast is older, we want to get a new one
         // So if there isn't a forecast from today we'll return an empty cursor
         String[] variables = new String[]{state, city, getTodaysDate()};    // rawQuery must not include a trailing ';'
-
+        Log.d("Dal", String.format(query.replaceAll("\\Q?\\E", "%s"), variables[0], variables[1], variables[2]));
         // Do the query
         Cursor cursor = db.rawQuery(query, variables);
+        Log.d("MainActivity", "cursor count: " + Integer.toString(cursor.getCount()));
 
         return cursor;
     }
@@ -88,10 +89,12 @@ public class Dal  {
                 xmlreader.parse(is);
                 items = handler.getItems();
                 items.setForecastDate(getTodaysDate()); // Today's date
+                Log.d("Dal", "items count: " + Integer.toString(items.size()));
             } catch (Exception e) {
                 Log.e("Weather", "parseXMLStream error: " + e.toString());
             }
         }
+
         return items;
     }
 
@@ -122,7 +125,7 @@ public class Dal  {
         db.close();
     }
 
-    public  String getTodaysDate() {
+    private String getTodaysDate() {
         return dateOutFormat.format(Calendar.getInstance(Locale.US).getTime());
     }
 }

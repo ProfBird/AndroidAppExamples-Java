@@ -1,6 +1,6 @@
 package edu.uoregon.bbird.weatherdemo;
 
-// Written by Brian Bird 7/11/15, updated 7/18/17
+// Written by Brian Bird 7/11/15, updated 7/18/18
 
 import android.app.Activity;
 import android.database.Cursor;
@@ -35,7 +35,7 @@ public class MainActivity extends Activity
     ListView itemsListView;
 
 
-	/********* -------- Activity Lifecycle Callback Methods --------- ***********/
+	/********* --------- Activity and Listener Callback Methods --------- ***********/
 
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,12 +75,13 @@ public class MainActivity extends Activity
 	/************* ----------- Private Methods ------------- ***************/
 
 	private void getForecast(String state, String city) {
-        // If there isn't a forecast in the db for this location (and date?), then get one from the web service
+        // If there isn't a forecast in the db for this location and date, then get one from the web service
         cursor = dal.getForcastFromDb(state, city);
         if (cursor.getCount() == 0) {
             // Get a forecast from the web service, put it in the dB, get it back out again, and display it
             new RestTask().execute(state, city);
         } else {
+        	// Display the forecast that is already in the dB
             displayForecast();
         }
     }
@@ -142,12 +143,11 @@ public class MainActivity extends Activity
                 connection.disconnect();
 
 			} catch (Exception e) {
-				Log.e("weather", "doInBackground error: " + e.getLocalizedMessage());
+				Log.e("RestTask", "doInBackground error: " + e.getLocalizedMessage());
 			}
 
 			return items;
 		}
-
 
 
 		@Override
