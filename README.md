@@ -1,5 +1,5 @@
 # CIS399AndroidDemos
-Demos of Android apps for CIS 399 at the University of Oregon. Apps were written in Java using Android Studio.
+Demos of Android apps for my [Android App Development](https://github.com/ProfBird/AndroidAppDev1-Java-CourseMaterials) course. Apps were written in Java using Android Studio.
 
 Note: All these apps are in one repository, so you will
 need to download or clone the whole repository even if you
@@ -79,8 +79,6 @@ only want code for one app.
   * Uses Android Location objects to calculate the distance between the two locations.
 
 ---------------------------
-
-I wrote these apps for [CIS 399, Android Mobile Application Development](https://github.com/UO-CIS/CIS399Android-CourseMaterials), a course I teach at the University of Oregon.
 
 Read about Android programming on my blog:
 https://birdsbits.wordpress.com/tag/android/
