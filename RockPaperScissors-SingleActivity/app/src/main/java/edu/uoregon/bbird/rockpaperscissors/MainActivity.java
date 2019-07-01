@@ -35,6 +35,7 @@ public class MainActivity extends Activity {
         catch(Exception e)
         {
             Toast.makeText(this, "Please enter: rock, paper, or scissors", Toast.LENGTH_LONG).show();
+           // Log.d("rockpaperscissors", rpsEditText.getText().toString());
             return;
         }
 
