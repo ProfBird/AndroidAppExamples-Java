@@ -7,40 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e85296b8-e1d2-4719-8e6b-51f82b701410" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_26_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_26_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_26_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_26_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_26_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_26_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_26_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_26_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_26_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity-MultiLayout/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_23_4_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity-MultiLayout/.idea/libraries/Gradle__com_android_support_appcompat_v7_23_4_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity-MultiLayout/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_0_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity-MultiLayout/.idea/libraries/Gradle__com_android_support_support_v4_23_4_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity-MultiLayout/.idea/libraries/Gradle__com_android_support_support_vector_drawable_23_4_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity-MultiLayout/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity-MultiLayout/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity-MultiLayout/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity-MultiLayout/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_solver_1_0_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity-MultiLayout/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_solver_1_0_2_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity-MultiLayout/.idea/libraries/Gradle__com_android_support_support_annotations_23_4_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity-MultiLayout/.idea/libraries/Gradle__com_android_support_support_annotations_23_4_0_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity-MultiLayout/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity-MultiLayout/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity-MultiLayout/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity-MultiLayout/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity-MultiLayout/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity-MultiLayout/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity-MultiLayout/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity-MultiLayout/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity-MultiLayout/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity-MultiLayout/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity/app/src/main/java/edu/uoregon/bbird/rockpaperscissors/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity/app/src/main/java/edu/uoregon/bbird/rockpaperscissors/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RockPaperScissors-SingleActivity/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -295,6 +262,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="717" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Resources Explorer" />
       <window_info active="true" id="Project" order="0" visible="true" weight="0.37214983" />
