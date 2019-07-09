@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+// You need to extend AppCompatActivity in order to use the App Bar for the menu
 public class MainActivity extends AppCompatActivity {
 
     // Instance variable for game logic
@@ -94,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    // get the user's preference settings here so that it will be updated
+    // if the user changed it while the app was running.
     protected void onResume() {
         super.onResume();
 
