@@ -46,9 +46,9 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
     @Override
     public void onBindViewHolder(final ContactViewHolder holder, final int position) {
         HashMap<String, String> map = mValues.get(position);
-        holder.mFirstNameTextView.setText(map.get("FirstName"));
-        holder.mLastNameTextView.setText(map.get("LastName"));
-        holder.mPhoneTextView.setText(map.get("Phone"));
+        holder.mFirstNameTextView.setText(map.get(MainActivity.FIRST_NAME));
+        holder.mLastNameTextView.setText(map.get(MainActivity.LAST_NAME));
+        holder.mPhoneTextView.setText(map.get(MainActivity.PHONE));
 
         holder.mLayout.setOnClickListener(new View.OnClickListener() {
             @Override

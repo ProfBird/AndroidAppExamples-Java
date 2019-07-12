@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String FIRST_NAME = "FirstName";
+    public static final String LAST_NAME = "LastName";
+    public static final String PHONE = "Phone";
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -29,19 +32,19 @@ public class MainActivity extends AppCompatActivity {
         // Note: since we are writing the adapter code, the data-set can be any kind of data structure
         ArrayList<HashMap<String, String>> data = new ArrayList<HashMap<String, String>>();
         HashMap<String, String> map = new HashMap<String, String>();
-        map.put("FirstName", "Clyde");
-        map.put("LastName", "Drexler");
-        map.put("Phone", "456-789-1011");
+        map.put(FIRST_NAME, "Clyde");
+        map.put(LAST_NAME, "Drexler");
+        map.put(PHONE, "456-789-1011");
         data.add(map);
         map = new HashMap<String, String>();
-        map.put("FirstName", "Satya");
-        map.put("LastName", "Nadella");
-        map.put("Phone", "360-890-2345");
+        map.put(FIRST_NAME, "Satya");
+        map.put(LAST_NAME, "Nadella");
+        map.put(PHONE, "360-890-2345");
         data.add(map);
         map = new HashMap<String, String>();
-        map.put("FirstName", "John");
-        map.put("LastName", "Grisham");
-        map.put("Phone", "345-678-9012");
+        map.put(FIRST_NAME, "John");
+        map.put(LAST_NAME, "Grisham");
+        map.put(PHONE, "345-678-9012");
         data.add(map);
 
         // specify an adapter (see also next example)
