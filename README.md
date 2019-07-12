@@ -52,6 +52,18 @@ only want code for one app.
 * DatePickerDemo
   * A simple app with just a DatePicker widget and a TextView that shows the date selected. The Calendar class is used to get the current date and the SimpleDateFormat class is used to format the date obtained from the picker.
 
+* SimpleListViewDemo
+  * One Activity with a ListView in its UI
+  * An ArrayIndex of HashMap objects with contact info
+  * A SimpleAdapter
+  * An item click handler
+  
+* SimpleRecyclerViewDemo
+  * One Activity with a RecyclerView in its UI
+  * An ArrayIndex of HashMap objects with contact info
+  * A RecyclerView Adapter
+  * A View click handler
+
 * WeatherForecast-SAX+ListView
   * Parses an XML file of weather data using SAX
   * Displays weather icons in the ListView along with the weather data. 
