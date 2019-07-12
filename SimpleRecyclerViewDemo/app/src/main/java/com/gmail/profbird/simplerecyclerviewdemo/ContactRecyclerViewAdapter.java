@@ -48,12 +48,12 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
         HashMap<String, String> map = mValues.get(position);
         holder.mFirstNameTextView.setText(map.get("FirstName"));
         holder.mLastNameTextView.setText(map.get("LastName"));
-        holder.mLastNameTextView.setText(map.get("Phone"));
+        holder.mPhoneTextView.setText(map.get("Phone"));
 
         holder.mLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(), "Row " + position, Toast.LENGTH_SHORT);
+                Toast.makeText(v.getContext(), "Row " + position, Toast.LENGTH_SHORT).show();
             }
         });
     }

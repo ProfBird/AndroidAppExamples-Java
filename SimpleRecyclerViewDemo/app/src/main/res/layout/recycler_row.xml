@@ -6,6 +6,7 @@
 
     <TextView
         android:id="@+id/firstNameTextView"
+        android:text="First Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
@@ -13,6 +14,7 @@
 
     <TextView
         android:id="@+id/lastNameTextView"
+        android:text="Last Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
@@ -20,6 +22,7 @@
 
     <TextView
         android:id="@+id/phoneTextView"
+        android:text="Phone Number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
