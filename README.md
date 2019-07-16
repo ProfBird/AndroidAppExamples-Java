@@ -26,8 +26,9 @@ only want code for one app.
     * Activity state is saved in a Bundle using the onSaveInstanceState callback method.
 
 * Multi-ActivityDemo
-  * A very simple app that demonstrates starting a second activity
-
+  
+* A very simple app that demonstrates starting a second activity
+  
 * RockPaperScissors-MultiActivity
   * An RPS game with two activities
     * Uses radio buttons for player's hand choice
@@ -47,11 +48,13 @@ only want code for one app.
     second activity has an up button on the Toolbar.
 
 * AsyncDemo
-  * A simple demo of running a task on a non-UI thread using AsyncTask.
-
+  
+* A simple demo of running a task on a non-UI thread using AsyncTask.
+  
 * DatePickerDemo
-  * A simple app with just a DatePicker widget and a TextView that shows the date selected. The Calendar class is used to get the current date and the SimpleDateFormat class is used to format the date obtained from the picker.
-
+  
+* A simple app with just a DatePicker widget and a TextView that shows the date selected. The Calendar class is used to get the current date and the SimpleDateFormat class is used to format the date obtained from the picker.
+  
 * SimpleListViewDemo
   * One Activity with a ListView in its UI
   * An ArrayIndex of HashMap objects with contact info
@@ -75,15 +78,20 @@ only want code for one app.
   * Data is in the form of XML files downloaded from [CDYNE Weather](http://wiki.cdyne.com/?title=CDYNE_Weather)
 
 * WeatherForecast-SAX+SQLite+REST+ListView
+  
+  *This app is no longer working. Weather Underground no longer provides a Web API*
+  
   * Pulls forecast data from the Weather Underground REST service
-  * Parse the XML forecast data using SAX
+* Parse the XML forecast data using SAX
   * Stores the forecasts in a SQLite database 
   * Uses a CursorAdapter to display a forecast in a ListView.
-
+  
 * WeatherForecast-kSOAP+SQLite+ListView
-  * Similar to WeatherForecast-SAX+SQLite+ListView, but it gets it's weather forecast data from a SOAP web service instead of from XML files. It uses kSOAP as the web service client. 7/12/16: Unfortunately, the cdyne weather web service used by this app is defunct!
-
+  
+* Similar to WeatherForecast-SAX+SQLite+ListView, but it gets it's weather forecast data from a SOAP web service instead of from XML files. It uses kSOAP as the web service client. 7/12/16: Unfortunately, the cdyne weather web service used by this app is defunct!
+  
 * kSoapWaterTempDemo
+  
   * A very simple app that demonstrates using the kSoap2-Android library to read from a web service. It reads the ocean temperature from a NOAA SOAP web service.
 * GeoDistanceCalcuator
   * Uses the Fused Location Provider (Google Play Services) to get the current latitude and longitude.

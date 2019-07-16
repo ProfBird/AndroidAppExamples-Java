@@ -76,7 +76,7 @@ public class MainActivity extends Activity
 
 	private void getForecast(String state, String city) {
         // If there isn't a forecast in the db for this location and date, then get one from the web service
-        cursor = dal.getForcastFromDb(state, city);
+		cursor = dal.getForcastFromDb(state, city);
         if (cursor.getCount() == 0) {
             // Get a forecast from the web service, put it in the dB, get it back out again, and display it
             new RestTask().execute(state, city);
