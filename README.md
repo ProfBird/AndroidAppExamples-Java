@@ -1,4 +1,4 @@
-# CIS399AndroidDemos
+# Examples of Android Apps in Java
 Demos of Android apps for my [Android App Development](https://github.com/ProfBird/AndroidAppDev1-Java-CourseMaterials) course. Apps were written in Java using Android Studio.
 
 Note: All these apps are in one repository, so you will
