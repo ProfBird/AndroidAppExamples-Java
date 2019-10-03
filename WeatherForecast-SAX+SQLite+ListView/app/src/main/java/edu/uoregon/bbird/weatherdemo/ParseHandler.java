@@ -10,7 +10,6 @@ import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.*;
 
 import static edu.uoregon.bbird.weatherdemo.WeatherSQLiteHelper.*;
-
 public class ParseHandler extends DefaultHandler {
     private WeatherItems weatherItems;
     private WeatherItem item;

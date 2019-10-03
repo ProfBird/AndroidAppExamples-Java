@@ -10,9 +10,11 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -20,6 +22,7 @@ import android.widget.TextView;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.io.IOException;
@@ -27,7 +30,8 @@ import java.util.List;
 import java.util.Locale;
 
 
-public class MainActivity extends AppCompatActivity implements OnSuccessListener {
+public class MainActivity extends AppCompatActivity implements OnSuccessListener,
+        OnFailureListener {
 
     FusedLocationProviderClient  locationClient;
     Location myLocation;
@@ -43,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements OnSuccessListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         currentLocationTextView = (TextView) findViewById(R.id.currentLocationTextView);
         distanceTextView = (TextView) findViewById(R.id.distanceTextView);
         latLonTextView = (TextView) findViewById(R.id.latLonTextView);
@@ -73,14 +78,14 @@ public class MainActivity extends AppCompatActivity implements OnSuccessListener
                     MY_PERMISSION_ACCESS_COURSE_LOCATION);
         } else {
             // This is where we request the locaiton
-            locationClient.getLastLocation();
+            locationClient.getLastLocation().addOnSuccessListener(this);
         }
     }
 
   @Override
     public void onSuccess(Object location) {
-        // Here it is! This is where we get the current location
-        Location myLocation = (Location)location;
+        // This is the call-back method for getLastLocation
+        myLocation = (Location)location;
         Geocoder geo = new Geocoder(this,
                 Locale.getDefault());
         List<Address> addresses = null;
@@ -89,11 +94,21 @@ public class MainActivity extends AppCompatActivity implements OnSuccessListener
                     myLocation.getLatitude(),
                     myLocation.getLongitude(), 1);
         } catch (IOException e) {
-            e.printStackTrace();
+            Log.e("onSuccess", e.getMessage());
         }
 
-        currentLocationTextView.setText(addresses.get(0).getLocality());
+        if (addresses != null) {
+            currentLocationTextView.setText(addresses.get(0).getLocality());
+        }
+        else
+        {
+            currentLocationTextView.setText(myLocation.getLongitude() + ", " + myLocation.getLatitude());
+        }
+    }
 
+    @Override
+    public void onFailure(@NonNull Exception e) {
+        distanceTextView.setText("Can't connect to location API");
     }
 
     public void calcDistance(View v) {
