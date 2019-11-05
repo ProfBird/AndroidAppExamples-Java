@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity
     RadioButton scissorsRadioButton;
     Hand humanHand;
     public static final String HUMAN_HAND = "humanHand";
+    public static final String WINNER = "winner";
+    public static final int REQUEST_1 = 1;
+
 
     /* --------- Activity Callback Methods --------- */
 
@@ -39,6 +42,11 @@ public class MainActivity extends AppCompatActivity
         rpsRadioGroup.setOnCheckedChangeListener(this);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
     /* ---------------- Event Handlers ---------------------- */
 
     // Handler for the playButton's onClick event defined in activity_main.xml
@@ -46,7 +54,7 @@ public class MainActivity extends AppCompatActivity
         // Start second activity and send it the player's hand selection
         Intent intent = new Intent(this, SecondActivity.class);
         intent.putExtra(HUMAN_HAND, humanHand.toString());  // send data to 2nd activity
-        startActivity(intent);
+        startActivityForResult(intent, REQUEST_1);
     }
 
     // Radio Button Listener Callback Method

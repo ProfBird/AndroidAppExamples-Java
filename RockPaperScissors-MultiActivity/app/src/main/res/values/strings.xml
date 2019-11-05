@@ -10,4 +10,5 @@
     <string name="rock">Rock</string>
     <string name="scissors">Scissors</string>
     <string name="your_choice">Your Choice:</string>
+    <string name="go_back">Return</string>
 </resources>

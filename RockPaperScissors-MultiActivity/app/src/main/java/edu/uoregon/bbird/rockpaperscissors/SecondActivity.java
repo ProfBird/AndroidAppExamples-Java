@@ -1,8 +1,10 @@
 package edu.uoregon.bbird.rockpaperscissors;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -40,8 +42,19 @@ public class SecondActivity extends AppCompatActivity {
         displayImage(game.computerMove());   // Computer makes a move and we display it
 
         // Display the winner
-        TextView winnerTextView = (TextView)findViewById(R.id.winnerTextView);
+        TextView winnerTextView = findViewById(R.id.winnerTextView);
         winnerTextView.setText(game.whoWon().toString());
+
+
+    }
+
+    public void goBack(View v)
+    {
+        // Set a result to send back to the main activity
+        Intent winner = new Intent(this, MainActivity.class);
+        winner.putExtra(MainActivity.WINNER, game.whoWon().toString());
+        setResult(Activity.RESULT_OK, winner);
+        finish();
     }
 
     private void displayImage(Hand hand) {

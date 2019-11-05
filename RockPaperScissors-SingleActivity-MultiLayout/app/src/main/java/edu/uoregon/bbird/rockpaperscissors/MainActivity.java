@@ -34,7 +34,7 @@ public class MainActivity extends Activity {
         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
 
-        // The user might enter an invalid choice, so catch it and propmt for the right choices
+        // The user might enter an invalid choice, so catch it and prompt for the right choices
         try {
             humanHand = Hand.valueOf(rpsText.getText().toString().toLowerCase());
         }
@@ -84,12 +84,12 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        rpsImage = (ImageView)findViewById(R.id.rpsImage);
-        rpsText = (EditText)findViewById(R.id.rpsEditText);
-        winnerText = (TextView)findViewById(R.id.winnerLabel);
-        compMoveText = (TextView)findViewById(R.id.compMoveTextView);
-        hScoreTextView = (TextView)findViewById(R.id.hScoreTextView);
-        cScoreTextView = (TextView)findViewById(R.id.cScoreTextView);
+        rpsImage = findViewById(R.id.rpsImage);
+        rpsText = findViewById(R.id.rpsEditText);
+        winnerText = findViewById(R.id.winnerLabel);
+        compMoveText = findViewById(R.id.compMoveTextView);
+        hScoreTextView = findViewById(R.id.hScoreTextView);
+        cScoreTextView = findViewById(R.id.cScoreTextView);
 
         int humanWins = 0, compWins = 0;
         Hand compChoice = Hand.none;
