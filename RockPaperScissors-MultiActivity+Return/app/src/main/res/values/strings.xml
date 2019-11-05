@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">RockPaperScissors</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="none">None</string>
+    <string name="waiting">Waiting…</string>
+    <string name="winner">Winner:</string>
+    <string name="the_hand_chosen_by_the_computer">The hand chosen by the computer</string>
+    <string name="paper">Paper</string>
+    <string name="rock">Rock</string>
+    <string name="scissors">Scissors</string>
+    <string name="your_choice">Your Choice:</string>
+    <string name="go_back">Return</string>
+</resources>
