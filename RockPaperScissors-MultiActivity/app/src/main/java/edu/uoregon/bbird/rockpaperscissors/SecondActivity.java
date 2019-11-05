@@ -1,6 +1,5 @@
 package edu.uoregon.bbird.rockpaperscissors;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * Created by Brian Bird on 7/15/2015, revised 7/6/17
+ * Created by Brian Bird on 7/15/2015, revised 11/4/19
  */
 public class SecondActivity extends AppCompatActivity {
 
@@ -21,8 +20,6 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second_activity);
-        // Add an "up" button to the app bar
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -51,9 +48,9 @@ public class SecondActivity extends AppCompatActivity {
     public void goBack(View v)
     {
         // Set a result to send back to the main activity
-        Intent winner = new Intent(this, MainActivity.class);
+        Intent winner = new Intent();
         winner.putExtra(MainActivity.WINNER, game.whoWon().toString());
-        setResult(Activity.RESULT_OK, winner);
+        setResult(RESULT_OK, winner);
         finish();
     }
 

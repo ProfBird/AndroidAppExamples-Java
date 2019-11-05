@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 /**
  * Created by Brian Bird on 7/15/2015, revised 7/6/17
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity
     RadioButton rockRadioButton;
     RadioButton paperRadioButton;
     RadioButton scissorsRadioButton;
+    TextView winnerTextView;
+
     Hand humanHand;
     public static final String HUMAN_HAND = "humanHand";
     public static final String WINNER = "winner";
@@ -40,11 +43,13 @@ public class MainActivity extends AppCompatActivity
         scissorsRadioButton = (RadioButton)findViewById(R.id.scissorsRadioButton);
         RadioGroup rpsRadioGroup = (RadioGroup)findViewById(R.id.rpsRadioGroup);
         rpsRadioGroup.setOnCheckedChangeListener(this);
+        winnerTextView = findViewById(R.id.winnerTextView);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        winnerTextView.setText("Winner: " + data.getStringExtra(WINNER));
     }
 
     /* ---------------- Event Handlers ---------------------- */

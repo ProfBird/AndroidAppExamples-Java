@@ -6,14 +6,14 @@
     android:layout_height="match_parent">
 
     <Button
+        android:id="@+id/playButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Play"
-        android:onClick="play"
-        android:id="@+id/playButton"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="44dp"
+        android:onClick="play"
+        android:text="Play"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/humanImageView"
         tools:ignore="HardcodedText" />
 
@@ -22,25 +22,25 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
         android:text="@string/your_choice"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="26dp"
-        app:layout_constraintHorizontal_bias="0.501" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/humanImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
+        android:contentDescription="@string/rock"
         android:visibility="invisible"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rpsRadioGroup"
-        app:srcCompat="@drawable/rock"
-        android:contentDescription="@string/rock"/>
+        app:srcCompat="@drawable/rock" />
 
     <RadioGroup
         android:id="@+id/rpsRadioGroup"
@@ -74,5 +74,16 @@
             android:layout_weight="1"
             android:text="@string/scissors" />
     </RadioGroup>
+
+    <TextView
+        android:id="@+id/winnerTextView"
+        android:layout_width="192dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="36dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playButton" />
 
 </android.support.constraint.ConstraintLayout>
