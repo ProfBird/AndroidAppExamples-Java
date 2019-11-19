@@ -1,5 +1,7 @@
 package edu.lanecc.birdb.listview_arrayadapter_parser_demo;
 
+import androidx.annotation.NonNull;
+
 public class VocabItem {
 
     private String spanish = null;
@@ -30,4 +32,9 @@ public class VocabItem {
         this.pos = pos;
     }
 
+    @NonNull
+    @Override
+    public String toString() {
+        return "Spanish: " + spanish + ", POS: " + pos;
+    }
 }
