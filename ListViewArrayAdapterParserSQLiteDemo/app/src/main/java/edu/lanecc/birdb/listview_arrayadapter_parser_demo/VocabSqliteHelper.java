@@ -29,6 +29,9 @@ public class VocabSqliteHelper extends SQLiteOpenHelper {
                 + ENGLISH + " TEXT,"
                 + POS + " TEXT"
                 + ")" );
+
+        Dal dal = new Dal(context);
+        dal.loadDbFromXML();
     }
 
     @Override

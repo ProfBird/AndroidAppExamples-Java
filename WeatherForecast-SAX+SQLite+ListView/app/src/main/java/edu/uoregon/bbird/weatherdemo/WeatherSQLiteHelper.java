@@ -44,6 +44,7 @@ public class WeatherSQLiteHelper extends SQLiteOpenHelper {
 				+ NIGHT_PRECIP + " INTEGER,"
 				+ DAY_PRECIP + " INTEGER"
 				+ ")" );
+
 	}
 	
 	@Override
