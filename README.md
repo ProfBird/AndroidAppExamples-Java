@@ -66,6 +66,14 @@ only want code for one app.
   * An ArrayIndex of HashMap objects with contact info
   * A RecyclerView Adapter
   * A View click handler
+  
+* ListViewArrayAdapterParserDemo 
+  This is a Spanish-English vocabulary practice app.
+  * One ListActivity.
+  * An XML file in the Assets folder containing Spanish-Entlish vocabulary.
+  * A SAX Parser that produces an ArrayList of vocabulary objects.
+  * An ArrayAdapter
+  * An item click handler
 
 * WeatherForecast-SAX+ListView
   * Parses an XML file of weather data using SAX

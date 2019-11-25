@@ -18,9 +18,8 @@ import java.util.ArrayList;
 public class ParseHandler extends DefaultHandler {
 
     private ArrayList<VocabItem> VocabItems; // Will hold the parser output
-    private VocabItem item;           // Holds data for one tide prediction
-    private boolean isWord = false;  // This and the other booleans are used by SAX
-    private boolean isSpanish = false;
+    private VocabItem item;           // Holds data for one word
+    private boolean isSpanish = false; // This and the other booleans are used by SAX
     private boolean isEnglish = false;
     private boolean isPos = false;
 
@@ -39,7 +38,6 @@ public class ParseHandler extends DefaultHandler {
 
         if (qName.equals("word")) {
             item = new VocabItem();
-            //item.setForecastDate(atts.getValue(0));
             return;
         }
         else if (qName.equals("spanish")) {
@@ -47,13 +45,10 @@ public class ParseHandler extends DefaultHandler {
             return;
         }
         else if (qName.equals("english")) {
-            //item.setLowTemp(atts.getValue(2));
-            //item.setHighTemp(atts.getValue(3));
             isEnglish = true;
             return;
         }
         else if (qName.equals("pos")) {
-            //item.setPrecipitation(atts.getValue(0));
             isPos = true;
             return;
         }
@@ -71,6 +66,9 @@ public class ParseHandler extends DefaultHandler {
         } else if (isEnglish) {
             item.setEnglish(valueString);
             isEnglish = false;
+        }else if (isPos) {
+            item.setPos(valueString);
+            isPos = false;
         }
     }
 
