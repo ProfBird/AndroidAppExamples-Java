@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vocabulary>
+<word>
+	<spanish>abojo</spanish>
+	<english>down</english>
+	<pos>adv</pos>
+</word>
+<word>
+	<spanish>ahí</spanish>
+	<english>there</english>
+	<pos>adv</pos>
+</word>
+<word>
+	<spanish>alguien</spanish>
+	<english>someone</english>
+	<pos>pro</pos>
+</word>
+<word>
+	<spanish>alto</spanish>
+	<english>high</english>
+	<pos>adj</pos>
+</word>
+<word>
+	<spanish>alto</spanish>
+	<english>loud</english>
+	<pos>adj</pos>
+</word>
+<word>
+	<spanish>amar</spanish>
+	<english>to love</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>amor</spanish>
+	<english>love</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>antes</spanish>
+	<english>before</english>
+	<pos>prep</pos>
+</word>
+<word>
+	<spanish>arriba</spanish>
+	<english>up</english>
+	<pos>adv</pos>
+</word>
+<word>
+	<spanish>años</spanish>
+	<english>years old</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>bajo</spanish>
+	<english>low</english>
+	<pos>adj</pos>
+</word>
+<word>
+	<spanish>bajo</spanish>
+	<english>low</english>
+	<pos>adv</pos>
+</word>
+<word>
+	<spanish>beber</spanish>
+	<english>to drink</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>bicicleta</spanish>
+	<english>bicycle</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>bien</spanish>
+	<english>good</english>
+	<pos>adv</pos>
+</word>
+<word>
+	<spanish>bien</spanish>
+	<english>nice</english>
+	<pos>adj</pos>
+</word>
+<word>
+	<spanish>brillante</spanish>
+	<english>bright</english>
+	<pos>adj</pos>
+</word>
+<word>
+	<spanish>brillantemente</spanish>
+	<english>bright</english>
+	<pos>adv</pos>
+</word>
+<word>
+	<spanish>bueno</spanish>
+	<english>good</english>
+	<pos>adj</pos>
+</word>
+<word>
+	<spanish>caliente</spanish>
+	<english>hot</english>
+	<pos>adj</pos>
+</word>
+<word>
+	<spanish>caminar</spanish>
+	<english>to walk</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>camino</spanish>
+	<english>road</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>casa</spanish>
+	<english>house</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>casa</spanish>
+	<english>home</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>chica</spanish>
+	<english>girl</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>chico</spanish>
+	<english>boy</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>coche</spanish>
+	<english>car</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>comer</spanish>
+	<english>to eat</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>correr</spanish>
+	<english>to run</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>cosas</spanish>
+	<english>things</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>creo</spanish>
+	<english>I think</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>decir</spanish>
+	<english>to say</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>despacio</spanish>
+	<english>slow</english>
+	<pos>adv</pos>
+</word>
+<word>
+	<spanish>diente</spanish>
+	<english>tooth</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>dios</spanish>
+	<english>god</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>dormir</spanish>
+	<english>to sleep</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>dos</spanish>
+	<english>two</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>día</spanish>
+	<english>day</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>dónde</spanish>
+	<english>where</english>
+	<pos>pro</pos>
+</word>
+<word>
+	<spanish>ella</spanish>
+	<english>she</english>
+	<pos>pro</pos>
+</word>
+<word>
+	<spanish>entonces</spanish>
+	<english>then</english>
+	<pos>adv</pos>
+</word>
+<word>
+	<spanish>entrar</spanish>
+	<english>to enter</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>esa</spanish>
+	<english>that</english>
+	<pos>pro</pos>
+</word>
+<word>
+	<spanish>escuela</spanish>
+	<english>school</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>estaba</spanish>
+	<english>was</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>estudiar</spanish>
+	<english>to study</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>están</spanish>
+	<english>are</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>favor</spanish>
+	<english>favor</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>feo</spanish>
+	<english>ugly</english>
+	<pos>adj</pos>
+</word>
+<word>
+	<spanish>flor</spanish>
+	<english>flower</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>frio</spanish>
+	<english>cold</english>
+	<pos>adj</pos>
+</word>
+<word>
+	<spanish>fuerte</spanish>
+	<english>loud</english>
+	<pos>adv</pos>
+</word>
+<word>
+	<spanish>gato</spanish>
+	<english>cat</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>gordo</spanish>
+	<english>fat</english>
+	<pos>adj</pos>
+</word>
+<word>
+	<spanish>graciosamente</spanish>
+	<english>gracefully</english>
+	<pos>adv</pos>
+</word>
+<word>
+	<spanish>grande</spanish>
+	<english>big</english>
+	<pos>adj</pos>
+</word>
+<word>
+	<spanish>guapo</spanish>
+	<english>handsome</english>
+	<pos>adj</pos>
+</word>
+<word>
+	<spanish>gustar</spanish>
+	<english>to like</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>hace</spanish>
+	<english>ago</english>
+	<pos>adj</pos>
+</word>
+<word>
+	<spanish>has</spanish>
+	<english>searched</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>hasta</spanish>
+	<english>up to</english>
+	<pos>prep</pos>
+</word>
+<word>
+	<spanish>hermoso</spanish>
+	<english>beautiful</english>
+	<pos>adj</pos>
+</word>
+<word>
+	<spanish>herramienta</spanish>
+	<english>tool</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>hola</spanish>
+	<english>hello</english>
+	<pos>int</pos>
+</word>
+<word>
+	<spanish>hombre</spanish>
+	<english>man</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>ir</spanish>
+	<english>go</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>juego</spanish>
+	<english>game</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>jugar</spanish>
+	<english>to play</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>leche</spanish>
+	<english>milk</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>leer</spanish>
+	<english>to read</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>lento</spanish>
+	<english>slow</english>
+	<pos>adv</pos>
+</word>
+<word>
+	<spanish>libro</spanish>
+	<english>book</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>ligero</spanish>
+	<english>light</english>
+	<pos>adj</pos>
+</word>
+<word>
+	<spanish>luna</spanish>
+	<english>moon</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>luz</spanish>
+	<english>light</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>malo</spanish>
+	<english>bad</english>
+	<pos>adj</pos>
+</word>
+<word>
+	<spanish>mano</spanish>
+	<english>hand</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>me</spanish>
+	<english>me</english>
+	<pos>pro</pos>
+</word>
+<word>
+	<spanish>mejor</spanish>
+	<english>best</english>
+	<pos>adj</pos>
+</word>
+<word>
+	<spanish>mis</spanish>
+	<english>my</english>
+	<pos>pro</pos>
+</word>
+<word>
+	<spanish>mono</spanish>
+	<english>monkey</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>mosca</spanish>
+	<english>fly</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>mucho</spanish>
+	<english>much</english>
+	<pos>adj</pos>
+</word>
+<word>
+	<spanish>mujer</spanish>
+	<english>woman</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>mí</spanish>
+	<english>my</english>
+	<pos>pro</pos>
+</word>
+<word>
+	<spanish>ni</spanish>
+	<english>neither</english>
+	<pos>con</pos>
+</word>
+<word>
+	<spanish>no</spanish>
+	<english>no</english>
+	<pos>particle</pos>
+</word>
+<word>
+	<spanish>noche</spanish>
+	<english>night</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>nunca</spanish>
+	<english>never</english>
+	<pos>adv</pos>
+</word>
+<word>
+	<spanish>oh</spanish>
+	<english>oh</english>
+	<pos>int</pos>
+</word>
+<word>
+	<spanish>oscurecer</spanish>
+	<english>to dim</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>oscuro</spanish>
+	<english>dim</english>
+	<pos>adj</pos>
+</word>
+<word>
+	<spanish>pan</spanish>
+	<english>bread</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>perro</spanish>
+	<english>dog</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>persona</spanish>
+	<english>person</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>pesado</spanish>
+	<english>heavy</english>
+	<pos>adj</pos>
+</word>
+<word>
+	<spanish>poco</spanish>
+	<english>little</english>
+	<pos>adj</pos>
+</word>
+<word>
+	<spanish>porque</spanish>
+	<english>because</english>
+	<pos>pro</pos>
+</word>
+<word>
+	<spanish>puedes</spanish>
+	<english>can</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>quieres</spanish>
+	<english>want</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>rapidamente</spanish>
+	<english>fast</english>
+	<pos>adv</pos>
+</word>
+<word>
+	<spanish>rapido</spanish>
+	<english>fast</english>
+	<pos>adj</pos>
+</word>
+<word>
+	<spanish>raton</spanish>
+	<english>mouse</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>sabes</spanish>
+	<english>you know</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>saltar</spanish>
+	<english>to jump</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>sentar</spanish>
+	<english>to sit</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>si</spanish>
+	<english>yes</english>
+	<pos>particle</pos>
+</word>
+<word>
+	<spanish>siempre</spanish>
+	<english>always</english>
+	<pos>adv</pos>
+</word>
+<word>
+	<spanish>siento</spanish>
+	<english>I feel</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>silla</spanish>
+	<english>chair</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>sin</spanish>
+	<english>without</english>
+	<pos>adv</pos>
+</word>
+<word>
+	<spanish>sobre</spanish>
+	<english>about</english>
+	<pos>prep</pos>
+</word>
+<word>
+	<spanish>sol</spanish>
+	<english>sun</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>sueño</spanish>
+	<english>sleep</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>sus</spanish>
+	<english>their</english>
+	<pos>pro</pos>
+</word>
+<word>
+	<spanish>también</spanish>
+	<english>also</english>
+	<pos>adv</pos>
+</word>
+<word>
+	<spanish>tan</spanish>
+	<english>so</english>
+	<pos>adv</pos>
+</word>
+<word>
+	<spanish>taza</spanish>
+	<english>cup</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>tenemos</spanish>
+	<english>we have</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>ti</spanish>
+	<english>you</english>
+	<pos>pro</pos>
+</word>
+<word>
+	<spanish>tiempo</spanish>
+	<english>time</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>tonto</spanish>
+	<english>silly</english>
+	<pos>adj</pos>
+</word>
+<word>
+	<spanish>trabajar</spanish>
+	<english>to work</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>trabajo</spanish>
+	<english>work</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>uno</spanish>
+	<english>one</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>va</spanish>
+	<english>goes</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>ver</spanish>
+	<english>look</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>verdad</spanish>
+	<english>truth</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>vida</spanish>
+	<english>life</english>
+	<pos>noun</pos>
+</word>
+<word>
+	<spanish>volar</spanish>
+	<english>to fly</english>
+	<pos>verb</pos>
+</word>
+<word>
+	<spanish>yo</spanish>
+	<english>I</english>
+	<pos>pro</pos>
+</word>
+<word>
+	<spanish>usted</spanish>
+	<english>you</english>
+	<pos>pro</pos>
+</word>
+<word>
+	<spanish>él</spanish>
+	<english>he</english>
+	<pos>pro</pos>
+</word>
+</vocabulary>
