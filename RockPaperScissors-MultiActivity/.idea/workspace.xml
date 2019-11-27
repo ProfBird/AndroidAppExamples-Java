@@ -8,6 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e85296b8-e1d2-4719-8e6b-51f82b701410" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../RockPaperScissors-MultiActivity+Return/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RockPaperScissors-MultiActivity+Return/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RockPaperScissors-MultiActivity+Return/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RockPaperScissors-MultiActivity+Return/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RockPaperScissors-MultiActivity+Return/app/src/main/java/edu/uoregon/bbird/rockpaperscissors/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RockPaperScissors-MultiActivity+Return/app/src/main/java/edu/uoregon/bbird/rockpaperscissors/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -291,7 +294,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="23" y="23" width="1167" height="732" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" order="0" visible="true" weight="0.17609046" />
       <window_info id="Structure" order="1" weight="0.25" />

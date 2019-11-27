@@ -1,9 +1,11 @@
 package edu.lanecc.birdb.listview_arrayadapter_parser_demo;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
 
 
 public class VocabSqliteHelper extends SQLiteOpenHelper {
@@ -15,6 +17,7 @@ public class VocabSqliteHelper extends SQLiteOpenHelper {
     public static final String POS = "pos";
 
     private Context context = null;
+    private ArrayList<VocabItem> vocabItems = null;
 
     public VocabSqliteHelper(Context c) {
         super(c, DATABASE_NAME, null, DATABASE_VERSION);
@@ -30,12 +33,28 @@ public class VocabSqliteHelper extends SQLiteOpenHelper {
                 + POS + " TEXT"
                 + ")" );
 
-        Dal dal = new Dal(context);
-        dal.loadDbFromXML();
+        // Get the vocab data and put it in the new table
+        loadDatabaseFromXmlFile(db);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         // TODO: Manage schema changes
+    }
+
+    private void loadDatabaseFromXmlFile(SQLiteDatabase db) {
+        Dal dal = new Dal(context);
+        vocabItems = dal.parseXmlFile("Spanish-english.xml");
+        // Put weather forecast in the database
+        ContentValues cv = new ContentValues();
+
+        for(VocabItem item : vocabItems)
+        {
+            cv.put(ENGLISH, item.getEnglish());
+            cv.put(SPANISH, item.getSpanish());				// stored in items, not item
+            cv.put(POS, item.getPos());			// stored in items, not item
+
+            db.insert(VOCABULARY, null, cv);
+        }
     }
 }

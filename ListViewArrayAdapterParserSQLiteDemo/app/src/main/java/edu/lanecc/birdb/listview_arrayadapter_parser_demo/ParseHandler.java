@@ -71,6 +71,9 @@ public class ParseHandler extends DefaultHandler {
         } else if (isEnglish) {
             item.setEnglish(valueString);
             isEnglish = false;
+        }else if (isPos) {
+            item.setPos(valueString);
+            isPos = false;
         }
     }
 
