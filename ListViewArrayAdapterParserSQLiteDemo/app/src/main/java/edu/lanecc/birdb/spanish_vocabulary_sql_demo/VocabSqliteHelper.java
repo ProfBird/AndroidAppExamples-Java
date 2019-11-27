@@ -1,4 +1,4 @@
-package edu.lanecc.birdb.listview_arrayadapter_parser_demo;
+package edu.lanecc.birdb.spanish_vocabulary_sql_demo;
 
 import android.content.ContentValues;
 import android.content.Context;

@@ -1,4 +1,4 @@
-package edu.lanecc.birdb.listview_arrayadapter_parser_demo;
+package edu.lanecc.birdb.spanish_vocabulary_sql_demo;
 
 
 import org.xml.sax.Attributes;
@@ -8,11 +8,8 @@ import java.util.ArrayList;
 
 /************** ParseHandler **********************************************
  * This class contains helper methods for the SAX event-based parser
- * framework. These methods are tailored to parse the XML tide prediction
- * data files from https://tidesandcurrents.noaa.gov/noaacurrents/Regions
- *
- * This class is used by the Dal (Data Access Layer) class.
- * This class depends on the VocabItem class.
+ * framework. These methods are tailored to parse the XML spanish-english
+ * vocablulary list in the assests directory of this project.
  **************************************************************************/
 
 public class ParseHandler extends DefaultHandler {
