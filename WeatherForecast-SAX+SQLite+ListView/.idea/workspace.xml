@@ -12,10 +12,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7705c121-d031-4aea-aaf7-fe1d9a8e04ab" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../ListViewArrayAdapterParserSQLiteDemo/app/src/main/java/edu/lanecc/birdb/listview_arrayadapter_parser_demo/Dal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ListViewArrayAdapterParserSQLiteDemo/app/src/main/java/edu/lanecc/birdb/listview_arrayadapter_parser_demo/Dal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ListViewArrayAdapterParserSQLiteDemo/app/src/main/java/edu/lanecc/birdb/listview_arrayadapter_parser_demo/VocabSqliteHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ListViewArrayAdapterParserSQLiteDemo/app/src/main/java/edu/lanecc/birdb/listview_arrayadapter_parser_demo/VocabSqliteHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ListViewArrayAdapterParserSQLiteDemo/app/src/main/java/edu/lanecc/birdb/spanish_vocabulary_sql_demo/MainActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ListViewArrayAdapterParserSQLiteDemo/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ListViewArrayAdapterParserSQLiteDemo/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../ListViewArrayAdapterParserSQLiteDemo/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ListViewArrayAdapterParserSQLiteDemo/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ListViewArrayAdapterParserSQLiteDemo/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ListViewArrayAdapterParserSQLiteDemo/app/src/main/java/edu/lanecc/birdb/spanish_vocabulary_sql_demo/VocabListActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ListViewArrayAdapterParserSQLiteDemo/app/src/main/java/edu/lanecc/birdb/spanish_vocabulary_sql_demo/VocabListActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ListViewArrayAdapterParserSQLiteDemo/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ListViewArrayAdapterParserSQLiteDemo/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_23_4_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_23_4_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/WeatherSQLiteHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/WeatherSQLiteHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../WeatherForecast-SAX+SQLite+REST+ListView/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="WeatherForecast-SAX+SQLite+ListView.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,7 +36,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Android_Accelerated_x86_Nougat" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_19_Google_APIs" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -60,10 +65,10 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
+            <state relative-caret-position="-342">
               <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -75,7 +80,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/ParseHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
+            <state relative-caret-position="152">
               <caret line="11" column="66" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -87,7 +92,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
+            <state relative-caret-position="95">
               <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="79" />
             </state>
           </provider>
@@ -96,17 +101,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/listview_items.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
+            <state relative-caret-position="76">
               <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
             </state>
           </provider>
           <provider editor-type-id="android-designer2" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/Dal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
+            <state relative-caret-position="-123">
               <caret line="34" selection-start-line="34" selection-end-line="34" selection-end-column="70" />
             </state>
           </provider>
@@ -115,7 +120,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
+            <state relative-caret-position="19">
               <caret line="1" selection-start-line="1" selection-end-line="17" />
             </state>
           </provider>
@@ -124,8 +129,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/WeatherSQLiteHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+            <state relative-caret-position="513">
+              <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -160,10 +165,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="16" />
     <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="997" />
+    <option name="width" value="1698" />
+    <option name="height" value="742" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -171,7 +177,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
       <pane id="Scope">
         <subPane subId="Project Files">
@@ -211,6 +216,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -227,7 +233,31 @@
               <item name="WeatherForecast-SAX+SQLite+ListView" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="weatherdemo" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="edu" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WeatherForecast-SAX+SQLite+ListView" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="edu" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="uoregon" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WeatherForecast-SAX+SQLite+ListView" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="edu" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="uoregon" type="462c0819:PsiDirectoryNode" />
+              <item name="bbird" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WeatherForecast-SAX+SQLite+ListView" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="edu" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="uoregon" type="462c0819:PsiDirectoryNode" />
+              <item name="bbird" type="462c0819:PsiDirectoryNode" />
+              <item name="weatherdemo" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -359,29 +389,8 @@
       <option name="PREFERRED_AVD" value="" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
+      <option name="DEBUGGER_TYPE" value="Java" />
       <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
       <Profilers>
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
@@ -466,10 +475,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="744" extended-state="6" />
+    <frame x="16" y="23" width="1698" height="742" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info active="true" id="Project" order="0" visible="true" weight="0.15938511" />
+      <window_info active="true" id="Project" order="0" visible="true" weight="0.18286756" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Captures" order="2" side_tool="true" weight="0.25" />
       <window_info id="Build Variants" order="3" side_tool="true" />
@@ -485,8 +494,8 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.17973857" />
-      <window_info anchor="bottom" id="Android Profiler" order="8" />
+      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.17908083" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Logcat" order="10" />
       <window_info anchor="bottom" id="Android Monitor" order="11" weight="0.3287841" />
@@ -581,12 +590,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="23" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
+      <provider editor-type-id="android-manifest" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v11/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -614,7 +623,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/ParseHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
+        <state relative-caret-position="152">
           <caret line="11" column="66" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -624,14 +633,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
+        <state relative-caret-position="95">
           <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="79" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/listview_items.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
+        <state relative-caret-position="76">
           <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
         </state>
       </provider>
@@ -639,32 +648,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
+        <state relative-caret-position="19">
           <caret line="1" selection-start-line="1" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/WeatherSQLiteHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        <state relative-caret-position="513">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/Dal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
+        <state relative-caret-position="-123">
           <caret line="34" selection-start-line="34" selection-end-line="34" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/uoregon/bbird/weatherdemo/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-342">
+          <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

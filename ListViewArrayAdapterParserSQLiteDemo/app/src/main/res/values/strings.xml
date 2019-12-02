@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Spanish Vocabulary</string>
+    <string name="show_vocabulary">Show Vocabulary</string>
+    <string-array name="pos_array">
+        <item>all</item>
+        <item>noun</item>
+        <item>verb</item>
+        <item>adj</item>
+        <item>adv</item>
+        <item>art</item>
+        <item>pro</item>
+        <item>con</item>
+        <item>prep</item>
+        <item>particle</item>
+    </string-array>
 </resources>

@@ -18,11 +18,27 @@ public class VocabListActivity extends ListActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        String partOfSpeech = getIntent().getStringExtra(MainActivity.POS);
+
         // Initialize database
         VocabSqliteHelper helper = new VocabSqliteHelper(this);
         SQLiteDatabase db = helper.getReadableDatabase();
 
-        Cursor cursor = db.rawQuery("SELECT * FROM " + VocabSqliteHelper.VOCABULARY, null);
+        String query = "SELECT * " +
+                        " FROM " +
+                        VocabSqliteHelper.VOCABULARY;
+
+        if (!partOfSpeech.equals("all")) {
+            query += " WHERE " +
+                    VocabSqliteHelper.POS +
+                    " = '" + partOfSpeech + "';";
+        }
+        else
+        {
+            query += ";";
+        }
+
+        Cursor cursor = db.rawQuery(query, null);
 
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(
                 this,
